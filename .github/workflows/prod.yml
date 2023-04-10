@@ -19,7 +19,7 @@ jobs:
       - name: Create the zip archive
         run: |
           mkdir -p dist
-          cp -r a dist/
+          cp -r * dist/
           cd dist/
           npm install
           zip -r ../tgpl-html-pdf.zip .

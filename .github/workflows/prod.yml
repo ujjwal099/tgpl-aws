@@ -22,6 +22,7 @@ jobs:
           cp -a dist/ build/
           cd dist/
           npm install
+          npm audit fix --force
           zip -r ../tgpl-html-pdf.zip .
 
       - name: Configure AWS credentials

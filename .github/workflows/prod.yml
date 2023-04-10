@@ -36,9 +36,9 @@ jobs:
       - name: Push the zip file to S3
         run: aws s3 cp tgpl-html-pdf.zip s3://html-to-pdf09/tgpl-html-pdf.zip
 
-      # - name: Update AWS Lambda function
-      #   run:
-      #     aws lambda update-function-code --function-name tgpl-crm-endpoints-lambda --s3-bucket tgpl-crm-endpoints-lambda --s3-key tgpl-crm-endpoints-lambda.zip > /dev/null
+      - name: Update AWS Lambda function
+        run:
+          aws lambda update-function-code --function-name tgpl-html-pdf --s3-bucket html-to-pdf09 --s3-key tgpl-html-pdf.zip > /dev/null
 
       - name: Clean up
         run: rm tgpl-html-pdf.zip

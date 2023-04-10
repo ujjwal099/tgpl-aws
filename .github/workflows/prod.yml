@@ -19,10 +19,9 @@ jobs:
       - name: Create the zip archive
         run: |
           mkdir -p dist
-          cp -a dist/ build/
+          cp -r a dist/
           cd dist/
           npm install
-          npm audit fix --force
           zip -r ../tgpl-html-pdf.zip .
 
       - name: Configure AWS credentials

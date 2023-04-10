@@ -20,6 +20,7 @@ jobs:
         run: |
           mkdir -p dist
           cp -r * dist/
+          cd dist/
           npm install
           zip -r ../tgpl-html-pdf.zip .
 

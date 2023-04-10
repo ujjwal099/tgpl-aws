@@ -22,7 +22,7 @@ jobs:
           cp -r src dist/
           cd dist/
           npm install
-          zip -r ../tgpl-crm-endpoints-lambda.zip .
+          zip -r ../tgpl-html-pdf.zip .
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -34,7 +34,7 @@ jobs:
           role-session-name: MySessionName
 
       - name: Push the zip file to S3
-        run: aws s3 cp tgpl-html-pdf.zip s3://html-to-pdf09/tgpl-html-pdf.zip
+        run: aws s3 cp tgpl-html-pdf.zip s3://pprajapati/tgpl-html-pdf.zip
 
       # - name: Update AWS Lambda function
       #   run:

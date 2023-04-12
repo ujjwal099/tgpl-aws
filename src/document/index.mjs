@@ -11,6 +11,9 @@ const pdfTemplate = (
     "'Times New Roman', Times, serif",
     "'Times New Roman', Times, serif",
   ];
+  console.log("IFSC", dummyData?.stores[0]?.ifsc_code);
+  console.log("Pan Number 1", dummyData?.stores[0]?.panNumber);
+  console.log("Pan Number 2", dummyData?.stores[0]?.pan_number);
   const htmlString1 = `
  <!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box;">
@@ -60,6 +63,8 @@ const pdfTemplate = (
                         <p style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;">The Parties hereby represent and warrant that the Offer under this agreement will not violate any proprietary rights of any third party, including, without limitation, confidential relationships, patent, trade secrets, copyright rights and any other proprietary rights.</p>
                         <p style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;"><span class="field w-50" style="box-sizing: border-box;display: inline-block;width: 50%!important;position: relative;text-decoration: underline;">${
                           dummyData?.formData?.brand_name
+                            ? dummyData?.formData?.brand_name
+                            : ""
                         }</span> to allow 'Bank's' tagging under all
                             its outlets listed on Rating Sites.</p>
                         </li>
@@ -426,7 +431,9 @@ const pdfTemplate = (
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">This memorandum of understanding (&ldquo;<strong>Mou</strong>&rdquo;) dated [&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;___________], 2023 (&ldquo;<strong>Effective Date</strong>&rdquo;) and executed at New Delhi summarizes the principal terms with respect to the arrangement between:</span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">This memorandum of understanding (&ldquo;<strong>Mou</strong>&rdquo;) dated ${`${today.getDate()}. ${
+              today.getMonth() + 1
+            }. ${today.getFullYear()}.`}, 2023 (&ldquo;<strong>Effective Date</strong>&rdquo;) and executed at New Delhi summarizes the principal terms with respect to the arrangement between:</span></span>
                 </span>
                 </span>
             </p>
@@ -445,12 +452,18 @@ const pdfTemplate = (
                 </span>
             </p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">[<strong><em> ______________________________________________________ </em></strong>), a private limited company incorporated under the [Companies Act, 1956/2013] (CIN: [ _____________________&nbsp; ]) having its registered office at [<strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em></strong></span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">[<strong><em>${
+              dummyData?.formData?.merchant_name
+            } </em></strong>), a private limited company incorporated under the [Companies Act, 1956/2013] (CIN: [&nbsp; ]) having its registered office at [<strong><em>${
+    dummyData?.formData?.registered_address
+      ? dummyData?.formData?.registered_address
+      : ""
+  }</em></strong></span></span>
                 </span>
                 </span>
             </p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ] (hereinafter referred to as &ldquo;<strong>Merchant</strong>&rdquo;, which expression shall unless repugnant to the meaning and context hereof, be deemed to mean and include its successors and permitted assigns) of the <strong>OTHER PART</strong>. </span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">] (hereinafter referred to as &ldquo;<strong>Merchant</strong>&rdquo;, which expression shall unless repugnant to the meaning and context hereof, be deemed to mean and include its successors and permitted assigns) of the <strong>OTHER PART</strong>. </span></span>
                 </span>
                 </span>
             </p>
@@ -485,7 +498,9 @@ const pdfTemplate = (
             </p>
 
             <ol>
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant owns and runs a [dining outlet/salon/etc.] by the name of [______________________<strong><em>__ </em></strong>] (&ldquo;<strong>Outlet</strong>&rdquo;). </span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant owns and runs a [dining outlet/salon/etc.] by the name of [${
+                  dummyData?.formData?.brand_name
+                }<strong><em>__ </em></strong>] (&ldquo;<strong>Outlet</strong>&rdquo;). </span></span>
                     </span>
                     </span>
                 </li>
@@ -501,7 +516,7 @@ const pdfTemplate = (
                     </span>
                     </span>
                 </li>
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Pursuant to the negotiations between the Parties herein, Thriwe confirms that the Thriwe Clients has accepted this offer proposed by the Merchant and both Parties have agreed to initiate this arrangement wherein the Merchant shall offer discounts to Customers on the terms of this MoU. This MoU records the oral/ written understanding arrived at between the aforementioned Parties and a detailed agreement would be drawn up in respect of the same.</span></span>
+. This MoU records the oral/ written understanding arrived at between the aforementioned Parties and a detailed agreement would be drawn up in respect of the same.</span></span>
                     </span>
                     </span>
                 </li>
@@ -870,7 +885,15 @@ const pdfTemplate = (
                             </p>
                         </td>
                         <td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:45px;">
-                            <p style="margin-right:6px; text-align:justify">&nbsp;</p>
+                            <p style="margin-right:6px; text-align:justify">&nbsp;${
+                              dummyData?.stores[0]?.start_validity_voucher
+                                ? dummyData?.stores[0]?.start_validity_voucher
+                                : ""
+                            } & ${
+    dummyData?.stores[0]?.end_validity_voucher
+      ? dummyData?.stores[0]?.end_validity_voucher
+      : ""
+  }</p>
                         </td>
                     </tr>
                     <tr>
@@ -881,7 +904,11 @@ const pdfTemplate = (
                             </p>
                         </td>
                         <td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:45px;">
-                            <p style="margin-right:6px; text-align:justify">&nbsp;</p>
+                            <p style="margin-right:6px; text-align:justify">&nbsp;${
+                              dummyData?.stores[0]?.commission_to_thriwe
+                                ? dummyData?.stores[0]?.commission_to_thriwe
+                                : ""
+                            }</p>
                         </td>
                     </tr>
                     <tr>
@@ -892,7 +919,9 @@ const pdfTemplate = (
                             </p>
                         </td>
                         <td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:45px;">
-                            <p style="margin-right:6px; text-align:justify">&nbsp;</p>
+                            <p style="margin-right:6px; text-align:justify">&nbsp;${
+                              dummyData?.offers[0]?.offer_text
+                            }</p>
                         </td>
                     </tr>
                     <tr>
@@ -967,7 +996,7 @@ const pdfTemplate = (
                             <p style="text-align:justify">&nbsp;</p>
 
                             <p style="text-align:justify">&nbsp;</p>
-
+                            <img src="${textSignature}" alt="">
                             <p style="margin-left:7px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Stamp &amp; Signature:</span></span>
                                 </span>
                                 </span>
@@ -1006,7 +1035,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol>
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Merchant Name:&nbsp; <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Merchant Name:&nbsp; <u>${
+                  dummyData?.formData?.merchant_name
+                    ? dummyData?.formData?.merchant_name
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1015,7 +1048,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="2">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Merchant Legal name: <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Merchant Legal name: <u>${
+                  dummyData?.formData?.merchant_name
+                    ? dummyData?.formData?.merchant_name
+                    : ""
+                } </u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1024,7 +1061,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="3">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Address: <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Address: <u>${
+                  dummyData?.formData?.registered_address
+                    ? dummyData?.formData?.registered_address
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1033,7 +1074,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="4">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Contact number: &nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Contact number: <u>${
+                  dummyData?.formData?.spoc_no
+                    ? dummyData?.formData?.spoc_no
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1042,7 +1087,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="5">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name of the Signatory: _<u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name of the Signatory:<u> ${
+                  dummyData?.formData?.authorised_signatory_name
+                    ? dummyData?.formData?.authorised_signatory_name
+                    : ""
+                } </u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1051,7 +1100,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="6">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Designation: &nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Designation: &nbsp;<u> ${
+                  dummyData?.formData?.designation
+                    ? dummyData?.formData?.designation
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1060,7 +1113,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="7">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Mobile Number: &nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Mobile Number: &nbsp;<u> ${
+                  dummyData?.formData?.authorised_signatory_number
+                    ? dummyData?.formData?.authorised_signatory_number
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1069,7 +1126,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="8">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Email Id: (capital letters): <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Email Id: (capital letters): <u>${
+                  dummyData?.formData?.authorized_signatory_mail
+                    ? dummyData?.formData?.authorized_signatory_mail
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1078,7 +1139,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="9">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Swipe Machine (Bank name): (Attach the Copy): <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Swipe Machine (Bank name): (Attach the Copy): <u>${
+                  dummyData?.stores[0]?.tidANDMID[0]?.bankMachineName
+                    ? dummyData?.stores[0]?.tidANDMID[0]?.bankMachineName
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1087,7 +1152,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="10">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">TID: <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">TID: <u>${
+                  dummyData?.stores[0]?.tidANDMID[0]?.tid
+                    ? dummyData?.stores[0]?.tidANDMID[0]?.tid
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1096,7 +1165,11 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
 
             <ol start="11">
-                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">MID: <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">MID: <u>${
+                  dummyData?.stores[0]?.tidANDMID[0]?.mid
+                    ? dummyData?.stores[0]?.tidANDMID[0]?.mid
+                    : ""
+                }</u></span></span>
                     </span>
                     </span>
                 </li>
@@ -1147,7 +1220,11 @@ const pdfTemplate = (
                             </span>
                             </span>
                         </li>
-                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Remarks<u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Remarks<u>${
+                          dummyData?.stores[0]?.remarks_store
+                            ? dummyData?.stores[0]?.remarks_store
+                            : ""
+                        }</u></span></span>
                             </span>
                             </span>
                         </li>
@@ -1170,21 +1247,33 @@ const pdfTemplate = (
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Account Holder Name:: __________________________________________________</span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Account Holder Name:${
+              dummyData?.stores[0]?.merchant_name_written
+                ? dummyData?.stores[0]?.merchant_name_written
+                : ""
+            }</span></span>
                 </span>
                 </span>
             </p>
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Account Number:_______________________________________________________</span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Account Number:${
+              dummyData?.stores[0]?.bank_account_number
+                ? dummyData?.stores[0]?.bank_account_number
+                : ""
+            }</span></span>
                 </span>
                 </span>
             </p>
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Bank Name:____________________________________________________________</span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Bank Name:${
+              dummyData?.stores[0]?.bank_name
+                ? dummyData?.stores[0]?.bank_name
+                : ""
+            }</span></span>
                 </span>
                 </span>
             </p>
@@ -1198,7 +1287,11 @@ const pdfTemplate = (
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">IFSC Code:_____________________________________________________________</span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">IFSC Code:${
+              dummyData?.stores[0]?.ifsc_code
+                ? dummyData?.stores[0]?.ifsc_code
+                : ""
+            }</span></span>
                 </span>
                 </span>
             </p>
@@ -1223,14 +1316,20 @@ const pdfTemplate = (
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">GST Number:___________________________________________________________</span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">GST Number:${
+              dummyData?.stores[0]?.gst_no ? dummyData?.stores[0]?.gst_no : ""
+            }</span></span>
                 </span>
                 </span>
             </p>
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">PAN Number:___________________________________________________________</span></span>
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">PAN Number:${
+              dummyData?.stores[0]?.panNumber
+                ? dummyData?.stores[0]?.panNumber
+                : ""
+            }</span></span>
                 </span>
                 </span>
             </p>
@@ -1246,157 +1345,7 @@ const pdfTemplate = (
   if (templateType == 1) {
     return htmlString1;
   } else if (templateType == 2) {
-    return `
-      <!doctype html>
-      <html>
-         <head>
-            <meta charset="utf-8">
-            <title>PDF Result Template</title>
-            <style>
-                 .sign-box{
-                 display: flex;
-                 justify-content: flex-end
-                 }
-               .invoice-box {
-               max-width: 800px;
-               margin: auto;
-               padding: 30px;
-               border: 1px solid #eee;
-               box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-               font-size: 16px;
-               line-height: 24px;
-               font-family: 'Helvetica Neue', 'Helvetica',
-               color: #555;
-               }
-               .margin-top {
-               margin-top: 50px;
-               }
-               .justify-center {
-               text-align: center;
-               }
-               .invoice-box table {
-               width: 100%;
-               line-height: inherit;
-               text-align: left;
-               }
-               .invoice-box table td {
-               padding: 5px;
-               vertical-align: top;
-               }
-               .invoice-box table tr td:nth-child(2) {
-               text-align: right;
-               }
-               .invoice-box table tr.top table td {
-               padding-bottom: 20px;
-               }
-               .invoice-box table tr.top table td.title {
-               font-size: 45px;
-               line-height: 45px;
-               color: #333;
-               }
-               .invoice-box table tr.information table td {
-               padding-bottom: 40px;
-               }
-               .invoice-box table tr.heading td {
-               background: #eee;
-               border-bottom: 1px solid #ddd;
-               font-weight: bold;
-               }
-               .invoice-box table tr.details td {
-               padding-bottom: 20px;
-               }
-               .invoice-box table tr.item td {
-               border-bottom: 1px solid #eee;
-               }
-               .invoice-box table tr.item.last td {
-               border-bottom: none;
-               }
-               .invoice-box table tr.total td:nth-child(2) {
-               border-top: 2px solid #eee;
-               font-weight: bold;
-               }
-               @media only screen and (max-width: 600px) {
-               .invoice-box table tr.top table td {
-               width: 100%;
-               display: block;
-               text-align: center;
-               }
-               .invoice-box table tr.information table td {
-               width: 100%;
-               display: block;
-               text-align: center;
-               }
-               }
-            </style>
-         </head>
-         <body>
-            <div class="invoice-box">
-            <h1 class="justify-center">Template 2</h1>
-               <table cellpadding="0" cellspacing="0">
-                  <tr class="top">
-                     <td colspan="2">
-                        <table>
-                           <tr>
-                              <td class="title"><img  src="https://design.thriwe.com/tgpl-crm-prime/assets/images/thriwe-logo.png"
-                                 style="width:100%; max-width:156px;"></td>
-                              <td>
-                                 Date: ${`${today.getDate()}. ${
-                                   today.getMonth() + 1
-                                 }. ${today.getFullYear()}.`}
-                              </td>
-                           </tr>
-                           <tr>
-                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                              </p>
-                           </tr>
-                        </table>
-                     </td>
-                  </tr>
-                  <tr class="information">
-                     <td colspan="2">
-                        <table>
-                           <tr>
-                              <td>
-                                Name: ${signatoryName}
-                              </td>
-                              <td>
-                                 Contact Number: ${contactNo}
-                              </td>
-                           </tr>
-                        </table>
-                     </td>
-                  </tr>
-                  <tr class="heading">
-                     <td>User Information:</td>
-                     <td>Information</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Email:</td>
-                     <td>${email}</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Extra Field:</td>
-                     <td>${extraField}</td>
-                  </tr>
-               </table>
-               <br />
-               <div class="sign-box">
-               <div>Sign Here: </div>
-               <div>
-               ${
-                 textSignature
-                   ? textSignature
-                   : `<img src=${trimmedDataURL} style="width:100%; max-width:156px;">`
-               }
-               </div>
-             </div>
-               <br />
-               
-            </div>
-         </body>
-      </html>
-      `;
+    return htmlString2;
   } else {
     return `
       <!doctype html>

@@ -60,7 +60,7 @@ const createPdf = async (data, templateType, textSignature, id, ipAddress) => {
 
     const arr = await tab.pdf({
       path: `/tmp/${id}.pdf`,
-      margin: { top: 72, right: 72, bottom: 72, left: 72 },
+      margin: { top: 60, right: 72, bottom: 60, left: 72 },
     });
     console.log(arr);
     // console.log(arr);

@@ -12,6 +12,18 @@ const __dirname = path.dirname(__filename);
 export const handler = async (event) => {
   // TODO implement
   // console.log(event);
+  const headers = event.headers;
+  const xForwardedFor = headers["X-Forwarded-For"];
+
+  // Extract the client IP address from the "X-Forwarded-For" header
+  let ip;
+  if (xForwardedFor) {
+    ip = xForwardedFor.split(",")[0];
+  } else {
+    // If "X-Forwarded-For" header is not present, retrieve the source IP from the "requestContext"
+    ip = event.requestContext.identity.sourceIp;
+  }
+  console.log(ip);
   const {
     data,
     templateType,
@@ -28,7 +40,7 @@ export const handler = async (event) => {
     ipAddress,
   } = JSON.parse(event.body);
   const id = Date.now();
-  console.log("body",JSON.parse(event.body));
+  console.log("body", JSON.parse(event.body));
   if (noremail && authEmail && spocEmail) {
     // console.log(noremail);
     await sendMail(

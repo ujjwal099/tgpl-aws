@@ -65,6 +65,7 @@ export const handler = async (event) => {
     };
     return response;
   } else {
+    ipAddress = ip;
     const ans = await createPdf(
       data,
       templateType,

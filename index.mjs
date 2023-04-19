@@ -24,7 +24,7 @@ export const handler = async (event) => {
     ip = event.requestContext.identity.sourceIp;
   }
   console.log(ip);
-  const {
+  let {
     data,
     templateType,
     textSignature,

@@ -36,7 +36,7 @@ const sendMail = async (
   password,
   brandName,
   merchantName,
-  authName,
+  authName
 ) => {
   try {
     const today = dateToYMD(new Date());

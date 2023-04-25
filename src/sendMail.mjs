@@ -145,18 +145,19 @@ sign the MOU.</p>
          <p> Brand Name: ${brandName} </p>
          <p> Date of Signing: ${today} </p>
          <p> Authorised Signatory: ${authName} </p>
-         <p> agreement: <a href=${agreement}>View Agreement</a></p>
+         <p> agreement: <a href="${agreement}">View Agreement</a></p>
          <p>Thanks, </p>
          <p>Team Thriwe </p>
           `}`,
       };
     }
+    console.log("Request Pending");
     const promises = [
       sendMailPromise(options1),
       sendMailPromise(options2),
       sendMailPromise(options3),
     ];
-    console.log("Request Pending");
+
     await Promise.all(promises)
       .then((results) => {
         console.log("All emails sent:", results);

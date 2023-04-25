@@ -126,6 +126,7 @@ sign the MOU.</p>
        `,
     };
     if (locallySigned) {
+      console.log("LocallySigned");
       options3 = {
         from: "noreply@thriwe.com",
         to: email,
@@ -155,7 +156,7 @@ sign the MOU.</p>
       sendMailPromise(options2),
       sendMailPromise(options3),
     ];
-
+    console.log("Request Pending");
     await Promise.all(promises)
       .then((results) => {
         console.log("All emails sent:", results);

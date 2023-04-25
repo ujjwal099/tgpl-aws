@@ -9,25 +9,6 @@ function dateToYMD(date) {
   return "" + y + "-" + (m <= 9 ? "0" + m : m) + "-" + (d <= 9 ? "0" + d : d);
 }
 
-const sendMailPromise = (options) => {
-  var transporter = nodemailer.createTransport(
-    mandrillTransport({
-      auth: {
-        apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
-      },
-    })
-  );
-  return new Promise((resolve, reject) => {
-    transporter.sendMail(options, (err, info) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(info);
-      }
-    });
-  });
-};
-
 const sendMail = async (
   email,
   authEmail,
@@ -39,6 +20,13 @@ const sendMail = async (
   authName
 ) => {
   try {
+    var transporter = nodemailer.createTransport(
+      mandrillTransport({
+        auth: {
+          apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
+        },
+      })
+    );
     const today = dateToYMD(new Date());
     const options1 = {
       from: "noreply@thriwe.com",
@@ -161,19 +149,28 @@ sign the MOU.</p>
       }
        `,
     };
-    const promises = [
-      sendMailPromise(options1),
-      sendMailPromise(options2),
-      sendMailPromise(options3),
-    ];
+    transporter.sendMail(options1, (error, info) => {
+      if (error) {
+        console.error("Error sending email 1:", error);
+      } else {
+        console.log("Email 1 sent:", info.response);
+      }
+    });
+    transporter.sendMail(options2, (error, info) => {
+      if (error) {
+        console.error("Error sending email 2:", error);
+      } else {
+        console.log("Email 2 sent:", info.response);
+      }
+    });
 
-    Promise.all(promises)
-      .then((results) => {
-        console.log("All emails sent:", results);
-      })
-      .catch((err) => {
-        console.error("Error sending emails:", err);
-      });
+    transporter.sendMail(options3, (error, info) => {
+      if (error) {
+        console.error("Error sending email 3:", error);
+      } else {
+        console.log("Email 3 sent:", info.response);
+      }
+    });
   } catch (error) {
     // console.log(error);
   }

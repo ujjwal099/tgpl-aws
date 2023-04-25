@@ -59,7 +59,6 @@ const sendMail = async (
         <p>Dear User,</p>
         <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
         <p>AuthEmail : ${authEmail} </p>
-        <p> Password : ${password} </p>
         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>

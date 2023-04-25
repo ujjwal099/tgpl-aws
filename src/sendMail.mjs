@@ -37,12 +37,9 @@ const sendMail = async (
   brandName,
   merchantName,
   authName,
-  locallySigned,
-  agreement
 ) => {
   try {
     const today = dateToYMD(new Date());
-    var options3;
     const options1 = {
       from: "noreply@thriwe.com",
       to: authEmail,
@@ -125,19 +122,32 @@ sign the MOU.</p>
       }
        `,
     };
-    if (locallySigned) {
-      console.log("LocallySigned");
-      options3 = {
-        from: "noreply@thriwe.com",
-        to: email,
-        subject: `${
-          isSigning == "false"
-            ? `A form is submitted for ${brandName}`
-            : `MOU is successfully signed - ${brandName}
+    const options3 = {
+      from: "noreply@thriwe.com",
+      to: email,
+      subject: `${
+        isSigning == "false"
+          ? `A form is submitted for ${brandName}`
+          : `MOU is successfully signed - ${brandName}
 `
-        }`,
-        text: `wow thats sample `,
-        html: `${`
+      }`,
+      text: `wow thats sample `,
+      html: `
+      ${
+        isSigning == "false"
+          ? `
+         <p>Dear User,</p>
+         <p>A form is successfully submitted for <Brand Name>.</p>
+         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
+         <p> Merchant Name: ${merchantName} </p>
+         <p> Brand Name: ${brandName} </p>
+         <p> Date of Submission: ${today} </p>
+         <p> Authorised Signatory: ${authName} </p>
+         <p>You will be notified once Merchant signs the agreement.</p>
+         <p>Thanks, </p>
+         <p>Team Thriwe </p>
+          `
+          : `
          <p>Dear User,</p>
          <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
          <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
@@ -147,11 +157,10 @@ sign the MOU.</p>
          <p> Authorised Signatory: ${authName} </p>
          <p>Thanks, </p>
          <p>Team Thriwe </p>
-          `}`,
-      };
-    }
-    console.log("Request Pending");
-    console.log(options1, options2, options3);
+          `
+      }
+       `,
+    };
     const promises = [
       sendMailPromise(options1),
       sendMailPromise(options2),

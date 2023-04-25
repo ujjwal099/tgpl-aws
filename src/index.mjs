@@ -14,7 +14,6 @@ const pdfUploadToServer = async ({ id }) => {
   try {
     var data = new FormData();
     data.append("files", fs.createReadStream(`/tmp/${id}.pdf`));
-    // console.log(process.env.MASTER_KEY, process.env.APPLICATION_ID, data);
     var config = {
       method: "post",
       url: `https://${process.env.PARSE_ENDPOINT}/parse/files/${id}.pdf`,

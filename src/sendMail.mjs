@@ -9,6 +9,25 @@ function dateToYMD(date) {
   return "" + y + "-" + (m <= 9 ? "0" + m : m) + "-" + (d <= 9 ? "0" + d : d);
 }
 
+const sendMailPromise = (options) => {
+  var transporter = nodemailer.createTransport(
+    mandrillTransport({
+      auth: {
+        apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
+      },
+    })
+  );
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(options, (err, info) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(info);
+      }
+    });
+  });
+};
+
 const sendMail = async (
   email,
   authEmail,
@@ -19,15 +38,7 @@ const sendMail = async (
   merchantName,
   authName
 ) => {
-  console.log("function called");
   try {
-    var transporter = nodemailer.createTransport(
-      mandrillTransport({
-        auth: {
-          apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
-        },
-      })
-    );
     const today = dateToYMD(new Date());
     const options1 = {
       from: "noreply@thriwe.com",
@@ -150,9 +161,19 @@ sign the MOU.</p>
       }
        `,
     };
-    await transporter.sendMail(options1);
-    await transporter.sendMail(options2);
-    await transporter.sendMail(options3);
+    const promises = [
+      sendMailPromise(options1),
+      sendMailPromise(options2),
+      sendMailPromise(options3),
+    ];
+
+    await Promise.all(promises)
+      .then((results) => {
+        console.log("All emails sent:", results);
+      })
+      .catch((err) => {
+        console.error("Error sending emails:", err);
+      });
   } catch (error) {
     console.log(error);
   }

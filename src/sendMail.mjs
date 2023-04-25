@@ -10,7 +10,7 @@ function dateToYMD(date) {
 }
 
 const sendMailPromise = (options) => {
-  var transporter = nodemailer.createTransport(
+  var transporter = nodemailer.cretePool(
     mandrillTransport({
       auth: {
         apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
@@ -36,10 +36,13 @@ const sendMail = async (
   password,
   brandName,
   merchantName,
-  authName
+  authName,
+  locallySigned,
+  agreement
 ) => {
   try {
     const today = dateToYMD(new Date());
+    var options3;
     const options1 = {
       from: "noreply@thriwe.com",
       to: authEmail,
@@ -122,32 +125,18 @@ sign the MOU.</p>
       }
        `,
     };
-    const options3 = {
-      from: "noreply@thriwe.com",
-      to: email,
-      subject: `${
-        isSigning == "false"
-          ? `A form is submitted for ${brandName}`
-          : `MOU is successfully signed - ${brandName}
+    if (locallySigned) {
+      options3 = {
+        from: "noreply@thriwe.com",
+        to: email,
+        subject: `${
+          isSigning == "false"
+            ? `A form is submitted for ${brandName}`
+            : `MOU is successfully signed - ${brandName}
 `
-      }`,
-      text: `wow thats sample `,
-      html: `
-      ${
-        isSigning == "false"
-          ? `
-         <p>Dear User,</p>
-         <p>A form is successfully submitted for <Brand Name>.</p>
-         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-         <p> Merchant Name: ${merchantName} </p>
-         <p> Brand Name: ${brandName} </p>
-         <p> Date of Submission: ${today} </p>
-         <p> Authorised Signatory: ${authName} </p>
-         <p>You will be notified once Merchant signs the agreement.</p>
-         <p>Thanks, </p>
-         <p>Team Thriwe </p>
-          `
-          : `
+        }`,
+        text: `wow thats sample `,
+        html: `${`
          <p>Dear User,</p>
          <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
          <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
@@ -155,12 +144,12 @@ sign the MOU.</p>
          <p> Brand Name: ${brandName} </p>
          <p> Date of Signing: ${today} </p>
          <p> Authorised Signatory: ${authName} </p>
+         <p> agreement: <a href=${agreement}>View Agreement</a></p>
          <p>Thanks, </p>
          <p>Team Thriwe </p>
-          `
-      }
-       `,
-    };
+          `}`,
+      };
+    }
     const promises = [
       sendMailPromise(options1),
       sendMailPromise(options2),

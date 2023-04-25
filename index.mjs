@@ -25,7 +25,6 @@ export const handler = async (event) => {
   }
   console.log(ip);
   console.log(event.body);
-  console.log(JSON.parse(event.body));
   let {
     data,
     templateType,
@@ -40,7 +39,7 @@ export const handler = async (event) => {
     merchantName,
     authName,
     ipAddress,
-  } = JSON.parse(event.body);
+  } = event.body;
   const id = Date.now();
   console.log("body", JSON.parse(event.body));
   if (noremail && authEmail && spocEmail) {

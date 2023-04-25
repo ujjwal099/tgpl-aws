@@ -9,18 +9,6 @@ function dateToYMD(date) {
   return "" + y + "-" + (m <= 9 ? "0" + m : m) + "-" + (d <= 9 ? "0" + d : d);
 }
 
-const sendMailPromise = (options) => {
-  return new Promise((resolve, reject) => {
-    transporter.sendMail(options, (err, info) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(info);
-      }
-    });
-  });
-};
-
 const sendMail = async (
   email,
   authEmail,
@@ -32,6 +20,13 @@ const sendMail = async (
   authName
 ) => {
   try {
+    var transporter = nodemailer.createTransport(
+      mandrillTransport({
+        auth: {
+          apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
+        },
+      })
+    );
     const today = dateToYMD(new Date());
     const options1 = {
       from: "noreply@thriwe.com",
@@ -154,14 +149,6 @@ sign the MOU.</p>
       }
        `,
     };
-    var transporter = nodemailer.cretePool(
-      mandrillTransport({
-        auth: {
-          apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
-        },
-      })
-    );
-
     await transporter.sendMail(options1);
     await transporter.sendMail(options2);
     await transporter.sendMail(options3);

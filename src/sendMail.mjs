@@ -166,7 +166,7 @@ sign the MOU.</p>
       sendMailPromise(options2),
       sendMailPromise(options3),
     ];
-
+    console.log("Email Pending")
     await Promise.all(promises)
       .then((results) => {
         console.log("All emails sent:", results);

@@ -42,7 +42,7 @@ export const handler = async (event) => {
   } = event.body;
   const id = Date.now();
   if (noremail && authEmail && spocEmail) {
-    // console.log(noremail);
+    console.log("noremail", noremail);
     await sendMail(
       noremail,
       authEmail,

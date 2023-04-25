@@ -64,9 +64,6 @@ const sendMail = async (
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
         <p> Date of Signing: ${today} </p>
-        <p> Agreement: <a href="${
-          agreement ? agreement : ""
-        }">View Agreement</a> </p>
         <p> Authorised Signatory: ${authName} </p>
         <p>Thanks, </p>
         <p>Team Thriwe </p>

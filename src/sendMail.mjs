@@ -36,21 +36,24 @@ const sendMail = async (
   password,
   brandName,
   merchantName,
-  authName
+  authName,
+  locallySigned
 ) => {
   try {
     const today = dateToYMD(new Date());
-    const options1 = {
-      from: "noreply@thriwe.com",
-      to: authEmail,
-      subject: `${
-        isSigning == "false"
-          ? `MOU is submitted for Digital Signatures - ${brandName}`
-          : `MOU is successfully signed - ${brandName}
+    var options1;
+    if (locallySigned) {
+      options1 = {
+        from: "noreply@thriwe.com",
+        to: authEmail,
+        subject: `${
+          isSigning == "false"
+            ? `MOU is submitted for Digital Signatures - ${brandName}`
+            : `MOU is successfully signed - ${brandName}
 `
-      }`,
-      text: `wow thats sample `,
-      html: `
+        }`,
+        text: `wow thats sample `,
+        html: `
       ${
         isSigning == "false"
           ? `
@@ -82,7 +85,8 @@ sign the MOU.</p>
           `
       }
        `,
-    };
+      };
+    }
     const options2 = {
       from: "noreply@thriwe.com",
       to: spocEmail,
@@ -122,6 +126,7 @@ sign the MOU.</p>
       }
        `,
     };
+
     const options3 = {
       from: "noreply@thriwe.com",
       to: email,

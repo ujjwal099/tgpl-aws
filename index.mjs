@@ -38,6 +38,7 @@ export const handler = async (event) => {
     merchantName,
     authName,
     ipAddress,
+    locallySigned,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (noremail && authEmail && spocEmail) {
@@ -50,7 +51,8 @@ export const handler = async (event) => {
       password,
       brandName,
       merchantName,
-      authName
+      authName,
+      locallySigned
     );
     // console.log(noremail);
     const response = {

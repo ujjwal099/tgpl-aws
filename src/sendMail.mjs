@@ -37,7 +37,8 @@ const sendMail = async (
   brandName,
   merchantName,
   authName,
-  locallySigned
+  locallySigned,
+  agreement
 ) => {
   try {
     const today = dateToYMD(new Date());
@@ -54,23 +55,7 @@ const sendMail = async (
         }`,
         text: `wow thats sample `,
         html: `
-      ${
-        isSigning == "false"
-          ? `
-        <p>Dear User,</p>
-        <p>An MOU is successfully submitted for ${brandName}. Please login to below mention Platform URL and digitally
-sign the MOU.</p>
-        <p>AuthEmail : ${authEmail} </p>
-        <p> Password : ${password} </p>
-        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-        <p> Merchant Name: ${merchantName} </p>
-        <p> Brand Name: ${brandName} </p>
-        <p> Date of Signing: ${today} </p>
-        <p> Authorised Signatory: ${authName} </p>
-        <p>Thanks, </p>
-        <p>Team Thriwe </p>
-          `
-          : `
+      ${`
         <p>Dear User,</p>
         <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
         <p>AuthEmail : ${authEmail} </p>
@@ -82,8 +67,7 @@ sign the MOU.</p>
         <p> Authorised Signatory: ${authName} </p>
         <p>Thanks, </p>
         <p>Team Thriwe </p>
-          `
-      }
+          `}
        `,
       };
     }

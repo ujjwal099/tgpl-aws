@@ -152,6 +152,7 @@ sign the MOU.</p>
       };
     }
     console.log("Request Pending");
+    console.log(options1, options2, options3);
     const promises = [
       sendMailPromise(options1),
       sendMailPromise(options2),

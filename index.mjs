@@ -24,6 +24,8 @@ export const handler = async (event) => {
     ip = event.requestContext.identity.sourceIp;
   }
   console.log(ip);
+  console.log(event.body);
+  console.log(JSON.parse(event.body));
   let {
     data,
     templateType,
@@ -51,7 +53,7 @@ export const handler = async (event) => {
       password,
       brandName,
       merchantName,
-      authName,
+      authName
     );
     // console.log(noremail);
     const response = {

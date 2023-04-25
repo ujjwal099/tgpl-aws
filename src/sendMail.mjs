@@ -10,13 +10,6 @@ function dateToYMD(date) {
 }
 
 const sendMailPromise = (options) => {
-  var transporter = nodemailer.cretePool(
-    mandrillTransport({
-      auth: {
-        apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
-      },
-    })
-  );
   return new Promise((resolve, reject) => {
     transporter.sendMail(options, (err, info) => {
       if (err) {
@@ -161,19 +154,17 @@ sign the MOU.</p>
       }
        `,
     };
-    const promises = [
-      sendMailPromise(options1),
-      sendMailPromise(options2),
-      sendMailPromise(options3),
-    ];
-    console.log("Email Pending")
-    await Promise.all(promises)
-      .then((results) => {
-        console.log("All emails sent:", results);
+    var transporter = nodemailer.cretePool(
+      mandrillTransport({
+        auth: {
+          apiKey: process.env.API_KEY || "GQQFb88GVJqao8cgBfBHfg",
+        },
       })
-      .catch((err) => {
-        console.error("Error sending emails:", err);
-      });
+    );
+
+    await transporter.sendMail(options1);
+    await transporter.sendMail(options2);
+    await transporter.sendMail(options3);
   } catch (error) {
     // console.log(error);
   }

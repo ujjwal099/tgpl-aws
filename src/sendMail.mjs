@@ -64,10 +64,57 @@ const sendMail = async (
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
         <p> Date of Signing: ${today} </p>
+        <p> Agreement: <a href="${
+          agreement ? agreement : ""
+        }">View Agreement</a> </p>
         <p> Authorised Signatory: ${authName} </p>
         <p>Thanks, </p>
         <p>Team Thriwe </p>
           `}
+       `,
+      };
+    } else {
+      options1 = {
+        from: "noreply@thriwe.com",
+        to: authEmail,
+        subject: `${
+          isSigning == "false"
+            ? `MOU is submitted for Digital Signatures - ${brandName}`
+            : `MOU is successfully signed - ${brandName}
+`
+        }`,
+        text: `wow thats sample `,
+        html: `
+      ${
+        isSigning == "false"
+          ? `
+        <p>Dear User,</p>
+        <p>An MOU is successfully submitted for ${brandName}. Please login to below mention Platform URL and digitally
+sign the MOU.</p>
+        <p>AuthEmail : ${authEmail} </p>
+        <p> Password : ${password} </p>
+        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
+        <p> Merchant Name: ${merchantName} </p>
+        <p> Brand Name: ${brandName} </p>
+        <p> Date of Signing: ${today} </p>
+        <p> Authorised Signatory: ${authName} </p>
+        <p>Thanks, </p>
+        <p>Team Thriwe </p>
+          `
+          : `
+        <p>Dear User,</p>
+        <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
+        <p>AuthEmail : ${authEmail} </p>
+        <p> Password : ${password} </p>
+        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
+        <p> Merchant Name: ${merchantName} </p>
+        <p> Brand Name: ${brandName} </p>
+        <p> Date of Signing: ${today} </p>
+        <p> Authorised Signatory: ${authName} </p>
+        <p>Thanks, </p>
+        <p>Team Thriwe </p>
+          `
+      }
        `,
       };
     }

@@ -41,7 +41,6 @@ export const handler = async (event) => {
     ipAddress,
   } = event.body;
   const id = Date.now();
-  console.log("body", JSON.parse(event.body));
   if (noremail && authEmail && spocEmail) {
     // console.log(noremail);
     await sendMail(

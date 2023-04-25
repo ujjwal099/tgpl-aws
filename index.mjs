@@ -38,8 +38,6 @@ export const handler = async (event) => {
     merchantName,
     authName,
     ipAddress,
-    code,
-    phoneNo,
   } = JSON.parse(event.body);
   const id = Date.now();
   console.log("body", JSON.parse(event.body));
@@ -54,8 +52,6 @@ export const handler = async (event) => {
       brandName,
       merchantName,
       authName,
-      code,
-      phoneNo
     );
     // console.log(noremail);
     const response = {

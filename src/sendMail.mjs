@@ -171,6 +171,7 @@ sign the MOU.</p>
         console.log("Email 3 sent:", info.response);
       }
     });
+    console.log("mail send");
   } catch (error) {
     // console.log(error);
   }

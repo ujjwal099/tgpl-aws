@@ -24,7 +24,6 @@ export const handler = async (event) => {
     ip = event.requestContext.identity.sourceIp;
   }
   console.log(ip);
-  console.log(event.body);
   let {
     data,
     templateType,
@@ -39,7 +38,7 @@ export const handler = async (event) => {
     merchantName,
     authName,
     ipAddress,
-  } = event.body;
+  } = JSON.parse(event.body);
   const id = Date.now();
   if (noremail && authEmail && spocEmail) {
     console.log("noremail", noremail);

@@ -19,6 +19,7 @@ const sendMail = async (
   merchantName,
   authName
 ) => {
+  console.log("function called");
   try {
     var transporter = nodemailer.createTransport(
       mandrillTransport({
@@ -153,7 +154,7 @@ sign the MOU.</p>
     await transporter.sendMail(options2);
     await transporter.sendMail(options3);
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 

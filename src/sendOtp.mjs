@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const sendCode = async (phone, code) => {
   var data = {
     uname: process.env.UNAME,

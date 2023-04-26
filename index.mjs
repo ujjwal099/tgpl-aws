@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import sendMail from "./src/sendMail.mjs";
 import "dotenv/config";
+import sendOtp from "./src/sendOtp.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,9 +41,22 @@ export const handler = async (event) => {
     ipAddress,
     locallySigned,
     agreement,
+    phone,
   } = JSON.parse(event.body);
   const id = Date.now();
-  if (noremail && authEmail && spocEmail) {
+  if (phone) {
+    const { objectId } = await sendOtp(phone);
+    const response = {
+      statusCode: 200,
+      body: objectId,
+      headers: {
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS,POST",
+      },
+    };
+    return response;
+  } else if (noremail && authEmail && spocEmail) {
     console.log("noremail", noremail);
     await sendMail(
       noremail,

@@ -33,7 +33,6 @@ const sendOtp = async (phone) => {
     headers: {
       "X-Parse-Master-Key": process.env.MASTER_KEY,
       "X-Parse-Application-Id": process.env.APPLICATION_ID,
-      ...data.getHeaders(),
     },
     data: data,
   };

@@ -45,6 +45,7 @@ export const handler = async (event) => {
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
+    
     const { objectId } = await sendOtp(phone);
     const response = {
       statusCode: 200,

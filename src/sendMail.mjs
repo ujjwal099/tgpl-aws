@@ -65,7 +65,7 @@ const sendMail = async (
         <p>An MOU is successfully submitted for ${brandName}. Please login to below mention Platform URL and digitally
 sign the MOU.</p>
         <p>AuthEmail : ${authEmail} </p>
-       ${password != undefined && `<p> Password : ${password} </p>`}
+       ${password && `<p> Password : ${password} </p>`}
         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
@@ -78,7 +78,7 @@ sign the MOU.</p>
         <p>Dear User,</p>
         <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
         <p>AuthEmail : ${authEmail} </p>
-        ${password != undefined && `<p> Password : ${password} </p>`}
+        ${password && `<p> Password : ${password} </p>`}
         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
@@ -163,7 +163,7 @@ sign the MOU.</p>
         <p>An MOU is successfully submitted for ${brandName}. Please login to below mention Platform URL and digitally
 sign the MOU.</p>
         <p>AuthEmail : ${authEmail} </p>
-        ${password != undefined && `<p> Password : ${password} </p>`}
+        ${password && `<p> Password : ${password} </p>`}
         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
@@ -179,7 +179,7 @@ sign the MOU.</p>
         <p>Dear User,</p>
         <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
         <p>AuthEmail : ${authEmail} </p>
-        ${password != undefined && `<p> Password : ${password} </p>`}
+        ${password && `<p> Password : ${password} </p>`}
         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>

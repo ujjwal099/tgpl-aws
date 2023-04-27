@@ -42,6 +42,7 @@ export const handler = async (event) => {
     locallySigned,
     agreement,
     phone,
+    mailChange,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
@@ -68,7 +69,8 @@ export const handler = async (event) => {
       merchantName,
       authName,
       locallySigned,
-      agreement
+      agreement,
+      mailChange
     );
     // console.log(noremail);
     const response = {

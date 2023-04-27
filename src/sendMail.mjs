@@ -38,41 +38,15 @@ const sendMail = async (
   merchantName,
   authName,
   locallySigned,
-  agreement
+  agreement,
+  mailChange
 ) => {
   try {
     const today = dateToYMD(new Date());
     var options1;
-    if (locallySigned) {
-      options1 = {
-        from: "noreply@thriwe.com",
-        to: authEmail,
-        subject: `${
-          isSigning == "false"
-            ? `MOU is submitted for Digital Signatures - ${brandName}`
-            : `MOU is successfully signed - ${brandName}
-`
-        }`,
-        text: `wow thats sample `,
-        html: `
-      ${`
-        <p>Dear User,</p>
-        <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
-        <p>AuthEmail : ${authEmail} </p>
-        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-        <p> Merchant Name: ${merchantName} </p>
-        <p> Brand Name: ${brandName} </p>
-        <p> Date of Signing: ${today} </p>
-        <p> Agreement: <a href="${
-          agreement ? agreement : ""
-        }">View Agreement</a> </p>
-        <p> Authorised Signatory: ${authName} </p>
-        <p>Thanks, </p>
-        <p>Team Thriwe </p>
-          `}
-       `,
-      };
-    } else {
+    var options2;
+    var options3;
+    if (mailChange == "Yes") {
       options1 = {
         from: "noreply@thriwe.com",
         to: authEmail,
@@ -91,7 +65,7 @@ const sendMail = async (
         <p>An MOU is successfully submitted for ${brandName}. Please login to below mention Platform URL and digitally
 sign the MOU.</p>
         <p>AuthEmail : ${authEmail} </p>
-        <p> Password : ${password} </p>
+       ${password != undefined && `<p> Password : ${password} </p>`}
         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
@@ -104,7 +78,7 @@ sign the MOU.</p>
         <p>Dear User,</p>
         <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
         <p>AuthEmail : ${authEmail} </p>
-        <p> Password : ${password} </p>
+        ${password != undefined && `<p> Password : ${password} </p>`}
         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
@@ -116,18 +90,122 @@ sign the MOU.</p>
       }
        `,
       };
-    }
-    const options2 = {
-      from: "noreply@thriwe.com",
-      to: spocEmail,
-      subject: `${
-        isSigning == "false"
-          ? `A form is submitted for ${brandName}`
-          : `MOU is successfully signed - ${brandName}
+      options2 = {
+        from: "noreply@thriwe.com",
+        to: spocEmail,
+        subject: `${
+          isSigning == "false"
+            ? `A form is submitted for ${brandName}`
+            : `MOU is successfully signed - ${brandName}
 `
-      }`,
-      text: `wow thats sample `,
-      html: `
+        }`,
+        text: `wow thats sample `,
+        html: `<p>Authorised Signatory Mail has Changed </p>`,
+      };
+      options3 = {
+        from: "noreply@thriwe.com",
+        to: email,
+        subject: `${
+          isSigning == "false"
+            ? `A form is submitted for ${brandName}`
+            : `MOU is successfully signed - ${brandName}
+`
+        }`,
+        text: `wow thats sample `,
+        html: `<p>Authorised Signatory Mail has Changed </p>`,
+      };
+    } else {
+      if (locallySigned) {
+        options1 = {
+          from: "noreply@thriwe.com",
+          to: authEmail,
+          subject: `${
+            isSigning == "false"
+              ? `MOU is submitted for Digital Signatures - ${brandName}`
+              : `MOU is successfully signed - ${brandName}
+`
+          }`,
+          text: `wow thats sample `,
+          html: `
+      ${`
+        <p>Dear User,</p>
+        <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
+        <p>AuthEmail : ${authEmail} </p>
+        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
+        <p> Merchant Name: ${merchantName} </p>
+        <p> Brand Name: ${brandName} </p>
+        <p> Date of Signing: ${today} </p>
+        <p> Agreement: <a href="${
+          agreement ? agreement : ""
+        }">View Agreement</a> </p>
+        <p> Authorised Signatory: ${authName} </p>
+        <p>Thanks, </p>
+        <p>Team Thriwe </p>
+          `}
+       `,
+        };
+      } else {
+        options1 = {
+          from: "noreply@thriwe.com",
+          to: authEmail,
+          subject: `${
+            isSigning == "false"
+              ? `MOU is submitted for Digital Signatures - ${brandName}`
+              : `MOU is successfully signed - ${brandName}
+`
+          }`,
+          text: `wow thats sample `,
+          html: `
+      ${
+        isSigning == "false"
+          ? `
+        <p>Dear User,</p>
+        <p>An MOU is successfully submitted for ${brandName}. Please login to below mention Platform URL and digitally
+sign the MOU.</p>
+        <p>AuthEmail : ${authEmail} </p>
+        ${password != undefined && `<p> Password : ${password} </p>`}
+        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
+        <p> Merchant Name: ${merchantName} </p>
+        <p> Brand Name: ${brandName} </p>
+        <p> Date of Signing: ${today} </p>
+        <p> Authorised Signatory: ${authName} </p>
+        <p> Agreement: <a href="${
+          agreement ? agreement : ""
+        }">View Agreement</a> </p>
+        <p>Thanks, </p>
+        <p>Team Thriwe </p>
+          `
+          : `
+        <p>Dear User,</p>
+        <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
+        <p>AuthEmail : ${authEmail} </p>
+        ${password != undefined && `<p> Password : ${password} </p>`}
+        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
+        <p> Merchant Name: ${merchantName} </p>
+        <p> Brand Name: ${brandName} </p>
+        <p> Date of Signing: ${today} </p>
+        <p> Authorised Signatory: ${authName} </p>
+         <p> Agreement: <a href="${
+           agreement ? agreement : ""
+         }">View Agreement</a> </p>
+        <p>Thanks, </p>
+        <p>Team Thriwe </p>
+          `
+      }
+       `,
+        };
+      }
+      options2 = {
+        from: "noreply@thriwe.com",
+        to: spocEmail,
+        subject: `${
+          isSigning == "false"
+            ? `A form is submitted for ${brandName}`
+            : `MOU is successfully signed - ${brandName}
+`
+        }`,
+        text: `wow thats sample `,
+        html: `
       ${
         isSigning == "false"
           ? `
@@ -155,19 +233,19 @@ sign the MOU.</p>
           `
       }
        `,
-    };
+      };
 
-    const options3 = {
-      from: "noreply@thriwe.com",
-      to: email,
-      subject: `${
-        isSigning == "false"
-          ? `A form is submitted for ${brandName}`
-          : `MOU is successfully signed - ${brandName}
+      options3 = {
+        from: "noreply@thriwe.com",
+        to: email,
+        subject: `${
+          isSigning == "false"
+            ? `A form is submitted for ${brandName}`
+            : `MOU is successfully signed - ${brandName}
 `
-      }`,
-      text: `wow thats sample `,
-      html: `
+        }`,
+        text: `wow thats sample `,
+        html: `
       ${
         isSigning == "false"
           ? `
@@ -195,7 +273,8 @@ sign the MOU.</p>
           `
       }
        `,
-    };
+      };
+    }
     const promises = [
       sendMailPromise(options1),
       sendMailPromise(options2),

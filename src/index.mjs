@@ -57,11 +57,18 @@ const createPdf = async (data, templateType, textSignature, id, ipAddress) => {
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
-
-    const arr = await tab.pdf({
-      path: `/tmp/${id}.pdf`,
-      margin: { top: 60, right: 72, bottom: 60, left: 72 },
-    });
+    let arr;
+    if (templateType == 1) {
+      arr = await tab.pdf({
+        path: `/tmp/${id}.pdf`,
+        margin: { top: 60, right: 72, bottom: 60, left: 72 },
+      });
+    } else {
+      arr = await tab.pdf({
+        path: `/tmp/${id}.pdf`,
+        margin: { top: 50, right: 72, bottom: 50, left: 72 },
+      });
+    }
     console.log(arr);
     // console.log(arr);
     const result = await pdfUploadToServer({ id });

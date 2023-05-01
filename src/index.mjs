@@ -52,7 +52,8 @@ const createPdf = async (data, templateType, textSignature, id, ipAddress) => {
     });
     const tab = await browser.newPage();
     await tab.setContent(htmlString);
-    await tab.setViewport({ width: 612, height: 792 });
+    if (templateType == 1) await tab.setViewport({ width: 612, height: 792 });
+    else await tab.setViewport({ width: 612, height: 792 });
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });

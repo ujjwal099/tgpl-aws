@@ -889,7 +889,9 @@ const pdfTemplate = (
                               dummyData?.stores[0]?.start_validity_voucher
                                 ? dummyData?.stores[0]?.start_validity_voucher
                                 : ""
-                            } & ${
+                            } ${
+    dummyData?.stores[0]?.end_validity_voucher ? "&" : ""
+  } ${
     dummyData?.stores[0]?.end_validity_voucher
       ? dummyData?.stores[0]?.end_validity_voucher
       : ""

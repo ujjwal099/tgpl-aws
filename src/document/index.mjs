@@ -993,60 +993,88 @@ const pdfTemplate = (
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:184px; vertical-align:top; width:314px">
-                        <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name: ${
-                           dummyData?.formData?.authorised_signatory_name
-                             ? dummyData?.formData?.authorised_signatory_name
-                             : ""
-                         }</span></span>
-                                </span>
-                                </span>
-                            </p>
-                        </div>
+        <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:184px; vertical-align:top; width:314px">
+    <div>
+      <p style="margin-left:7px; margin-right:228px; text-align:justify">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Name: ${
+                  dummyData?.formData?.authorised_signatory_name
+                    ? dummyData?.formData?.authorised_signatory_name
+                    : ""
+                }
+              </span>
+            </span>
+          </span>
+        </span>
+      </p>
+    </div>
 
-                         <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Designation: ${
-                           dummyData?.formData?.designation
-                         }</span></span>
-                                </span>
-                                </span>
-                            </p>
-                        </div>
+    <div>
+      <p style="margin-left:7px; margin-right:228px; text-align:justify">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Designation: ${dummyData?.formData?.designation}
+              </span>
+            </span>
+          </span>
+        </span>
+      </p>
+    </div>
 
-                         <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Date: ${new Date(
-                           today
-                         ).toLocaleDateString()} & ${
-    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
-  }</span></span>
-                                </span>
-                                </span>
-                            </p>
-                        </div>
+    <div>
+      <p style="margin-left:7px; margin-right:228px; text-align:justify">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Date: ${new Date(
+                  today
+                ).toLocaleDateString()} & ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}
+              </span>
+            </span>
+          </span>
+        </span>
+      </p>
+    </div>
 
-                         <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Using IP Address: ${ipAddress}</span></span>
-                                </span>
-                                </span>
-                            </p>
-                        </div>
+    <div>
+      <p style="margin-left:7px; margin-right:228px; text-align:justify">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Mobile Verified by OTP: ${
+                  dummyData?.formData?.authorised_signatory_number
+                    ? dummyData?.formData?.authorised_signatory_number
+                    : ""
+                }
+              </span>
+            </span>
+          </span>
+        </span>
+      </p>
+    </div>
 
-                         <div>
-                        <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Mobile Verified by OTP: </span></span><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">${
-                          dummyData?.formData?.authorised_signatory_number
-                            ? dummyData?.formData?.authorised_signatory_number
-                            : ""
-                        }</span></span></span></span></p>
-                        </div>
-                            <p style="text-align:justify">&nbsp;</p>
+    <p style="text-align:justify">&nbsp;</p>
 
-                            <p style="text-align:justify">&nbsp;</p>
-                            <img src="${textSignature}" alt="">
-                            <p style="margin-left:7px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Stamp &amp; Signature:</span></span>
-                                </span>
-                                </span>
-                            </p>
+    <p style="text-align:justify">&nbsp;</p>
+    <img src="${textSignature}" alt="">
+    <p style="margin-left:7px; text-align:justify">
+      <span style="font-size:11pt">
+        <span style="font-family:Verdana,sans-serif">
+          <span style="font-size:10.5pt">
+            <span style="font-family:&quot;Times New Roman&quot;,serif">
+              Stamp &amp; Signature:
+            </span>
+          </span>
+        </span>
+      </span>
+    </p>
                         </td>
                         <td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:184px; vertical-align:top; width:314px">
                             <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name: Designation: Date:</span></span>

@@ -990,11 +990,26 @@ const pdfTemplate = (
                     </tr>
                     <tr>
                         <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:184px; vertical-align:top; width:314px">
-                            <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name: Designation: Date:</span></span>
+                        <div>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name: </span></span>
                                 </span>
                                 </span>
                             </p>
+                        </div>
 
+                         <div>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Designation: </span></span>
+                                </span>
+                                </span>
+                            </p>
+                        </div>
+
+                         <div>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Date: </span></span>
+                                </span>
+                                </span>
+                            </p>
+                        </div>
                             <p style="text-align:justify">&nbsp;</p>
 
                             <p style="text-align:justify">&nbsp;</p>

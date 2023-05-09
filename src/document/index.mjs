@@ -1033,14 +1033,11 @@ const pdfTemplate = (
                         </div>
 
                          <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Mobile Verified by OTP: ${
-                           dummyData?.formData?.authorised_signatory_number
-                             ? dummyData?.formData?.authorised_signatory_number
-                             : ""
-                         }</span></span>
-                                </span>
-                                </span>
-                            </p>
+                        <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Mobile Verified by OTP: </span></span><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">${
+                          dummyData?.formData?.authorised_signatory_number
+                            ? dummyData?.formData?.authorised_signatory_number
+                            : ""
+                        }</span></span></span></span></p>
                         </div>
                             <p style="text-align:justify">&nbsp;</p>
 

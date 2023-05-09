@@ -1409,7 +1409,8 @@ const pdfTemplate = (
             </p>
 
             <p style="text-align:justify">&nbsp;</p>
-        <table>
+        </div>
+         <table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -1417,15 +1418,14 @@ const pdfTemplate = (
                 </tr>
             </thead>
             <tbody>
-            ${dummyData?.stores?.map((store)=>{
-                    <tr key={item.id}>
-                      <td>{store.store_name}</td>
-                      <td>{store.store_city}</td>
-                    </tr>;
+            ${dummyData?.stores?.map((store) => {
+              <tr key={item.id}>
+                <td>{store.store_name}</td>
+                <td>{store.store_city}</td>
+              </tr>;
             })}
             </tbody>
         </table>
-        </div>
     </div>
 </body>
 

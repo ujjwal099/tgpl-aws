@@ -135,7 +135,11 @@ const pdfTemplate = (
                <p style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;"><strong style="box-sizing: border-box;font-weight: bolder;">Signatory Designation:</strong> <span class="field w-75" style="box-sizing: border-box;display: inline-block;width: 75%!important;position: relative;text-decoration: underline;">${
                  dummyData?.formData?.designation
                }</span></p>
-               <p style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;"><strong style="box-sizing: border-box;font-weight: bolder;">Mobile Verified by OTP:</strong> <span class="field w-75" style="box-sizing: border-box;display: inline-block;width: 75%!important;position: relative;text-decoration: underline;"></span></p>
+               <p style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;"><strong style="box-sizing: border-box;font-weight: bolder;">Mobile Verified by OTP:</strong> <span class="field w-75" style="box-sizing: border-box;display: inline-block;width: 75%!important;position: relative;text-decoration: underline;">${
+                 dummyData?.formData?.authorised_signatory_number
+                   ? dummyData?.formData?.authorised_signatory_number
+                   : ""
+               }</span></p>
                 <img src="${textSignature}" alt="">
                <p style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;"><strong style="box-sizing: border-box;font-weight: bolder;">Signature:</strong> <span class="field w-75" style="box-sizing: border-box;display: inline-block;width: 75%!important;position: relative;text-decoration: underline;">
                </span></p>
@@ -991,21 +995,49 @@ const pdfTemplate = (
                     <tr>
                         <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:184px; vertical-align:top; width:314px">
                         <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name: </span></span>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name: ${
+                           dummyData?.formData?.authorised_signatory_name
+                             ? dummyData?.formData?.authorised_signatory_name
+                             : ""
+                         }</span></span>
                                 </span>
                                 </span>
                             </p>
                         </div>
 
                          <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Designation: </span></span>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Designation: ${
+                           dummyData?.formData?.designation
+                         }</span></span>
                                 </span>
                                 </span>
                             </p>
                         </div>
 
                          <div>
-                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Date: </span></span>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Date: ${new Date(
+                           today
+                         ).toLocaleDateString()} & ${
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+  }</span></span>
+                                </span>
+                                </span>
+                            </p>
+                        </div>
+
+                         <div>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Using IP Address: ${ipAddress}</span></span>
+                                </span>
+                                </span>
+                            </p>
+                        </div>
+
+                         <div>
+                         <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Mobile Verified by OTP: ${
+                           dummyData?.formData?.authorised_signatory_number
+                             ? dummyData?.formData?.authorised_signatory_number
+                             : ""
+                         }</span></span>
                                 </span>
                                 </span>
                             </p>

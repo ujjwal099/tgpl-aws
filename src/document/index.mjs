@@ -5,15 +5,26 @@ const pdfTemplate = (
   ipAddress = ""
 ) => {
   // console.log(dummyData);
-  const today = new Date();
-  const fontArray = [
-    "'Great Vibes', cursive",
-    "'Times New Roman', Times, serif",
-    "'Times New Roman', Times, serif",
-  ];
-  console.log("IFSC", dummyData?.stores[0]?.ifsc_code);
-  console.log("Pan Number 1", dummyData?.stores[0]?.panNumber);
-  console.log("Pan Number 2", dummyData?.stores[0]?.pan_number);
+  const tableRows = offers
+    .map((offer) => {
+      return offer.linkStore
+        .map((store) => {
+          return `<tr>
+              <td>${offer.offer_text}</td>
+              <td>${offer.offer_validity_startDate}</td>
+              <td>${offer.offer_validity_endDate}</td>
+              <td>${store.store_name}</td>
+              <td>${store.store_address}</td>
+              <td>${store.store_city}</td>
+              <td>${store.store_country}</td>
+              <td>${store.store_pincode}</td>
+              <td>${store.contact_no}</td>
+            </tr>`;
+        })
+        .join("");
+    })
+    .join("");
+  console.log(tableRows);
   const htmlString1 = `
 <!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box;">

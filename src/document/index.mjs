@@ -13,18 +13,30 @@ const pdfTemplate = (
         ?.map((store) => {
           console.log("store", store);
           return `<tr>
-              <td style="border: 1px solid;">${offer.offer_text}</td>
-              <td style="border: 1px solid;">${offer.offer_validity_startDate}</td>
-              <td style="border: 1px solid;">${offer.offer_validity_endDate}</td>
-              <td style="border: 1px solid;">${store.store_name}</td>
-              <td style="border: 1px solid;">${store.store_address}</td>
-              <td style="border: 1px solid;">${store.store_city}</td>
-              <td style="border: 1px solid;">${store.store_country}</td>
-              <td style="border: 1px solid;">${store.store_pincode}</td>
-              <td style="border: 1px solid;">${store.contact_no}</td>
+              <td style="border: 1px solid; padding: 10px;">${offer.offer_text}</td>
+              <td style="border: 1px solid; padding: 10px;">${offer.offer_validity_startDate}</td>
+              <td style="border: 1px solid; padding: 10px;">${offer.offer_validity_endDate}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_name}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_address}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_city}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_country}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_pincode}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.contact_no}</td>
             </tr>`;
         })
         .join("");
+    })
+    .join("");
+  const storeRows = dummyData?.stores
+    ?.map((store) => {
+      return `<tr>
+              <td style="border: 1px solid; padding: 10px;">${store.store_name}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_address}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_city}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_country}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_pincode}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.contact_no}</td>
+            </tr>`;
     })
     .join("");
   console.log("tableRows", tableRows);
@@ -417,17 +429,17 @@ const pdfTemplate = (
         </div>
     </div>
     <div>
-    <table style="border: 1px solid;">
+    <table style="border: 1px solid; padding: 10px;">
         <tr>
-             <th style="border: 1px solid;">Offer Text</th>
-             <th style="border: 1px solid;">Offer Validity Start Date</th>
-             <th style="border: 1px solid;">Offer Validity End Date</th>
-             <th style="border: 1px solid;">Store Name</th>
-             <th style="border: 1px solid;">Store Address</th>
-             <th style="border: 1px solid;">Store City</th>
-             <th style="border: 1px solid;">Store Country</th>
-             <th style="border: 1px solid;">Store Pincode</th>
-             <th style="border: 1px solid;">Contact No</th>
+             <th style="border: 1px solid; padding: 10px;">Offer Text</th>
+             <th style="border: 1px solid; padding: 10px;">Offer Validity Start Date</th>
+             <th style="border: 1px solid; padding: 10px;">Offer Validity End Date</th>
+             <th style="border: 1px solid; padding: 10px;">Store Name</th>
+             <th style="border: 1px solid; padding: 10px;">Store Address</th>
+             <th style="border: 1px solid; padding: 10px;">Store City</th>
+             <th style="border: 1px solid; padding: 10px;">Store Country</th>
+             <th style="border: 1px solid; padding: 10px;">Store Pincode</th>
+             <th style="border: 1px solid; padding: 10px;">Contact No</th>
         </tr>
         ${tableRows}
     </table>
@@ -1442,9 +1454,21 @@ const pdfTemplate = (
 
             <p style="text-align:justify">&nbsp;</p>
         </div>
+        <div>
+            <table style="border: 1px solid; padding: 10px;">
+        <tr>
+             <th style="border: 1px solid; padding: 10px;">Store Name</th>
+             <th style="border: 1px solid; padding: 10px;">Store Address</th>
+             <th style="border: 1px solid; padding: 10px;">Store City</th>
+             <th style="border: 1px solid; padding: 10px;">Store Country</th>
+             <th style="border: 1px solid; padding: 10px;">Store Pincode</th>
+             <th style="border: 1px solid; padding: 10px;">Contact No</th>
+        </tr>
+        ${storeRows}
+    </table>
+        </div>
     </div>
 </body>
-
 </html>`;
 
   if (templateType == 1) {

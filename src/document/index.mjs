@@ -8,8 +8,10 @@ const pdfTemplate = (
   const today = new Date();
   const tableRows = dummyData?.offers
     ?.map((offer) => {
+      console.log("linkStore", offer.linkStore);
       return offer.linkStore
-        .map((store) => {
+        ?.map((store) => {
+          console.log("store", store);
           return `<tr>
               <td>${offer.offer_text}</td>
               <td>${offer.offer_validity_startDate}</td>

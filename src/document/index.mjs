@@ -25,7 +25,7 @@ const pdfTemplate = (
         .join("");
     })
     .join("");
-  console.log(tableRows);
+  console.log("tableRows", tableRows);
   const htmlString1 = `
 <!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box;">

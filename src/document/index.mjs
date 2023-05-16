@@ -15,7 +15,7 @@ const pdfTemplate = (
   console.log("Pan Number 1", dummyData?.stores[0]?.panNumber);
   console.log("Pan Number 2", dummyData?.stores[0]?.pan_number);
   const htmlString1 = `
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box;">
 <head style="box-sizing: border-box;">
     <meta charset="UTF-8" style="box-sizing: border-box;">
@@ -401,7 +401,24 @@ const pdfTemplate = (
                       </p>
             </div>
         </div>
-    </div></section>
+    </div>
+    <div>
+    <table style="border: 1px solid;">
+        <tr>
+             <th style="border: 1px solid;">Firstname</th>
+             <th style="border: 1px solid;">Lastname</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid;">Peter</td>
+            <td style="border: 1px solid;">Griffin</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid;">Lois</td>
+            <td style="border: 1px solid;">Griffin</td>
+        </tr>
+    </table>
+    </div>
+</section>
 </body>
 </head></html>
 `;

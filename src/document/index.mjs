@@ -5,8 +5,8 @@ const pdfTemplate = (
   ipAddress = ""
 ) => {
   // console.log(dummyData);
-  const tableRows = offers
-    .map((offer) => {
+  const tableRows = dummyData?.offers
+    ?.map((offer) => {
       return offer.linkStore
         .map((store) => {
           return `<tr>

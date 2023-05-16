@@ -13,15 +13,15 @@ const pdfTemplate = (
         ?.map((store) => {
           console.log("store", store);
           return `<tr>
-              <td>${offer.offer_text}</td>
-              <td>${offer.offer_validity_startDate}</td>
-              <td>${offer.offer_validity_endDate}</td>
-              <td>${store.store_name}</td>
-              <td>${store.store_address}</td>
-              <td>${store.store_city}</td>
-              <td>${store.store_country}</td>
-              <td>${store.store_pincode}</td>
-              <td>${store.contact_no}</td>
+              <td style="border: 1px solid;">${offer.offer_text}</td>
+              <td style="border: 1px solid;">${offer.offer_validity_startDate}</td>
+              <td style="border: 1px solid;">${offer.offer_validity_endDate}</td>
+              <td style="border: 1px solid;">${store.store_name}</td>
+              <td style="border: 1px solid;">${store.store_address}</td>
+              <td style="border: 1px solid;">${store.store_city}</td>
+              <td style="border: 1px solid;">${store.store_country}</td>
+              <td style="border: 1px solid;">${store.store_pincode}</td>
+              <td style="border: 1px solid;">${store.contact_no}</td>
             </tr>`;
         })
         .join("");
@@ -419,17 +419,17 @@ const pdfTemplate = (
     <div>
     <table style="border: 1px solid;">
         <tr>
-             <th style="border: 1px solid;">Firstname</th>
-             <th style="border: 1px solid;">Lastname</th>
+             <th style="border: 1px solid;">Offer Text</th>
+             <th style="border: 1px solid;">Offer Validity Start Date</th>
+             <th style="border: 1px solid;">Offer Validity End Date</th>
+             <th style="border: 1px solid;">Store Name</th>
+             <th style="border: 1px solid;">Store Address</th>
+             <th style="border: 1px solid;">Store City</th>
+             <th style="border: 1px solid;">Store Country</th>
+             <th style="border: 1px solid;">Store Pincode</th>
+             <th style="border: 1px solid;">Contact No</th>
         </tr>
-        <tr>
-            <td style="border: 1px solid;">Peter</td>
-            <td style="border: 1px solid;">Griffin</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid;">Lois</td>
-            <td style="border: 1px solid;">Griffin</td>
-        </tr>
+        ${tableRows}
     </table>
     </div>
 </section>

@@ -5,6 +5,7 @@ const pdfTemplate = (
   ipAddress = ""
 ) => {
   // console.log(dummyData);
+  const today = new Date();
   const tableRows = dummyData?.offers
     ?.map((offer) => {
       return offer.linkStore

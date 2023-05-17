@@ -1101,6 +1101,18 @@ const pdfTemplate = (
           </span>
         </span>
       </p>
+
+       <p style="margin-left:7px;">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                IpAddress: ${ipAddress}
+              </span>
+            </span>
+          </span>
+        </span>
+      </p>
    
 
     <p style="text-align:justify">&nbsp;</p>

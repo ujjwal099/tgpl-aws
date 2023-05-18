@@ -43,6 +43,7 @@ export const handler = async (event) => {
     agreement,
     phone,
     mailChange,
+    signedAgreement,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {

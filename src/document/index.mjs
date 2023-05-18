@@ -11,7 +11,7 @@ const pdfTemplate = (
       console.log("linkStore", offer.linkStore);
       return offer.linkStore
         ?.map((store) => {
-          console.log("store", store);
+          console.log("store1", store);
           return `<tr>
               <td style="border: 1px solid; padding: 10px;">${offer.offer_text}</td>
               <td style="border: 1px solid; padding: 10px;">${offer.offer_validity_startDate}</td>
@@ -29,6 +29,7 @@ const pdfTemplate = (
     .join("");
   const storeRows = dummyData?.stores
     ?.map((store) => {
+      console.log("store2", store);
       return `<tr>
               <td style="border: 1px solid; padding: 10px;">${store.store_name}</td>
               <td style="border: 1px solid; padding: 10px;">${store.store_address}</td>
@@ -40,6 +41,7 @@ const pdfTemplate = (
     })
     .join("");
   console.log("tableRows", tableRows);
+  console.log("storeRows", storeRows);
   const htmlString1 = `
 <!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box;">

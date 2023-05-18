@@ -31,7 +31,14 @@ const pdfUploadToServer = async ({ id }) => {
   }
 };
 
-const createPdf = async (data, templateType, textSignature, id, ipAddress) => {
+const createPdf = async (
+  data,
+  templateType,
+  textSignature,
+  id,
+  ipAddress,
+  signedAgreement
+) => {
   try {
     // console.log(data);
     // console.log(data.offers);
@@ -39,7 +46,8 @@ const createPdf = async (data, templateType, textSignature, id, ipAddress) => {
       data,
       templateType,
       textSignature,
-      ipAddress
+      ipAddress,
+      signedAgreement
     );
     console.log("htmlString", htmlString);
 

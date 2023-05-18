@@ -2,17 +2,20 @@ const pdfTemplate = (
   dummyData,
   templateType = 1,
   textSignature = "",
-  ipAddress = ""
+  ipAddress = "",
+  signedAgreement = false
 ) => {
   // console.log(dummyData);
   const today = new Date();
-  const tableRows = dummyData?.offers
-    ?.map((offer) => {
-      console.log("linkStore", offer.linkStore);
-      return offer.linkStore
-        ?.map((store) => {
-          console.log("store1", store);
-          return `<tr>
+  let tableRows;
+  if (signedAgreement) {
+    tableRows = dummyData?.offers
+      ?.map((offer) => {
+        console.log("linkStore", offer.stores);
+        return offer.stores
+          ?.map((store) => {
+            console.log("store1", store);
+            return `<tr>
               <td style="border: 1px solid; padding: 10px;">${offer.offer_text}</td>
               <td style="border: 1px solid; padding: 10px;">${offer.offer_validity_startDate}</td>
               <td style="border: 1px solid; padding: 10px;">${offer.offer_validity_endDate}</td>
@@ -23,10 +26,33 @@ const pdfTemplate = (
               <td style="border: 1px solid; padding: 10px;">${store.store_pincode}</td>
               <td style="border: 1px solid; padding: 10px;">${store.contact_no}</td>
             </tr>`;
-        })
-        .join("");
-    })
-    .join("");
+          })
+          .join("");
+      })
+      .join("");
+  } else {
+    tableRows = dummyData?.offers
+      ?.map((offer) => {
+        console.log("linkStore", offer.linkStore);
+        return offer.linkStore
+          ?.map((store) => {
+            console.log("store1", store);
+            return `<tr>
+              <td style="border: 1px solid; padding: 10px;">${offer.offer_text}</td>
+              <td style="border: 1px solid; padding: 10px;">${offer.offer_validity_startDate}</td>
+              <td style="border: 1px solid; padding: 10px;">${offer.offer_validity_endDate}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_name}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_address}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_city}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_country}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.store_pincode}</td>
+              <td style="border: 1px solid; padding: 10px;">${store.contact_no}</td>
+            </tr>`;
+          })
+          .join("");
+      })
+      .join("");
+  }
   const storeRows = dummyData?.stores
     ?.map((store) => {
       console.log("store2", store);

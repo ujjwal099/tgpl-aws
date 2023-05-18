@@ -70,7 +70,8 @@ export const handler = async (event) => {
       authName,
       locallySigned,
       agreement,
-      mailChange
+      mailChange,
+      signedAgreement
     );
     // console.log(noremail);
     const response = {
@@ -90,7 +91,8 @@ export const handler = async (event) => {
       templateType,
       textSignature,
       id,
-      ipAddress
+      ipAddress,
+      signedAgreement
     );
     if (fileToBeDeletedName !== undefined) {
       try {

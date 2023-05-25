@@ -1512,528 +1512,980 @@ const pdfTemplate = (
 </html>`;
 
   const htmlString3 = `<!DOCTYPE html>
-<html lang="en" style="box-sizing: border-box">
-  <head style="box-sizing: border-box">
-    <meta charset="UTF-8" style="box-sizing: border-box" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-      style="box-sizing: border-box"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
-      rel="stylesheet"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      style="box-sizing: border-box"
-    />
-    <title style="box-sizing: border-box">Document</title>
-    <body>
-      <p>&nbsp;</p>
-      <p>
-        &nbsp;<img
-          src="https://assets.thriwe.com/thriwe_website_main/img/logo.png"
-          alt=""
-          width="131"
-          height="39"
-        />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thriwe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12 mt-5 mb-5 text-center"><img src="image/logo.png" /></div>
+        <div class="col-12">
+            <p style="text-align:center"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">MEMORANDUM OF UNDERSTANDING</span></span>
+                </strong>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">This memorandum of understanding (&ldquo;<strong>Mou</strong>&rdquo;) dated ${`${today.getDate()}. ${
+              today.getMonth() + 1
+            }. ${today.getFullYear()}.`}, 2023 (&ldquo;<strong>Effective Date</strong>&rdquo;) and executed at New Delhi summarizes the principal terms with respect to the arrangement between:</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">THRIWE CONSULTING PRIVATE LIMITED</span></span>
+                </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">, a private limited company incorporated under the Companies Act, 1956 (CIN: [<strong>U74110DL2008PTC182279]</strong>) and having its registered office at [ <strong>501, Rectangle One, Saket District Centre, New Delhi 110017</strong> ] (hereinafter referred to as &ldquo;<strong>Thriwe</strong>&rdquo;, which expression shall unless repugnant to the meaning and context hereof, be deemed to mean and include its successors and permitted assigns) of the <strong>FIRST PART</strong>;</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">AND </span></span>
+                </strong>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">[<strong><em>${
+              dummyData?.formData?.merchant_name
+            } </em></strong>), a private limited company incorporated under the [Companies Act, 1956/2013] (CIN: [&nbsp; ]) having its registered office at [<strong><em>${
+    dummyData?.formData?.registered_address
+      ? dummyData?.formData?.registered_address
+      : ""
+  }</em></strong></span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">] (hereinafter referred to as &ldquo;<strong>Merchant</strong>&rdquo;, which expression shall unless repugnant to the meaning and context hereof, be deemed to mean and include its successors and permitted assigns) of the <strong>OTHER PART</strong>. </span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe and the Merchant shall collectively be referred to as &ldquo;Parties&rdquo; and individually as &ldquo;Party&rdquo;, wherever the context so permits.</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe partnered clients like Banks, Fintech, Insurance, Corporates and other companies shall collectively be referred to as &ldquo;<strong>Thriwe clients</strong>&rdquo;. </span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Now, therefore, in consideration of mutual promises contained herein, the sufficiency of which is hereby acknowledged, the Parties agree as follows:</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="margin-right:54px; text-align:justify"><span style="font-size:9pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">WHEREAS</span></span>
+                </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">:</span></span>
+                </span>
+                </span>
+            </p>
+
+            <ol>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant owns and runs a [dining outlet/salon/etc.] by the name of [${
+                  dummyData?.formData?.brand_name
+                }<strong><em>__ </em></strong>] (&ldquo;<strong>Outlet</strong>&rdquo;). </span></span>
+                    </span>
+                    </span>
+                </li>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe is authorized on behalf of the Thriwe Clients (<em>defined hereinafter</em>) to enter into this MoU.</span></span>
+                    </span>
+                    </span>
+                </li>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant is desirous to participate in the Thriwe Voucher Program and agreed to offer commission to Thriwe on voucher value</span></span>
+                    </span>
+                    </span>
+                </li>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant is also desirous to offer discount to Customers over and above commission offered to Thriwe (<em>defined hereinafter</em>) the on services provided in its Outlets.</span></span>
+                    </span>
+                    </span>
+                </li>
+. This MoU records the oral/ written understanding arrived at between the aforementioned Parties and a detailed agreement would be drawn up in respect of the same.</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">DEFINITIONS -</span></span>
+                    </strong>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-left:28px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">In this MoU unless there is anything repugnant to the subject or context thereof, the expressions/words listed below shall have the meanings assigned to them, respectively hereafter:</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="margin-left:28px; text-align:justify">&nbsp;</p>
+
+            <ol>
+                <li style="list-style-type:none">
+                    <ol>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&quot;<strong>Applicable Law</strong>&quot; and any reference to any legislative provisions means any applicable law, statute, by-law, regulation, order, regulatory policy (including any requirement or notice of any regulatory body), compulsory guidance or industry code of practice, rule of court or directives, delegated or subordinate legislation in force from time to time;</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&ldquo;<strong>Bank</strong>&rdquo; shall mean a company incorporated under the [Companies Act, 1956/ 2013] and licensed as a bank under the Banking Regulation Act, 1949 which has authorized the agent to participate in the Offer (<em>as defined below</em>) on its behalf and having such details as set out in schedule 2 of this MoU;</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&ldquo;<strong>Bank Card</strong>&rdquo; shall mean credit or debit card which has been issued by the Bank and is valid and subsisting during the entire duration of the Offer; </span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&quot;<strong>Confidential Information</strong>&quot; </span></span>
+                            <span style="font-family:Arial,sans-serif"><span style="color:black"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">shall mean</span></span>
+                            </strong>
+                            </span>
+                            </span><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif"> any information of a confidential nature whether in tangible or intangible form or whether specifically marked as confidential or not, concerning the business, affairs, customers, clients or suppliers of the other Party or of any member of its affiliates, including but not limited to information relating to a Party&rsquo;s operations, processes, plans, product information, know-how, designs, trade secrets, software, applications, source code, market opportunities and customers, financial information, internal processes, information about Party&rsquo;s employees. In addition to the foregoing, Confidential Information of either Party (the Party disclosing such information being the &ldquo;<strong>Disclosing Party</strong>&rdquo; and the other Party being the &ldquo;<strong>Receiving Party</strong>&rdquo;) may also include information which the Disclosing Party protects against un-restricted disclosure to others that: (i) the Disclosing Party or its representatives designates as confidential at the time of disclosure; or (ii) should reasonably be understood to be confidential given the nature of the information and the circumstances surrounding its disclosure; including, without limitation, information about or concerning any Third Party that is disclosed to the Receiving Party under this MoU;</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&ldquo;<strong>Customer</strong>&rdquo; for the purpose of this MoU means a person who holds a valid Bank card;</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&ldquo;<strong>Intellectual Property</strong>&rdquo; includes ideas, concepts, creations, discoveries, domain names, inventions, improvements, know how, trade or business secrets; trademarks, service marks, designs, utility models, tools, vices, models, methods, patents copyright (including all copyright in any designs and any moral rights), procedures, processes, systems, principles, algorithms, works of authorship, flowcharts, drawings, books, papers, models, sketches, formulas, teaching techniques, electronic codes, proprietary techniques, research projects, and other confidential and proprietary information, computer programming code, source code, object code, databases, software programs, data, documents, instruction manuals, records, memoranda, notes, user guides; in either printed or machine-readable form, whether or not copyrightable or patentable, or any written or verbal instructions or comments;</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&ldquo;</span></span><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Intellectual Property Rights</span></span></strong>
+                            <span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&rdquo;</span></span><strong> </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">shall mean all rights in any Intellectual Property, in each case whether registered or unregistered and including all applications for registrations, and rights to apply and make such applications, and any extensions or renewals thereof, including all rights provided by international treaties and conventions, rights of distribution, reproduction and all other exploitation rights, and any goodwill in relation to or in connection with the same, or such other similar or equivalent rights or forms of protection which subsist or will subsist in the future in any part of the world</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">&ldquo;<strong>Personal Data</strong>&rdquo; shall mean any information that relates to a natural person which, either directly or indirectly, in combination with other information available or likely to be available with a body corporate, is capable of identifying such person and shall include sensitive personal data as defined under Information Technology Act, 2000 and rules made thereunder and as amended from time to time.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="2">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">OFFER - </span></span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant, pursuant to the Thriwe Voucher program with the Thriwe Clients, shall extend a commission to Thriwe and Discount offer to customer of on all days in a week to all holders of the Thriwe Voucher issued in India and abroad details whereof have been provided in Schedule 1 hereto (hereinafter referred to as the &ldquo;<strong>Offer</strong>&rdquo;).</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-left:38px; text-align:justify">&nbsp;</p>
+
+            <ol start="3">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black">TERM AND TERMINATION - </span></span>
+                    </span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black">This MOU shall be valid for the period of 1 year i.e. from [____________] to [___________].<em> </em>Both the Parties may mutually agree in writing to terminate this MOU anytime during the subsistence of this MOU by providing prior written notice of such termination, of at least 30 days. </span></span>
+                    </span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="4">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">OBLIGATIONS OF THE MERCHANT -</span></span>
+                    </strong>
+                    </span>
+                    </span>
+
+                    <ol>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant shall extend the Offer to the Customers in accordance with the details as set out in Schedule 1. The Offer shall be valid for the period mentioned under Schedule I (&ldquo;<strong>Offer Period</strong>&rdquo;).</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant shall be solely responsible for the delivery, service, suitability, merchantability, availability and quality, of and with regard to the products/ services made available to Customers under the Offer and shall offer the standard service providers warranties in respect of the services provided. The Merchant shall inform the Bank in case it starts any new Outlets and the Offer will get automatically extended to these new Outlets for entire Offer Period. </span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant shall further be responsible and liable for all/any disputes, queries, complaints and contentions raised by Customers including but not limited to, delivery, service, suitability, merchantability, availability or quality of the food, products and/or services offered by the Merchant. These disputes, queries, complaints or contentions include disputes raised by the Customers directly to the Merchant or disputes forwarded by the Bank to the Merchant which shall be attended to promptly and be satisfactorily resolved by the Merchant within 48 (forty-eight) hours. In the event the Bank is constrained to compensate the Customer on account of a dispute regarding delivery, service, suitability, merchantability, availability or quality of the Merchant&rsquo;s food, products and/or services made available to Customers under this Offer, the Merchant shall be obligated to promptly and without demur compensate the Bank on account of the same.<strong><em> </em></strong></span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant shall be responsible for communicating the Offer to the Customers at the Outlet using promotional material provided by the Thriwe Clients to the Merchant more particularly listed in <strong>Schedule 2 </strong>(&ldquo;<strong>Marketing Material</strong>&rdquo;).</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant shall allow the third party appointed by the Thriwe Clients to survey the Marketing Material on a working day and within business hours.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant shall provide the details of redemption data required by Thriwe on a monthly basis. The redemption data shall be provided by the Merchant within first 5 (five) days of the month or within such timelines as mutually agreed between the Parties.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe will create denomination basis the requirement of Thriwe Clients or use standard denomination (e.g.: Rs.100, Rs.250, Rs.500, Rs.750, Rs.1000, Rs.2500, Rs.5000)</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe will share invoice with merchant once every month against the commission.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant shall raise the Bill of Supply <span style="background-color:white"><span style="color:#222222">for the value of voucher (Voucher value minus commission). Merchant shall also have an option to raise a consolidated Bill of Supply for a month. The voucher value shall be determined basis the below formula: </span></span>
+                            </span>
+                            </span>
+                            </span>
+                            </span>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+
+            <p style="margin-left:28px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#222222">Voucher value = Voucher value - Commission (Excluding GST. For example - e.g.: 500 - 50 (10% commission) = Rs.450. &nbsp;</span></span>
+                </span>
+                </span>
+                </span>
+                </span>
+            </p>
+
+            <ol>
+                <li style="list-style-type:none">
+                    <ol start="10">
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">In addition to that above, the Merchant agrees that GST shall be applicable on commission and the same will be deducted by Thriwe and deposited. </span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe will transfer funds to merchant account once every week for the redeemed voucher. Thriwe will inform via email of the day in which merchant fund will be transferred. Voucher value shall be determined basis the below formula:</span></span>
+                            </span>
+                            </span>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+
+            <p style="margin-left:28px; text-align:justify">&nbsp;</p>
+
+            <p style="margin-left:28px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe will transfer funds either Tuesday or Thursday and same will be informed to merchant via email. Thriwe will transfer last seven days funds against redeemed voucher.</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="margin-left:28px; text-align:justify">&nbsp;</p>
+
+            <p style="margin-left:28px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Fund Transfer value = Voucher value &ndash; (Commission + GST)</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="margin-left:28px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">e.g.: Rs.500 is Voucher value and commission is 15% payout will be</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="margin-left:28px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Rs.500 &ndash; (75 + 13.50) = Rs.411.50 is the payout to merchant</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="margin-left:28px; text-align:justify">&nbsp;</p>
+
+            <p style="margin-left:38px; text-align:justify">&nbsp;</p>
+
+            <ol start="5">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black">INTELLECTUAL PROPERTY</span></span>
+                    </span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif"> -</span></span>
+                    </span>
+                    </span>
+
+                    <ol>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Each Party shall retain all right, title and interest in its Intellectual Property Rights.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">No interest whatsoever in the other Party&#39;s Intellectual Property Rights is granted by this Agreement and use of any Intellectual Property Right permitted to one Party by the other Party subject to the express written consent of such other Party and shall be strictly in terms of this Agreement and any violation of the same shall be construed as breach of this Agreement.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">To the fullest extent permissible by Applicable Laws, both Parties agree that they will not, nor will they allow others to, reverse engineer or disassemble any parts of the other party&#39;s Intellectual Property. Neither Party shall use the Intellectual Property of the other Party in any manner whatsoever without the prior written consent of the other Party.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Both the Parties herein are complete owners of their respective brands, trademarks, logos.</span></span>
+                            </span>
+                            </span>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="6">
+                <li style="text-align:justify"><span style="font-size:9pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">DATA PROTECTION - </span></span><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Merchant agrees that the customer data being shared with it for the purposes of the reservations or offer redemption will be dealt with utmost care and confidentiality. The Merchant warrants that it would maintain the same type of care and confidentiality of the data of the Bank as it would do of its own data.</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="7">
+                <li style="text-align:justify"><span style="font-size:9pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">DETAILS OF THE PROGRAMS:<u> </u></span></span><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Thriwe shall create a platform and onboard merchants from different categories like dining, salon, among others and will create a system to generate vouchers of different denomination on real time basis. Users can visit the platform and generate vouchers of defined denomination and balance will be deducted as per voucher value. Outlet operator can redeem the voucher and provide discount to user. Thriwe will make payment every week (Tuesday or Thursday) of the voucher redeemed in the last 7 days.</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="8">
+                <li style="text-align:justify"><span style="font-size:9pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">NON-DISCLOSURE:</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <h1 style="margin-left:28px; text-align:justify"><span style="font-size:9pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Subject to Applicable Law, each Party shall ensure to its best efforts that its respective employees, directors, successors and representatives maintain confidentiality regarding the contents of this Agreement, the information pertaining to the Parties, and the Business and affairs of the&nbsp;Parties. The Parties shall be permitted to disclose all aspects of this&nbsp;Agreement&nbsp;to their investment bankers, accountants, legal counsel and in so far as it is disclosed in each case only where such Persons are under appropriate non-disclosure obligations imposed by professional ethics, Law or contracts.&nbsp;The Parties shall be permitted to disclose Confidential Information which (i) is in the public domain, other than by breach of this Agreement; (ii) is required to be disclosed under any Applicable Law; (iii) is later acquired by a Party from a source not obligated to any other Party, or its Affiliates, to keep such information confidential; or (iv) was previously known or already in the lawful possession of a Party, prior to disclosure by any other Party.</span></span>
+                </span>
+                </span>
+            </h1>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="9">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">REPRESENTATION AND WARRANTIES - </span></span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Each Party represents and warrants that: (a) it is a duly organized, validly existing, and in good standing under the laws of India and has the right, power and authority to enter into this MoU; (b) it has all the requisite corporate power, government licenses and authority to execute, deliver and perform its obligations under this MoU; (c) all acts, conditions and things required to be done, fulfilled and performed to ensure that the obligations assumed by it under this MoU are legal, valid, binding and enforceable and will be done, fulfilled and performed in good faith; (d) this MoU is valid and binding obligations, enforceable against it in accordance with its terms; (d) it shall comply with all Applicable Laws in the performance of its obligations and the exercise of its &nbsp;rights under this MoU; and (e) it will perform its obligations under this MoU in compliance with all Applicable Laws, necessary for the performance of its obligations hereunder.</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-right:12px; text-align:justify">&nbsp;</p>
+
+            <ol start="10">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">INDEMNITY - </span></span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Either Party agrees to indemnify and hold harmless (&ldquo;<strong>Indemnifying Party</strong>&rdquo;) the other Party, its officers, employees, and directors (each, a &ldquo;<strong>Indemnified Party</strong>&rdquo;) against any losses, claims, demands, fines, costs, damages, charges, taxes including interest and penalties, out-of-pocket expenses, including reasonable attorneys&rsquo; and accountants&rsquo; fees , howsoever arising, directly or indirectly, as a result of any breach or non-performance by the Indemnifying Party of any of its obligations, undertakings, covenants, representations or warranties as set out in this Agreement. The Indemnifying Party shall not have any liability for incidental, consequential, indirect, special, or punitive damages of any kind, regardless of the form of action, whether in contract or otherwise, even if any representative of a Party has been advised of the possibility of such damages. Notwithstanding the foregoing, the Indemnifying Party&rsquo;s liability arising or resulting under this Agreement for any damages shall be capped at the consideration of previous 1 (one) month paid by the Customer under this Agreement. </span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-left:63px">&nbsp;</p>
+
+            <ol start="11">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">NOTICES - </span></span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">A notice, permission or other communication under or in connection with this MOU must be in writing, in English, and delivered by e-mail to the relevant Party to the contact, address, and e-mail address set out in this MOU. </span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-left:38px; text-align:justify">&nbsp;</p>
+
+            <ol start="12">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">LAW AND JURISDICTION - </span></span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">This Agreement shall be governed by and interpreted in accordance with the laws of India. The Parties agree that in the event of any disputes or differences arising between the Parties in relation to this Agreement, the Parties shall first attempt to resolve such disputes and differences amicably and through mutual discussions and negotiations. In the event the Parties fail to resolve their disputes or differences amicably, within 30 (thirty) days from the date on which any Party first notifies the other Party of such dispute having arisen, then such disputes shall be settled by arbitration of a sole arbitrator, mutually appointed by the Parties. The arbitration will be conducted in accordance with the arbitration rules and procedures of the Arbitration and Conciliation Act, 1996 as amended from time to time. The language of arbitration proceedings shall be English. The venue and seat of arbitration shall be New Delhi, India</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-right:12px; text-align:justify">&nbsp;</p>
+
+            <ol start="13">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">FORCE MAJEURE - </span></span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">The Parties can terminate the MoU in case of a Force Majeure Event in the manner set out in this MOU or by mutual consent in writing. For the purpose of this MoU, &ldquo;<strong>Force Majeure</strong>&rdquo; shall mean any act of God or State, or any other circumstances beyond the Parties&#39; reasonable control.</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-left:38px; margin-right:12px; text-align:justify">&nbsp;</p>
+
+            <ol start="14">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">AMENDMENTS - </span></span>
+                    </strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">No amendment to this MOU shall be valid or binding unless set forth in writing and duly executed by the Parties to this MOU.</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-left:63px">&nbsp;</p>
+
+            <ol start="15">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Merchant will have to accept Thriwe voucher till last date of voucher validity. E.g.: If program is valid till 31-Mar and customer generates voucher on 29-Mar with validity of 30 days. Merchant will accept the voucher till 27-Apr. Validity will be mentioned in voucher.</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <h1 style="text-align:justify">&nbsp;</h1>
+
+            <h1 style="margin-left:38px; text-align:justify"><span style="font-size:9pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Benefits provided by Merchant to Thriwe and Thriwe Clients identified above.</span></span>
+                </span>
+                </span>
+            </h1>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <table style="border-collapse: collapse; width: 100%;">
+  <tbody>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="151">
+        <p><strong>Offer(s)</strong></p>
+      </td>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
+        <p>
+          <strong>Any denomination between AED<u> 50 to AED 9999</u> voucher to be uploaded in platform for user access</strong>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="151">
+        <p><strong>Voucher Validity</strong></p>
+      </td>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
+        <p>Thriwe will define Voucher validity</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="151">
+        <p><strong>Program Validity (Start &amp; End Date)</strong></p>
+      </td>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
+        <p><strong>&nbsp;</strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="151">
+        <p><strong>Commission to Thriwe</strong></p>
+      </td>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
+        <p><strong>&nbsp;</strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="151">
+        <p><strong>Offer for Customer</strong></p>
+      </td>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
+        <p><strong>&nbsp;</strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="151">
+        <p><strong>Terms &amp; Conditions:</strong></p>
+        <p>&nbsp;</p>
+      </td>
+      <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
+        <p>
+          <strong>1.&nbsp;&nbsp; </strong>The above voucher can be utilized against services at the partner merchant.
+        </p>
+        <p>
+          <strong>2.&nbsp;&nbsp; </strong>The voucher value is equal to a cash value for services availed at the Merchant.
+        </p>
+        <p>
+          <strong>3.&nbsp;&nbsp; </strong>The customer will state the intention to avail the offer before the bill is generated.
+        </p>
+      </td>
+    </
+
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <table cellspacing="0" class="Table" style="border-collapse:collapse; border:none; margin-left:8px; width:100%">
+                <tbody>
+                    <tr>
+                        <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; height:44px; vertical-align:top; width:50%">
+                            <p style="margin-left:7px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For Merchant:</span></span>
+                                </strong>
+                                </span>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:44px; vertical-align:top; width:50%">
+                            <p style="margin-left:7px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For Thriwe Consulting Pvt. Ltd.</span></span>
+                                </strong>
+                                </span>
+                                </span>
+                            </p>
+
+                            <p><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+        <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:184px; vertical-align:top; width:314px">
+  
+      <p style="margin-left:7px;">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Name: ${
+                  dummyData?.formData?.authorised_signatory_name
+                    ? dummyData?.formData?.authorised_signatory_name
+                    : ""
+                }
+              </span>
+            </span>
+          </span>
+        </span>
       </p>
-      <p>&nbsp;</p>
-      <p><strong>THIS AGREEMENT is made on the day</strong></p>
-      <p>
-        <strong>BETWEEN: Thriwe Consulting FZ LLC</strong> with its registered
-        address at&nbsp; ________________ (hereinafter referred to as
-        &ldquo;First Party/Thriwe&rdquo;);
+    
+
+    
+      <p style="margin-left:7px;">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Designation: ${dummyData?.formData?.designation}
+              </span>
+            </span>
+          </span>
+        </span>
       </p>
-      <p>AND</p>
-      <p>
-        The Subscribing Vendor as referred to as&rdquo;
-        <strong>____________________</strong> P.O.BOX _____ (Hereinafter
-        referred to As &ldquo;Second Party&rdquo;/ <strong>Merchant)</strong>
+  
+
+ 
+      <p style="margin-left:7px;">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Date: ${new Date(
+                  today
+                ).toLocaleDateString()} & ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}
+              </span>
+            </span>
+          </span>
+        </span>
       </p>
-      <p><strong>&nbsp;</strong></p>
-      <p><strong>Select the one which is applicable:</strong></p>
-      <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; OFFERS for Thriwe clients</strong></p>
-      <p><strong>WHEREAS</strong>:</p>
-      <ol>
-        <li>
-          The Merchant owns and runs an outlet by the name of
-          [______________________<strong><em>__ </em></strong>]
-          (&ldquo;<strong>Outlet</strong>&rdquo;).
-        </li>
-        <li>
-          Thriwe is authorized on behalf of the Thriwe Clients_to enter into
-          this MoU.
-        </li>
-        <li>
-          The Merchant is desirous to offer discount to Customers over and above
-          commission offered to Thriwe (<em>defined hereinafter</em>) on the
-          services provided in its Outlets.
-        </li>
-      </ol>
-      <p><strong>&nbsp;</strong></p>
-      <p>
-        <strong
-          >Participating Programs:
-          <u>_________________________________________________,</u></strong
-        >
-        of&nbsp; Dubai, United Arab Emirates
+  
+
+ 
+      <p style="margin-left:7px;">
+        <span style="font-size:11pt">
+          <span style="font-family:Verdana,sans-serif">
+            <span style="font-size:10.5pt">
+              <span style="font-family:&quot;Times New Roman&quot;,serif">
+                Mobile Verified by OTP: ${
+                  dummyData?.formData?.authorised_signatory_number
+                    ? dummyData?.formData?.authorised_signatory_number
+                    : ""
+                }
+              </span>
+            </span>
+          </span>
+        </span>
       </p>
-      <p>
-        <strong>Purpose &amp; Background: </strong>The purpose of this agreement
-        is to delineate the general areas of responsibility and to provide
-        guidelines for co-ordination of activities between the two organizations
-        for the &lsquo;Special Offer&rdquo; made by
-        <strong>__________________</strong><strong> &ldquo;</strong
-        ><strong>To</strong> Participating Thriwe Clients.
-      </p>
-      <p>
-        <strong><u>&nbsp;</u></strong>
-      </p>
-      <p>
-        <strong
-          >Offer:
-          ________________________________________________________________________________________________</strong
-        >
-      </p>
-      <p><strong>&nbsp;</strong></p>
-      <p>
-        <strong>Validity: </strong>This agreement shall be in effect from
-        __________<strong> till </strong>&nbsp;__________<strong>. </strong>Both
-        parties should give 30 days&rsquo; written confirmation to renew or
-        terminate the contract. The termination will be without prejudice to any
-        rights or obligations arising prior to the termination date.
-      </p>
-      <p><strong>&nbsp;</strong></p>
-      <p><strong>Terms &amp; Conditions:</strong></p>
-      <ul>
-        <li>
-          Offer not valid in conjunction with any other promotions &amp;
-          discounts.
-        </li>
-      </ul>
-      <ul>
-        <li>
-          Offer to be best offer for Thriwe Clients&rsquo;<strong
-            ><u> customers/</u></strong
-          >cardholders during the promotion duration.
-        </li>
-        <li>
-          Offer are only valid with payment made using a Thriwe
-          Clients&rsquo;<strong><u> customers/</u></strong
-          >cardholders credit or Debit Card.
-        </li>
-      </ul>
-      <p>&nbsp;</p>
-      <p>
-        <strong
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          ___________________</strong
-        >
-        <strong>hereby undertakes the following:</strong>
-      </p>
-      <ul>
-        <li>
-          Offer to be best offer for Thriwe Clients&rsquo;<strong
-            ><u> customers/</u></strong
-          >
-          Cardholders during the promotion duration.
-        </li>
-        <li>
-          Thriwe Clients&rsquo;<strong><u> customers/</u></strong> Cardholders
-          customers entitled for the offer automatically on presenting their
-          Thriwe Clients&rsquo;<strong><u> customers/</u></strong> Cardholders
-          Debit or credit card.
-        </li>
-        <li>
-          Ensure that the offer is provided in a professional and diligent
-          manner.
-        </li>
-      </ul>
-      <p>&nbsp;</p>
-      <p>Thriwe Clients&rsquo;</p>
-      <p><strong>&nbsp;</strong></p>
-      <p><strong>Acceptance of Thriwe Vouchers at Merchant outlets.</strong></p>
-      <p><strong>WHEREAS</strong>:</p>
-      <ol>
-        <li>
-          The Merchant owns and runs an outlet by the name of
-          [______________________<strong><em>__ </em></strong>]
-          (&ldquo;<strong>Outlet</strong>&rdquo;).
-        </li>
-        <li>
-          Thriwe is authorized on behalf of the Thriwe Clients (<em
-            >defined hereinafter</em
-          >) to enter into this MoU.
-        </li>
-        <li>
-          The Merchant is desirous to participate in the Thriwe Voucher Program
-          and agreed to offer commission to Thriwe on voucher value
-        </li>
-      </ol>
-      <p>&nbsp;</p>
-      <p>
-        <strong>Participating Programs: </strong>Thriwe Vouchers in Dubai,
-        United Arab Emirates
-      </p>
-      <p>
-        <strong>TERM AND TERMINATION - </strong>This MOU shall be valid for the
-        period of 1 year i.e. from date of signing Agreement/MOU. Both the
-        Parties may mutually agree in writing to terminate this MOU anytime
-        during the subsistence of this MOU by providing prior written notice of
-        such termination, of at least 30 days.
-      </p>
-      <ol>
-        <li>
-          <strong>OBLIGATIONS OF THE MERCHANT -</strong>
-          <ul>
-            <li>
-              The Merchant shall be solely responsible for the delivery,
-              service, suitability, merchantability, availability and quality,
-              of and with regard to the products/ services made available to
-              Customers under the Offer and shall offer the standard service
-              providers warranties in respect of the services provided. The
-              Merchant shall inform Thriwe in case it starts any new Outlets and
-              the Offer will get automatically extended to these new Outlets for
-              entire Offer Period.
-            </li>
-            <li>
-              The Merchant shall further be responsible and liable for all/any
-              disputes, queries, complaints and contentions raised by Customers
-              including but not limited to, delivery, service, suitability,
-              merchantability, availability or quality of the food, products
-              and/or services offered by the Merchant. These disputes, queries,
-              complaints or contentions include disputes raised by the Customers
-              directly to the Merchant or disputes forwarded by the Bank to the
-              Merchant which shall be attended to promptly and be satisfactorily
-              resolved by the Merchant within 48 (forty-eight) hours. In the
-              event the Bank is constrained to compensate the Customer on
-              account of a dispute regarding delivery, service, suitability,
-              merchantability, availability or quality of the Merchant&rsquo;s
-              food, products and/or services made available to Customers under
-              this Offer, the Merchant shall be obligated to promptly and
-              without demur compensate the Bank on account of the same.
-            </li>
-            <li>
-              Thriwe shall deploy from time to time promotional material at
-              merchant outlets in the form of Tent cards, Standees.
-            </li>
-            <li>
-              The Merchant shall allow the third party appointed by the Thriwe
-              Clients to survey the Marketing Material on a working day and
-              within business hours.
-            </li>
-            <li>
-              The merchant will use platform provided by Thriwe to validate and
-              redeem the vouchers. Payout will only be given for the redeemed
-              vouchers.
-            </li>
-            <li>
-              Thriwe will create denomination basis the requirement of Thriwe
-              Clients or use standard denomination (e.g.: AED 50, AED 100, AED
-              250, AED 500, AED 750, AED 1000, AED 2000)
-            </li>
-            <li>
-              Thriwe will share invoice with merchant once every month against
-              the commission.
-            </li>
-            <li>
-              The Merchant shall raise the Bill of Supply/Tax Invoice for the
-              value of voucher (Voucher value minus commission). Merchant shall
-              also have an option to raise a consolidated Bill of Supply for
-              each month. The voucher value shall be determined basis the below
-              formula:
-            </li>
-          </ul>
-        </li>
-      </ol>
-      <p>
-        Voucher value = Voucher value - Commission (Excluding taxes. For example
-        - e.g.: 500 - 50 (10% commission) = Rs.450.&nbsp;
-      </p>
-      <p>&nbsp;</p>
-      <ul>
-        <li>
-          In addition to that above, the Merchant agrees that VAT shall be
-          applicable on commission and the same will be deducted by Thriwe and
-          deposited.
-        </li>
-      </ul>
-      <p>&nbsp;</p>
-      <ul>
-        <li>
-          Thriwe will transfer funds to merchant account once every week for the
-          redeemed voucher. Thriwe will inform via email, the details of bank
-          account in which fund will be transferred by Thriwe. Voucher value
-          shall be determined basis the below formula:
-        </li>
-      </ul>
-      <p>
-        Thriwe will transfer funds either Tuesday or Thursday and same will be
-        informed to merchant via email. Thriwe will transfer last seven days
-        funds against redeemed voucher.
-      </p>
-      <p>&nbsp;</p>
-      <p>Fund Transfer value = Voucher value &ndash; (Commission + VAT)</p>
-      <p>e.g.: AED 500 is Voucher value and commission is 15% payout will be</p>
-      <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AED 500 &ndash; (75 + 3.75) =
-        AED 421.25 is the payout to merchant
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        <strong><u>DETAILS OF THE PROGRAMS</u></strong>
-      </p>
-      <p>
-        Thriwe shall create a platform and onboard merchants from different
-        categories like dining, salons, shopping, among others and will create a
-        system to generate vouchers of different denomination on real time
-        basis. Users can visit the platform and generate vouchers of defined
-        denomination and balance will be deducted as per voucher value. Outlet
-        operator can redeem the voucher and provide discount to user. Thriwe
-        will make payment every week (Tuesday or Thursday) of the voucher
-        redeemed in the last 7 days.
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        Merchant will have to accept Thriwe voucher till last date of voucher
-        validity. E.g.: If program is valid till 31-Mar and customer generates
-        voucher on 29-Mar with validity of 30 days. Merchant will accept the
-        voucher till 27-Apr. Validity will be mentioned in each voucher.
-      </p>
-      <p><strong>&nbsp;</strong></p>
-      <table>
-        <tbody>
-          <tr>
-            <td width="151">
-              <p>Offer(s)</p>
-            </td>
-            <td width="463">
-              <p>
-                <strong
-                  >Any denomination between AED<u> 50 to AED 9999</u> voucher to
-                  be uploaded in platform for user access</strong
-                >
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td width="151">
-              <p>Voucher Validity</p>
-            </td>
-            <td width="463">
-              <p>Thriwe will define Voucher validity</p>
-            </td>
-          </tr>
-          <tr>
-            <td width="151">
-              <p>Program Validity (Start &amp; End Date)</p>
-            </td>
-            <td width="463">
-              <p><strong>&nbsp;</strong></p>
-            </td>
-          </tr>
-          <tr>
-            <td width="151">
-              <p>Commission to Thriwe</p>
-            </td>
-            <td width="463">
-              <p><strong>&nbsp;</strong></p>
-            </td>
-          </tr>
-          <tr>
-            <td width="151">
-              <p>Offer for Customer</p>
-            </td>
-            <td width="463">
-              <p><strong>&nbsp;</strong></p>
-            </td>
-          </tr>
-          <tr>
-            <td width="151">
-              <p>Terms &amp; Conditions:</p>
-              <p>&nbsp;</p>
-            </td>
-            <td width="463">
-              <p>
-                <strong>1.&nbsp;&nbsp; </strong>The above voucher can be
-                utilized against services at the partner merchant.
-              </p>
-              <p>
-                <strong>2.&nbsp;&nbsp; </strong>The voucher value is equal to a
-                cash value for services availed at the Merchant.
-              </p>
-              <p>
-                <strong>3.&nbsp;&nbsp; </strong>The customer will state the
-                intention to avail the offer before the &nbsp;&nbsp;bill is
-                generated.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p><strong>&nbsp;</strong></p>
-      <p>
-        <strong><u>Bank Details</u></strong>
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        Account Holder Name:: __________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        Account Number:_______________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        Bank Name:____________________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        Branch:________________________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        IFSC Code:_____________________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        Cancel Cheque Number:___________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        <strong><u>Registration Details</u></strong>
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        VAT Number:___________________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        Trade
-        License:___________________________________________________________
-      </p>
-      <p>&nbsp;</p>
-      <p>
-        <strong><u>(To be Filled In Block Letters)</u></strong>
-      </p>
-      <ol>
-        <li>
-          Name:
-          ____________________________________________________________________________________
-        </li>
-        <li>
-          Legal
-          Name:________________________________________________________________________________
-        </li>
-        <li>
-          Brand
-          Name:_________________________________________________________________________________
-        </li>
-        <li>
-          Address:
-          ___________________________________________________________________________________
-        </li>
-      </ol>
-      <p>
-        _______________________________________________________________________________________________
-      </p>
-      <ol start="5">
-        <li>
-          Pin Code:
-          __________________________________________________________________________________
-        </li>
-        <li>
-          Contact number:
-          ____________________________________________________________________________
-        </li>
-        <li>
-          Name of the Signatory:
-          _______________________________________________________________________
-        </li>
-        <li>
-          Designation:
-          ________________________________________________________________________________
-        </li>
-        <li>
-          Mobile Number:
-          _____________________________________________________________________________
-        </li>
-        <li>
-          Email Id:
-          ____________________________________________________________________________________
-        </li>
-        <li>
-          Swipe Machine (Bank name):
-          ____________________________________________________________________
-        </li>
-        <li>
-          TID #:
-          _______________________________________________________________________________________
-        </li>
-        <li>
-          MID #:
-          __________________________________________________________________________________
-        </li>
-      </ol>
-      <p><strong>&nbsp;</strong></p>
-      <p>
-        <strong
-          >IN WITNESS WHEREOF, this agreement has been executed the day and year
-          first above written.</strong
-        >
-      </p>
-      <p><strong>&nbsp;</strong></p>
-      <p><strong>&nbsp;</strong></p>
-      <p><strong>&nbsp;</strong></p>
-      <table width="657">
-        <tbody>
-          <tr>
-            <td width="328">
-              <p>
-                Signed by:
-                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
-              </p>
-              <p>A duly authorised representative of</p>
-              <p><strong>Thriwe Consulting FZ LLC</strong></p>
-              <p>Name :&nbsp;</p>
-              <p>Designation :</p>
-              <p>&nbsp;</p>
-            </td>
-            <td width="328">
-              <p>
-                Signed by:
-                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
-              </p>
-              <p>A duly authorised representative of</p>
-              <p>
-                <strong
-                  >&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..</strong
-                >
-              </p>
-              <p>
-                Name:
-                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
-              </p>
-              <p>
-                Designation:
-                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
-              </p>
-              <p>&nbsp;</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-    </body>
-  </head>
-</html>
-`;
+   
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify">&nbsp;</p>
+    <img src="${textSignature}" alt="">
+    <p style="margin-left:7px; text-align:justify">
+      <span style="font-size:11pt">
+        <span style="font-family:Verdana,sans-serif">
+          <span style="font-size:10.5pt">
+            <span style="font-family:&quot;Times New Roman&quot;,serif">
+              Stamp &amp; Signature:
+            </span>
+          </span>
+        </span>
+      </span>
+    </p>
+    
+                        </td>
+                        <td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:184px; vertical-align:top; width:314px">
+                            <p style="margin-left:7px; margin-right:228px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name: Designation: Date:</span></span>
+                                </span>
+                                </span>
+                            </p>
+
+                            <p style="text-align:justify">&nbsp;</p>
+
+                            <p style="text-align:justify">&nbsp;</p>
+
+                            <p style="margin-left:7px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Stamp &amp; Signature:</span></span>
+                                </span>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="margin-left:15px; text-align:center"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><u><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Offer Details</span></span>
+                </u>
+                </strong>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol>
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Merchant Name:&nbsp; <u>${
+                  dummyData?.formData?.merchant_name
+                    ? dummyData?.formData?.merchant_name
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="2">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Merchant Legal name: <u>${
+                  dummyData?.formData?.merchant_name
+                    ? dummyData?.formData?.merchant_name
+                    : ""
+                } </u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="3">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Address: <u>${
+                  dummyData?.formData?.registered_address
+                    ? dummyData?.formData?.registered_address
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="4">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Contact number: <u>${
+                  dummyData?.formData?.spoc_no
+                    ? dummyData?.formData?.spoc_no
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="5">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Name of the Signatory:<u> ${
+                  dummyData?.formData?.authorised_signatory_name
+                    ? dummyData?.formData?.authorised_signatory_name
+                    : ""
+                } </u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="6">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Designation: &nbsp;<u> ${
+                  dummyData?.formData?.designation
+                    ? dummyData?.formData?.designation
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="7">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Mobile Number: &nbsp;<u> ${
+                  dummyData?.formData?.authorised_signatory_number
+                    ? dummyData?.formData?.authorised_signatory_number
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="8">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Email Id: (capital letters): <u>${
+                  dummyData?.formData?.authorized_signatory_mail
+                    ? dummyData?.formData?.authorized_signatory_mail
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="9">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Swipe Machine (Bank name): (Attach the Copy): <u>${
+                  dummyData?.stores[0]?.tidANDMID[0]?.bankMachineName
+                    ? dummyData?.stores[0]?.tidANDMID[0]?.bankMachineName
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="10">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">TID: <u>${
+                  dummyData?.stores[0]?.tidANDMID[0]?.tid
+                    ? dummyData?.stores[0]?.tidANDMID[0]?.tid
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="11">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">MID: <u>${
+                  dummyData?.stores[0]?.tidANDMID[0]?.mid
+                    ? dummyData?.stores[0]?.tidANDMID[0]?.mid
+                    : ""
+                }</u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ol start="12">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">POS: <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="margin-left:63px">&nbsp;</p>
+
+            <ol start="13">
+                <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Z Rating/CFT: ________________________________________________________________________</span></span>
+                    </span>
+                    </span>
+                </li>
+            </ol>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="margin-left:15px; text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">(Authorized Signatory)</span></span>
+                </strong>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <ul>
+                <li style="list-style-type:none">
+                    <ul style="list-style-type:disc">
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">What is your current swipe machine: - <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">What is your current MDR: - <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </u></span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Would you like to change it: -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No</span></span>
+                            </span>
+                            </span>
+                        </li>
+                        <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Remarks<u>${
+                          dummyData?.stores[0]?.remarks_store
+                            ? dummyData?.stores[0]?.remarks_store
+                            : ""
+                        }</u></span></span>
+                            </span>
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><u><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Bank Details</span></span>
+                </u>
+                </strong>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Account Holder Name:${
+              dummyData?.stores[0]?.merchant_name_written
+                ? dummyData?.stores[0]?.merchant_name_written
+                : ""
+            }</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Account Number:${
+              dummyData?.stores[0]?.bank_account_number
+                ? dummyData?.stores[0]?.bank_account_number
+                : ""
+            }</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Bank Name:${
+              dummyData?.stores[0]?.bank_name
+                ? dummyData?.stores[0]?.bank_name
+                : ""
+            }</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Branch:________________________________________________________________</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">IFSC Code:${
+              dummyData?.stores[0]?.ifsc_code
+                ? dummyData?.stores[0]?.ifsc_code
+                : ""
+            }</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Cancel Cheque Number:___________________________________________________</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><strong><u><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Registration Details</span></span>
+                </u>
+                </strong>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">GST Number:${
+              dummyData?.stores[0]?.gst_no ? dummyData?.stores[0]?.gst_no : ""
+            }</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+
+            <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Verdana,sans-serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Times New Roman&quot;,serif">PAN Number:${
+              dummyData?.stores[0]?.panNumber
+                ? dummyData?.stores[0]?.panNumber
+                : ""
+            }</span></span>
+                </span>
+                </span>
+            </p>
+
+            <p style="text-align:justify">&nbsp;</p>
+        </div>
+        <div>
+            <table style="border: 1px solid; padding: 10px;">
+        <tr>
+             <th style="border: 1px solid; padding: 10px;">Store Name</th>
+             <th style="border: 1px solid; padding: 10px;">Store Address</th>
+             <th style="border: 1px solid; padding: 10px;">Store City</th>
+             <th style="border: 1px solid; padding: 10px;">Store Country</th>
+             <th style="border: 1px solid; padding: 10px;">Store Pincode</th>
+             <th style="border: 1px solid; padding: 10px;">Contact No</th>
+        </tr>
+        ${storeRows}
+    </table>
+        </div>
+    </div>
+</body>
+
+</html>`;
 
   if (templateType == 1) {
     return htmlString1;

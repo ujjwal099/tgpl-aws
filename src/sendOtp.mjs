@@ -1,14 +1,15 @@
 import axios from "axios";
 import { sendMailPromise } from "./sendMail.mjs";
 
-const sendCode = async (phone, code) => {
+const sendCode = async (phone, code, countryCode) => {
   var data = {
     uname: process.env.UNAME,
     pass: process.env.PASS,
     send: "THRIWE",
-    dest: `+91${phone}`,
+    dest: `${countryCode}${phone}`,
     msg: `Hi,${code} is your OTP to verify your mobile number. OTP Code is valid for 10 minutes. THRIWE`,
   };
+  console.log("Data", data);
   var config = {
     method: "post",
     url: "https://fastsms.way2mint.com/SendSMS/sendmsg.php",

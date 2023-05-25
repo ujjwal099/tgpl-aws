@@ -1550,7 +1550,9 @@ const pdfTemplate = (
       <p>AND</p>
       <p>
         The Subscribing Vendor as referred to as&rdquo;
-        <strong>____________________</strong> P.O.BOX _____ (Hereinafter
+        <strong>${dummyData?.formData?.merchant_name}</strong> P.O.BOX ${
+    dummyData?.formData?.po_box
+  } (Hereinafter
         referred to As &ldquo;Second Party&rdquo;/ <strong>Merchant)</strong>
       </p>
       <p><strong>&nbsp;</strong></p>
@@ -1560,7 +1562,7 @@ const pdfTemplate = (
       <ol>
         <li>
           The Merchant owns and runs an outlet by the name of
-          [______________________<strong><em>__ </em></strong>]
+          [${dummyData?.formData?.brand_name}<strong><em>__ </em></strong>]
           (&ldquo;<strong>Outlet</strong>&rdquo;).
         </li>
         <li>
@@ -1577,7 +1579,11 @@ const pdfTemplate = (
       <p>
         <strong
           >Participating Programs:
-          <u>_________________________________________________,</u></strong
+          <u>${
+            dummyData?.offers[0]?.program
+              ? dummyData?.offers[0]?.program.join(", ")
+              : ""
+          }</u></strong
         >
         of&nbsp; Dubai, United Arab Emirates
       </p>
@@ -1586,7 +1592,9 @@ const pdfTemplate = (
         is to delineate the general areas of responsibility and to provide
         guidelines for co-ordination of activities between the two organizations
         for the &lsquo;Special Offer&rdquo; made by
-        <strong>__________________</strong><strong> &ldquo;</strong
+        <strong>${
+          dummyData.formData?.brand_name
+        }</strong><strong> &ldquo;</strong
         ><strong>To</strong> Participating Thriwe Clients.
       </p>
       <p>
@@ -1595,13 +1603,25 @@ const pdfTemplate = (
       <p>
         <strong
           >Offer:
-          ________________________________________________________________________________________________</strong
+          ${
+            dummyData?.offers[0]?.offer_text
+              ? dummyData?.offers[0]?.offer_text
+              : ""
+          }</strong
         >
       </p>
       <p><strong>&nbsp;</strong></p>
       <p>
         <strong>Validity: </strong>This agreement shall be in effect from
-        __________<strong> till </strong>&nbsp;__________<strong>. </strong>Both
+        ${
+          dummyData?.offers[0]?.offer_validity_startDate
+            ? dummyData?.offers[0]?.offer_validity_startDate
+            : ""
+        }<strong> till </strong>&nbsp;${
+    dummyData?.offers[0]?.offer_validity_endDate
+      ? dummyData?.offers[0]?.offer_validity_endDate
+      : ""
+  }<strong>. </strong>Both
         parties should give 30 days&rsquo; written confirmation to renew or
         terminate the contract. The termination will be without prejudice to any
         rights or obligations arising prior to the termination date.
@@ -1630,7 +1650,7 @@ const pdfTemplate = (
       <p>
         <strong
           >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          ___________________</strong
+         ${dummyData?.formData?.brand_name}</strong
         >
         <strong>hereby undertakes the following:</strong>
       </p>
@@ -1660,7 +1680,7 @@ const pdfTemplate = (
       <ol>
         <li>
           The Merchant owns and runs an outlet by the name of
-          [______________________<strong><em>__ </em></strong>]
+          [${dummyData?.formData?.brand_name}<strong><em>__ </em></strong>]
           (&ldquo;<strong>Outlet</strong>&rdquo;).
         </li>
         <li>
@@ -1829,7 +1849,15 @@ const pdfTemplate = (
         <p><strong>Program Validity (Start &amp; End Date)</strong></p>
       </td>
       <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
-        <p><strong>&nbsp;</strong></p>
+        <p><strong>&nbsp;${
+          dummyData?.stores[0]?.start_validity_voucher
+            ? dummyData?.stores[0]?.start_validity_voucher
+            : ""
+        } ${dummyData?.stores[0]?.end_validity_voucher ? "&" : ""} ${
+    dummyData?.stores[0]?.end_validity_voucher
+      ? dummyData?.stores[0]?.end_validity_voucher
+      : ""
+  }</strong></p>
       </td>
     </tr>
     <tr>
@@ -1837,7 +1865,11 @@ const pdfTemplate = (
         <p><strong>Commission to Thriwe</strong></p>
       </td>
       <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
-        <p><strong>&nbsp;</strong></p>
+        <p><strong>&nbsp;${
+          dummyData?.stores[0]?.commission_to_thriwe
+            ? dummyData?.stores[0]?.commission_to_thriwe
+            : ""
+        }</strong></p>
       </td>
     </tr>
     <tr>
@@ -1845,7 +1877,11 @@ const pdfTemplate = (
         <p><strong>Offer for Customer</strong></p>
       </td>
       <td style="border: 1px solid black; padding: 8px; text-align: left;" width="463">
-        <p><strong>&nbsp;</strong></p>
+        <p><strong>&nbsp;${
+          dummyData?.offers[0]?.offer_text
+            ? dummyData?.offers[0]?.offer_text
+            : ""
+        }</strong></p>
       </td>
     </tr>
     <tr>
@@ -1873,15 +1909,25 @@ const pdfTemplate = (
       </p>
       <p>&nbsp;</p>
       <p>
-        Account Holder Name:: __________________________________________________
+        Account Holder Name::  ${
+          dummyData?.stores[0]?.merchant_name_written
+            ? dummyData?.stores[0]?.merchant_name_written
+            : ""
+        }
       </p>
       <p>&nbsp;</p>
       <p>
-        Account Number:_______________________________________________________
+        Account Number: ${
+          dummyData?.stores[0]?.bank_account_number
+            ? dummyData?.stores[0]?.bank_account_number
+            : ""
+        }
       </p>
       <p>&nbsp;</p>
       <p>
-        Bank Name:____________________________________________________________
+        Bank Name: ${
+          dummyData?.stores[0]?.bank_name ? dummyData?.stores[0]?.bank_name : ""
+        }
       </p>
       <p>&nbsp;</p>
       <p>
@@ -1889,7 +1935,9 @@ const pdfTemplate = (
       </p>
       <p>&nbsp;</p>
       <p>
-        IFSC Code:_____________________________________________________________
+        IFSC Code: ${
+          dummyData?.stores[0]?.ifsc_code ? dummyData?.stores[0]?.ifsc_code : ""
+        }
       </p>
       <p>&nbsp;</p>
       <p>
@@ -1901,12 +1949,12 @@ const pdfTemplate = (
       </p>
       <p>&nbsp;</p>
       <p>
-        VAT Number:___________________________________________________________
+        VAT Number: ${dummyData?.stores?.vat_number}
       </p>
       <p>&nbsp;</p>
       <p>
         Trade
-        License:___________________________________________________________
+        License: ${dummyData?.stores?.trade_license_number}
       </p>
       <p>&nbsp;</p>
       <p>
@@ -1915,60 +1963,59 @@ const pdfTemplate = (
       <ol>
         <li>
           Name:
-          ____________________________________________________________________________________
+          ${dummyData?.formData?.authorized_signatory_mail}
         </li>
         <li>
           Legal
-          Name:________________________________________________________________________________
+          Name: ${dummyData?.formData?.authorized_signatory_mail}
         </li>
         <li>
           Brand
-          Name:_________________________________________________________________________________
+          Name: ${dummyData?.formData?.brand_name}
         </li>
         <li>
           Address:
-          ___________________________________________________________________________________
-        </li>
-      </ol>
-      <p>
-        _______________________________________________________________________________________________
-      </p>
+          ${dummyData?.formData?.corporate_address}
       <ol start="5">
         <li>
           Pin Code:
-          __________________________________________________________________________________
+         ${dummyData?.formData?.corporate_address_pincode}
         </li>
         <li>
           Contact number:
-          ____________________________________________________________________________
+          ${dummyData?.formData?.authorised_signatory_number}
         </li>
         <li>
           Name of the Signatory:
-          _______________________________________________________________________
+         ${dummyData?.formData?.authorised_signatory_name}
         </li>
         <li>
           Designation:
-          ________________________________________________________________________________
+         ${dummyData?.formData?.designation}
         </li>
         <li>
           Mobile Number:
-          _____________________________________________________________________________
+          ${dummyData?.formData?.authorised_signatory_number}
         </li>
         <li>
           Email Id:
-          ____________________________________________________________________________________
+          ${dummyData?.formData?.authorized_signatory_mail}
         </li>
         <li>
           Swipe Machine (Bank name):
-          ____________________________________________________________________
+          ${dummyData?.stores[0].tidANDMID
+            ?.map((obj) => obj.bankMachineName)
+            .join(", ")}
         </li>
         <li>
           TID #:
-          _______________________________________________________________________________________
+         ${dummyData?.stores[0].tidANDMID?.map((obj) => obj.tid).join(", ")}
         </li>
         <li>
           MID #:
-          __________________________________________________________________________________
+          ${dummyData?.stores[0].tidANDMID
+            ?.map((obj) => obj.mid)
+            .join(", ")}
         </li>
       </ol>
       <p><strong>&nbsp;</strong></p>

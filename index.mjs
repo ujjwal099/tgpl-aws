@@ -45,10 +45,11 @@ export const handler = async (event) => {
     mailChange,
     signedAgreement,
     mail,
+    countryCode,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
-    const { objectId } = await sendOtp(phone, mail);
+    const { objectId } = await sendOtp(phone, mail, countryCode);
     const response = {
       statusCode: 200,
       body: objectId,

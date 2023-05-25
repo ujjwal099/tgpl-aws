@@ -1511,162 +1511,536 @@ const pdfTemplate = (
 </body>
 </html>`;
 
+  const htmlString3 = `<!DOCTYPE html>
+<html lang="en" style="box-sizing: border-box">
+  <head style="box-sizing: border-box">
+    <meta charset="UTF-8" style="box-sizing: border-box" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+      style="box-sizing: border-box"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      style="box-sizing: border-box"
+    />
+    <title style="box-sizing: border-box">Document</title>
+    <body>
+      <p>&nbsp;</p>
+      <p>
+        &nbsp;<img
+          src="https://assets.thriwe.com/thriwe_website_main/img/logo.png"
+          alt=""
+          width="131"
+          height="39"
+        />
+      </p>
+      <p>&nbsp;</p>
+      <p><strong>THIS AGREEMENT is made on the day</strong></p>
+      <p>
+        <strong>BETWEEN: Thriwe Consulting FZ LLC</strong> with its registered
+        address at&nbsp; ________________ (hereinafter referred to as
+        &ldquo;First Party/Thriwe&rdquo;);
+      </p>
+      <p>AND</p>
+      <p>
+        The Subscribing Vendor as referred to as&rdquo;
+        <strong>____________________</strong> P.O.BOX _____ (Hereinafter
+        referred to As &ldquo;Second Party&rdquo;/ <strong>Merchant)</strong>
+      </p>
+      <p><strong>&nbsp;</strong></p>
+      <p><strong>Select the one which is applicable:</strong></p>
+      <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; OFFERS for Thriwe clients</strong></p>
+      <p><strong>WHEREAS</strong>:</p>
+      <ol>
+        <li>
+          The Merchant owns and runs an outlet by the name of
+          [______________________<strong><em>__ </em></strong>]
+          (&ldquo;<strong>Outlet</strong>&rdquo;).
+        </li>
+        <li>
+          Thriwe is authorized on behalf of the Thriwe Clients_to enter into
+          this MoU.
+        </li>
+        <li>
+          The Merchant is desirous to offer discount to Customers over and above
+          commission offered to Thriwe (<em>defined hereinafter</em>) on the
+          services provided in its Outlets.
+        </li>
+      </ol>
+      <p><strong>&nbsp;</strong></p>
+      <p>
+        <strong
+          >Participating Programs:
+          <u>_________________________________________________,</u></strong
+        >
+        of&nbsp; Dubai, United Arab Emirates
+      </p>
+      <p>
+        <strong>Purpose &amp; Background: </strong>The purpose of this agreement
+        is to delineate the general areas of responsibility and to provide
+        guidelines for co-ordination of activities between the two organizations
+        for the &lsquo;Special Offer&rdquo; made by
+        <strong>__________________</strong><strong> &ldquo;</strong
+        ><strong>To</strong> Participating Thriwe Clients.
+      </p>
+      <p>
+        <strong><u>&nbsp;</u></strong>
+      </p>
+      <p>
+        <strong
+          >Offer:
+          ________________________________________________________________________________________________</strong
+        >
+      </p>
+      <p><strong>&nbsp;</strong></p>
+      <p>
+        <strong>Validity: </strong>This agreement shall be in effect from
+        __________<strong> till </strong>&nbsp;__________<strong>. </strong>Both
+        parties should give 30 days&rsquo; written confirmation to renew or
+        terminate the contract. The termination will be without prejudice to any
+        rights or obligations arising prior to the termination date.
+      </p>
+      <p><strong>&nbsp;</strong></p>
+      <p><strong>Terms &amp; Conditions:</strong></p>
+      <ul>
+        <li>
+          Offer not valid in conjunction with any other promotions &amp;
+          discounts.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Offer to be best offer for Thriwe Clients&rsquo;<strong
+            ><u> customers/</u></strong
+          >cardholders during the promotion duration.
+        </li>
+        <li>
+          Offer are only valid with payment made using a Thriwe
+          Clients&rsquo;<strong><u> customers/</u></strong
+          >cardholders credit or Debit Card.
+        </li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>
+        <strong
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ___________________</strong
+        >
+        <strong>hereby undertakes the following:</strong>
+      </p>
+      <ul>
+        <li>
+          Offer to be best offer for Thriwe Clients&rsquo;<strong
+            ><u> customers/</u></strong
+          >
+          Cardholders during the promotion duration.
+        </li>
+        <li>
+          Thriwe Clients&rsquo;<strong><u> customers/</u></strong> Cardholders
+          customers entitled for the offer automatically on presenting their
+          Thriwe Clients&rsquo;<strong><u> customers/</u></strong> Cardholders
+          Debit or credit card.
+        </li>
+        <li>
+          Ensure that the offer is provided in a professional and diligent
+          manner.
+        </li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>Thriwe Clients&rsquo;</p>
+      <p><strong>&nbsp;</strong></p>
+      <p><strong>Acceptance of Thriwe Vouchers at Merchant outlets.</strong></p>
+      <p><strong>WHEREAS</strong>:</p>
+      <ol>
+        <li>
+          The Merchant owns and runs an outlet by the name of
+          [______________________<strong><em>__ </em></strong>]
+          (&ldquo;<strong>Outlet</strong>&rdquo;).
+        </li>
+        <li>
+          Thriwe is authorized on behalf of the Thriwe Clients (<em
+            >defined hereinafter</em
+          >) to enter into this MoU.
+        </li>
+        <li>
+          The Merchant is desirous to participate in the Thriwe Voucher Program
+          and agreed to offer commission to Thriwe on voucher value
+        </li>
+      </ol>
+      <p>&nbsp;</p>
+      <p>
+        <strong>Participating Programs: </strong>Thriwe Vouchers in Dubai,
+        United Arab Emirates
+      </p>
+      <p>
+        <strong>TERM AND TERMINATION - </strong>This MOU shall be valid for the
+        period of 1 year i.e. from date of signing Agreement/MOU. Both the
+        Parties may mutually agree in writing to terminate this MOU anytime
+        during the subsistence of this MOU by providing prior written notice of
+        such termination, of at least 30 days.
+      </p>
+      <ol>
+        <li>
+          <strong>OBLIGATIONS OF THE MERCHANT -</strong>
+          <ul>
+            <li>
+              The Merchant shall be solely responsible for the delivery,
+              service, suitability, merchantability, availability and quality,
+              of and with regard to the products/ services made available to
+              Customers under the Offer and shall offer the standard service
+              providers warranties in respect of the services provided. The
+              Merchant shall inform Thriwe in case it starts any new Outlets and
+              the Offer will get automatically extended to these new Outlets for
+              entire Offer Period.
+            </li>
+            <li>
+              The Merchant shall further be responsible and liable for all/any
+              disputes, queries, complaints and contentions raised by Customers
+              including but not limited to, delivery, service, suitability,
+              merchantability, availability or quality of the food, products
+              and/or services offered by the Merchant. These disputes, queries,
+              complaints or contentions include disputes raised by the Customers
+              directly to the Merchant or disputes forwarded by the Bank to the
+              Merchant which shall be attended to promptly and be satisfactorily
+              resolved by the Merchant within 48 (forty-eight) hours. In the
+              event the Bank is constrained to compensate the Customer on
+              account of a dispute regarding delivery, service, suitability,
+              merchantability, availability or quality of the Merchant&rsquo;s
+              food, products and/or services made available to Customers under
+              this Offer, the Merchant shall be obligated to promptly and
+              without demur compensate the Bank on account of the same.
+            </li>
+            <li>
+              Thriwe shall deploy from time to time promotional material at
+              merchant outlets in the form of Tent cards, Standees.
+            </li>
+            <li>
+              The Merchant shall allow the third party appointed by the Thriwe
+              Clients to survey the Marketing Material on a working day and
+              within business hours.
+            </li>
+            <li>
+              The merchant will use platform provided by Thriwe to validate and
+              redeem the vouchers. Payout will only be given for the redeemed
+              vouchers.
+            </li>
+            <li>
+              Thriwe will create denomination basis the requirement of Thriwe
+              Clients or use standard denomination (e.g.: AED 50, AED 100, AED
+              250, AED 500, AED 750, AED 1000, AED 2000)
+            </li>
+            <li>
+              Thriwe will share invoice with merchant once every month against
+              the commission.
+            </li>
+            <li>
+              The Merchant shall raise the Bill of Supply/Tax Invoice for the
+              value of voucher (Voucher value minus commission). Merchant shall
+              also have an option to raise a consolidated Bill of Supply for
+              each month. The voucher value shall be determined basis the below
+              formula:
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        Voucher value = Voucher value - Commission (Excluding taxes. For example
+        - e.g.: 500 - 50 (10% commission) = Rs.450.&nbsp;
+      </p>
+      <p>&nbsp;</p>
+      <ul>
+        <li>
+          In addition to that above, the Merchant agrees that VAT shall be
+          applicable on commission and the same will be deducted by Thriwe and
+          deposited.
+        </li>
+      </ul>
+      <p>&nbsp;</p>
+      <ul>
+        <li>
+          Thriwe will transfer funds to merchant account once every week for the
+          redeemed voucher. Thriwe will inform via email, the details of bank
+          account in which fund will be transferred by Thriwe. Voucher value
+          shall be determined basis the below formula:
+        </li>
+      </ul>
+      <p>
+        Thriwe will transfer funds either Tuesday or Thursday and same will be
+        informed to merchant via email. Thriwe will transfer last seven days
+        funds against redeemed voucher.
+      </p>
+      <p>&nbsp;</p>
+      <p>Fund Transfer value = Voucher value &ndash; (Commission + VAT)</p>
+      <p>e.g.: AED 500 is Voucher value and commission is 15% payout will be</p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AED 500 &ndash; (75 + 3.75) =
+        AED 421.25 is the payout to merchant
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        <strong><u>DETAILS OF THE PROGRAMS</u></strong>
+      </p>
+      <p>
+        Thriwe shall create a platform and onboard merchants from different
+        categories like dining, salons, shopping, among others and will create a
+        system to generate vouchers of different denomination on real time
+        basis. Users can visit the platform and generate vouchers of defined
+        denomination and balance will be deducted as per voucher value. Outlet
+        operator can redeem the voucher and provide discount to user. Thriwe
+        will make payment every week (Tuesday or Thursday) of the voucher
+        redeemed in the last 7 days.
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        Merchant will have to accept Thriwe voucher till last date of voucher
+        validity. E.g.: If program is valid till 31-Mar and customer generates
+        voucher on 29-Mar with validity of 30 days. Merchant will accept the
+        voucher till 27-Apr. Validity will be mentioned in each voucher.
+      </p>
+      <p><strong>&nbsp;</strong></p>
+      <table>
+        <tbody>
+          <tr>
+            <td width="151">
+              <p>Offer(s)</p>
+            </td>
+            <td width="463">
+              <p>
+                <strong
+                  >Any denomination between AED<u> 50 to AED 9999</u> voucher to
+                  be uploaded in platform for user access</strong
+                >
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="151">
+              <p>Voucher Validity</p>
+            </td>
+            <td width="463">
+              <p>Thriwe will define Voucher validity</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="151">
+              <p>Program Validity (Start &amp; End Date)</p>
+            </td>
+            <td width="463">
+              <p><strong>&nbsp;</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td width="151">
+              <p>Commission to Thriwe</p>
+            </td>
+            <td width="463">
+              <p><strong>&nbsp;</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td width="151">
+              <p>Offer for Customer</p>
+            </td>
+            <td width="463">
+              <p><strong>&nbsp;</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td width="151">
+              <p>Terms &amp; Conditions:</p>
+              <p>&nbsp;</p>
+            </td>
+            <td width="463">
+              <p>
+                <strong>1.&nbsp;&nbsp; </strong>The above voucher can be
+                utilized against services at the partner merchant.
+              </p>
+              <p>
+                <strong>2.&nbsp;&nbsp; </strong>The voucher value is equal to a
+                cash value for services availed at the Merchant.
+              </p>
+              <p>
+                <strong>3.&nbsp;&nbsp; </strong>The customer will state the
+                intention to avail the offer before the &nbsp;&nbsp;bill is
+                generated.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>&nbsp;</strong></p>
+      <p>
+        <strong><u>Bank Details</u></strong>
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        Account Holder Name:: __________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        Account Number:_______________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        Bank Name:____________________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        Branch:________________________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        IFSC Code:_____________________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        Cancel Cheque Number:___________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        <strong><u>Registration Details</u></strong>
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        VAT Number:___________________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        Trade
+        License:___________________________________________________________
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        <strong><u>(To be Filled In Block Letters)</u></strong>
+      </p>
+      <ol>
+        <li>
+          Name:
+          ____________________________________________________________________________________
+        </li>
+        <li>
+          Legal
+          Name:________________________________________________________________________________
+        </li>
+        <li>
+          Brand
+          Name:_________________________________________________________________________________
+        </li>
+        <li>
+          Address:
+          ___________________________________________________________________________________
+        </li>
+      </ol>
+      <p>
+        _______________________________________________________________________________________________
+      </p>
+      <ol start="5">
+        <li>
+          Pin Code:
+          __________________________________________________________________________________
+        </li>
+        <li>
+          Contact number:
+          ____________________________________________________________________________
+        </li>
+        <li>
+          Name of the Signatory:
+          _______________________________________________________________________
+        </li>
+        <li>
+          Designation:
+          ________________________________________________________________________________
+        </li>
+        <li>
+          Mobile Number:
+          _____________________________________________________________________________
+        </li>
+        <li>
+          Email Id:
+          ____________________________________________________________________________________
+        </li>
+        <li>
+          Swipe Machine (Bank name):
+          ____________________________________________________________________
+        </li>
+        <li>
+          TID #:
+          _______________________________________________________________________________________
+        </li>
+        <li>
+          MID #:
+          __________________________________________________________________________________
+        </li>
+      </ol>
+      <p><strong>&nbsp;</strong></p>
+      <p>
+        <strong
+          >IN WITNESS WHEREOF, this agreement has been executed the day and year
+          first above written.</strong
+        >
+      </p>
+      <p><strong>&nbsp;</strong></p>
+      <p><strong>&nbsp;</strong></p>
+      <p><strong>&nbsp;</strong></p>
+      <table width="657">
+        <tbody>
+          <tr>
+            <td width="328">
+              <p>
+                Signed by:
+                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
+              </p>
+              <p>A duly authorised representative of</p>
+              <p><strong>Thriwe Consulting FZ LLC</strong></p>
+              <p>Name :&nbsp;</p>
+              <p>Designation :</p>
+              <p>&nbsp;</p>
+            </td>
+            <td width="328">
+              <p>
+                Signed by:
+                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
+              </p>
+              <p>A duly authorised representative of</p>
+              <p>
+                <strong
+                  >&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..</strong
+                >
+              </p>
+              <p>
+                Name:
+                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
+              </p>
+              <p>
+                Designation:
+                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
+              </p>
+              <p>&nbsp;</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </body>
+  </head>
+</html>
+`;
+
   if (templateType == 1) {
     return htmlString1;
   } else if (templateType == 2) {
     return htmlString2;
   } else {
-    return `
-      <!doctype html>
-      <html>
-         <head>
-            <meta charset="utf-8">
-            <title>PDF Result Template</title>
-            <style>
-                 .sign-box{
-                 display: flex;
-                 justify-content: flex-end
-                 }
-               .invoice-box {
-               max-width: 800px;
-               margin: auto;
-               padding: 30px;
-               border: 1px solid #eee;
-               box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-               font-size: 16px;
-               line-height: 24px;
-               font-family: 'Helvetica Neue', 'Helvetica',
-               color: #555;
-               }
-               .margin-top {
-               margin-top: 50px;
-               }
-               .justify-center {
-               text-align: center;
-               }
-               .invoice-box table {
-               width: 100%;
-               line-height: inherit;
-               text-align: left;
-               }
-               .invoice-box table td {
-               padding: 5px;
-               vertical-align: top;
-               }
-               .invoice-box table tr td:nth-child(2) {
-               text-align: right;
-               }
-               .invoice-box table tr.top table td {
-               padding-bottom: 20px;
-               }
-               .invoice-box table tr.top table td.title {
-               font-size: 45px;
-               line-height: 45px;
-               color: #333;
-               }
-               .invoice-box table tr.information table td {
-               padding-bottom: 40px;
-               }
-               .invoice-box table tr.heading td {
-               background: #eee;
-               border-bottom: 1px solid #ddd;
-               font-weight: bold;
-               }
-               .invoice-box table tr.details td {
-               padding-bottom: 20px;
-               }
-               .invoice-box table tr.item td {
-               border-bottom: 1px solid #eee;
-               }
-               .invoice-box table tr.item.last td {
-               border-bottom: none;
-               }
-               .invoice-box table tr.total td:nth-child(2) {
-               border-top: 2px solid #eee;
-               font-weight: bold;
-               }
-               @media only screen and (max-width: 600px) {
-               .invoice-box table tr.top table td {
-               width: 100%;
-               display: block;
-               text-align: center;
-               }
-               .invoice-box table tr.information table td {
-               width: 100%;
-               display: block;
-               text-align: center;
-               }
-               }
-            </style>
-         </head>
-         <body>
-            <div class="invoice-box">
-            <h1 class="justify-center">Template 3</h1>
-               <table cellpadding="0" cellspacing="0">
-                  <tr class="top">
-                     <td colspan="2">
-                        <table>
-                           <tr>
-                              <td class="title"><img  src="https://design.thriwe.com/tgpl-crm-prime/assets/images/thriwe-logo.png"
-                                 style="width:100%; max-width:156px;"></td>
-                              <td>
-                                 Date: ${`${today.getDate()}. ${
-                                   today.getMonth() + 1
-                                 }. ${today.getFullYear()}.`}
-                              </td>
-                           </tr>
-                           <tr>
-                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                              </p>
-                           </tr>
-                        </table>
-                     </td>
-                  </tr>
-                  <tr class="information">
-                     <td colspan="2">
-                        <table>
-                           <tr>
-                              <td>
-                                Name: ${signatoryName}
-                              </td>
-                              <td>
-                                 Contact Number: ${contactNo}
-                              </td>
-                           </tr>
-                        </table>
-                     </td>
-                  </tr>
-                  <tr class="heading">
-                     <td>User Information:</td>
-                     <td>Information</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Email:</td>
-                     <td>${email}</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Extra Field:</td>
-                     <td>${extraField}</td>
-                  </tr>
-               </table>
-               <br />
-               <div class="sign-box">
-               <div>Sign Here: </div>
-               <div>
-               ${
-                 textSignature
-                   ? textSignature
-                   : `<img src=${trimmedDataURL} style="width:100%; max-width:156px;">`
-               }
-               </div>
-             </div>
-               <br />
-               
-            </div>
-         </body>
-      </html>
-      `;
+    return htmlString3;
   }
 };
 

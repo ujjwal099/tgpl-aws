@@ -1976,7 +1976,6 @@ const pdfTemplate = (
         <li>
           Address:
           ${dummyData?.formData?.corporate_address}
-      <ol start="5">
         <li>
           Pin Code:
          ${dummyData?.formData?.corporate_address_pincode}

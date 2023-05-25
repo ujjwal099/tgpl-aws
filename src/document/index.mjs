@@ -2064,7 +2064,7 @@ const pdfTemplate = (
         </tbody>
       </table>
       ${
-        dummyData?.formData?.mou_type == "Offer"
+        dummyData?.formData?.mou_type != "Voucher"
           ? `<div>
     <table style="border: 1px solid; padding: 10px;">
         <tr>

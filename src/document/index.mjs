@@ -1495,7 +1495,7 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
         </div>
         <div>
-            <table style="border: 1px solid; padding: 10px;">
+        <table style="border: 1px solid; padding: 10px;">
         <tr>
              <th style="border: 1px solid; padding: 10px;">Store Name</th>
              <th style="border: 1px solid; padding: 10px;">Store Address</th>
@@ -2012,9 +2012,7 @@ const pdfTemplate = (
         </li>
         <li>
           MID #:
-          ${dummyData?.stores[0].tidANDMID
-            ?.map((obj) => obj.mid)
-            .join(", ")}
+          ${dummyData?.stores[0].tidANDMID?.map((obj) => obj.mid).join(", ")}
         </li>
       </ol>
       <p><strong>&nbsp;</strong></p>
@@ -2065,6 +2063,38 @@ const pdfTemplate = (
           </tr>
         </tbody>
       </table>
+      ${
+        dummyData?.formData?.mou_type == "Offer"
+          ? `<div>
+    <table style="border: 1px solid; padding: 10px;">
+        <tr>
+             <th style="border: 1px solid; padding: 10px;">Offer Text</th>
+             <th style="border: 1px solid; padding: 10px;">Offer Validity Start Date</th>
+             <th style="border: 1px solid; padding: 10px;">Offer Validity End Date</th>
+             <th style="border: 1px solid; padding: 10px;">Store Name</th>
+             <th style="border: 1px solid; padding: 10px;">Store Address</th>
+             <th style="border: 1px solid; padding: 10px;">Store City</th>
+             <th style="border: 1px solid; padding: 10px;">Store Country</th>
+             <th style="border: 1px solid; padding: 10px;">Store Pincode</th>
+             <th style="border: 1px solid; padding: 10px;">Contact No</th>
+        </tr>
+        ${tableRows}
+    </table>
+    </div>`
+          : ` <div>
+        <table style="border: 1px solid; padding: 10px;">
+        <tr>
+             <th style="border: 1px solid; padding: 10px;">Store Name</th>
+             <th style="border: 1px solid; padding: 10px;">Store Address</th>
+             <th style="border: 1px solid; padding: 10px;">Store City</th>
+             <th style="border: 1px solid; padding: 10px;">Store Country</th>
+             <th style="border: 1px solid; padding: 10px;">Store Pincode</th>
+             <th style="border: 1px solid; padding: 10px;">Contact No</th>
+        </tr>
+        ${storeRows}
+    </table>
+        </div>`
+      }
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>

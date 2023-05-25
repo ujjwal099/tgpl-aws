@@ -9,7 +9,7 @@ function dateToYMD(date) {
   return "" + y + "-" + (m <= 9 ? "0" + m : m) + "-" + (d <= 9 ? "0" + d : d);
 }
 
-const sendMailPromise = (options) => {
+export const sendMailPromise = (options) => {
   var transporter = nodemailer.createTransport(
     mandrillTransport({
       auth: {

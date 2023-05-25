@@ -44,10 +44,11 @@ export const handler = async (event) => {
     phone,
     mailChange,
     signedAgreement,
+    mail,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
-    const { objectId } = await sendOtp(phone);
+    const { objectId } = await sendOtp(phone, mail);
     const response = {
       statusCode: 200,
       body: objectId,
@@ -71,8 +72,7 @@ export const handler = async (event) => {
       authName,
       locallySigned,
       agreement,
-      mailChange,
-      signedAgreement
+      mailChange
     );
     // console.log(noremail);
     const response = {

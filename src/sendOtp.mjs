@@ -1,4 +1,5 @@
 import axios from "axios";
+import { sendMailPromise } from "./sendMail.mjs";
 
 const sendCode = async (phone, code) => {
   var data = {
@@ -20,7 +21,7 @@ const sendCode = async (phone, code) => {
   return;
 };
 
-const sendOtp = async (phone) => {
+const sendOtp = async (phone, mail) => {
   const code = String(Math.floor(100000 + Math.random() * 900000));
   await sendCode(phone, code);
   var data = {
@@ -39,6 +40,14 @@ const sendOtp = async (phone) => {
   };
   const result = await axios(config);
   console.log("Result", result.data);
+  var options = {
+    from: "noreply@thriwe.com",
+    to: mail,
+    subject: "Signing for OTP",
+    text: `wow thats sample `,
+    html: `<p>Hi,${code} is your OTP to verify your mobile number. OTP Code is valid for 10 minutes. THRIWE</p>`,
+  };
+  await sendMailPromise(options);
   return result.data;
 };
 

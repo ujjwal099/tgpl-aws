@@ -2,19 +2,20 @@ import axios from "axios";
 import { sendMailPromise } from "./sendMail.mjs";
 
 const sendCode = async (phone, code, countryCode) => {
-  var data = {
-    uname: process.env.UNAME,
-    pass: process.env.PASS,
-    send: "THRIWE",
-    dest: `${countryCode}${phone}`,
-    msg: `Hi,${code} is your OTP to verify your mobile number. OTP Code is valid for 10 minutes. THRIWE`,
-  };
+  var data = JSON.stringify({
+    flow_id: "63dcd4fbd6fc055abd747e13",
+    mobiles: `${countryCode}${phone}`,
+    var: code,
+  });
   console.log("Data", data);
-  var config = {
+  let config = {
     method: "post",
-    url: "https://fastsms.way2mint.com/SendSMS/sendmsg.php",
+    maxBodyLength: Infinity,
+    url: "https://api.msg91.com/api/v5/flow/",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      authkey: "377863AM7ok4QkYD1c63bc0c29P1",
+      "Content-Type": "application/json",
+      Cookie: "PHPSESSID=40aiqhbvg8ncu7i16t4rkf1ig3",
     },
     data: data,
   };

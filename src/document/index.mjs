@@ -1931,7 +1931,11 @@ const pdfTemplate = (
       </p>
       <p>&nbsp;</p>
       <p>
-        Branch:________________________________________________________________
+        Branch: ${
+          dummyData?.stores[0]?.branch_name
+            ? dummyData?.stores[0]?.branch_name
+            : ""
+        }
       </p>
       <p>&nbsp;</p>
       <p>
@@ -2030,7 +2034,7 @@ const pdfTemplate = (
           <tr>
             <td width="328">
               <p>
-                Signed by: ${textSignature}
+                Signed by:  <img src="${textSignature}" alt="">
               </p>
               <p>A duly authorised representative of</p>
               <p><strong>Thriwe Consulting FZ LLC</strong></p>

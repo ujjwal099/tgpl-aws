@@ -45,9 +45,17 @@ const sendOtp = async (phone, mail, countryCode) => {
   var options = {
     from: "noreply@thriwe.com",
     to: mail,
-    subject: "Signing for OTP",
+    subject: "OTP for Thriwe CRM | Email Verification",
     text: `wow thats sample `,
-    html: `<p>Hi,${code} is your OTP to verify your mobile number. OTP Code is valid for 10 minutes. THRIWE</p>`,
+    html: `<p>Dear User,</p>
+
+<p>Please use OTP (729962) to verify your credentials.<br>
+Please Note: OTP is valid for 10 minutes only</p>
+
+<p>
+Stay Safe,<br>
+Team Thriwe<br>
+</p>`,
   };
   await sendMailPromise(options);
   return result.data;

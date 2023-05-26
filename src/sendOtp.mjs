@@ -49,7 +49,7 @@ const sendOtp = async (phone, mail, countryCode) => {
     text: `wow thats sample `,
     html: `<p>Dear User,</p>
 
-<p>Please use OTP (729962) to verify your credentials.<br>
+<p>Please use OTP ${code} to verify your credentials.<br>
 Please Note: OTP is valid for 10 minutes only</p>
 
 <p>

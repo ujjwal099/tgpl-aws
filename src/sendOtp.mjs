@@ -23,9 +23,9 @@ const sendCode = async (phone, code, countryCode) => {
   return;
 };
 
-const sendOtp = async (phone, mail) => {
+const sendOtp = async (phone, mail, countryCode) => {
   const code = String(Math.floor(100000 + Math.random() * 900000));
-  await sendCode(phone, code);
+  await sendCode(phone, code, countryCode);
   var data = {
     phone: phone,
     code: code,

@@ -2030,13 +2030,14 @@ const pdfTemplate = (
           <tr>
             <td width="328">
               <p>
-                Signed by:
-                &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
+                Signed by: ${textSignature}
               </p>
               <p>A duly authorised representative of</p>
               <p><strong>Thriwe Consulting FZ LLC</strong></p>
-              <p>Name :&nbsp;</p>
-              <p>Designation :</p>
+              <p>Name :&nbsp; ${
+                dummyData?.formData?.authorised_signatory_name
+              }</p>
+              <p>Designation : ${dummyData?.formData?.designation}</p>
               <p>&nbsp;</p>
             </td>
             <td width="328">

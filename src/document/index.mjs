@@ -1541,7 +1541,7 @@ const pdfTemplate = (
         />
       </p>
       <p>&nbsp;</p>
-      <p><strong>THIS AGREEMENT is made on the day</strong></p>
+      <p style="text-align:center;"><strong>THIS AGREEMENT is made on the day</strong></p>
       <p>
         <strong>BETWEEN: Thriwe Consulting FZ LLC</strong> with its registered
         address at&nbsp; ________________ (hereinafter referred to as
@@ -1557,7 +1557,12 @@ const pdfTemplate = (
       </p>
       <p><strong>&nbsp;</strong></p>
       <p><strong>Select the one which is applicable:</strong></p>
-      <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; OFFERS for Thriwe clients</strong></p>
+       <label class="checkbox-inline" style="box-sizing: border-box;display: inline-block;margin-right: 15px;">
+           <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+             dummyData?.formData?.mou_type != "Voucher" ? "checked" : ""
+           }>&nbsp;
+      <strong> OFFERS for Thriwe clients</strong>
+      </label>
       <p><strong>WHEREAS</strong>:</p>
       <ol>
         <li>
@@ -1673,9 +1678,26 @@ const pdfTemplate = (
         </li>
       </ul>
       <p>&nbsp;</p>
-      <p>Thriwe Clients&rsquo;</p>
+      <p>Thriwe Clients&rsquo;<strong><u> customers/</u></strong>&nbsp; Cardholders<strong>hereby undertakes the following:</strong>  </p>
+      <ul>
+        <li>
+          Communicate the offer on Dubai Islamic Bank/ Emirates Islamic Bank Cardholders website
+        </li>
+        <li>
+         Internal broadcast to the staff
+        </li>
+        <li>
+        Communicate the offer through Website, Deals App, Social, Emailers
+        </li>
+      </ul>
       <p><strong>&nbsp;</strong></p>
-      <p><strong>Acceptance of Thriwe Vouchers at Merchant outlets.</strong></p>
+      <label class="checkbox-inline" style="box-sizing: border-box;display: inline-block;margin-right: 15px;">
+           <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+             dummyData?.formData?.mou_type != "Offer" ? "checked" : ""
+           }>&nbsp;
+      
+      <strong>Acceptance of Thriwe Vouchers at Merchant outlets</strong>
+      </label>
       <p><strong>WHEREAS</strong>:</p>
       <ol>
         <li>
@@ -1771,7 +1793,7 @@ const pdfTemplate = (
       </ol>
       <p>
         Voucher value = Voucher value - Commission (Excluding taxes. For example
-        - e.g.: 500 - 50 (10% commission) = Rs.450.&nbsp;
+        - e.g.:AED 500 - 50 (10% commission) = AED 450.&nbsp;
       </p>
       <p>&nbsp;</p>
       <ul>

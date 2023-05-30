@@ -70,6 +70,9 @@ sign the MOU.</p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
         <p> Date of Signing: ${today} </p>
+        <p> Agreement: <a href="${
+          agreement ? agreement : ""
+        }">View Agreement</a> </p>
         <p> Authorised Signatory: ${authName} </p>
         <p>Thanks, </p>
         <p>Team Thriwe </p>
@@ -83,6 +86,9 @@ sign the MOU.</p>
         <p> Merchant Name: ${merchantName} </p>
         <p> Brand Name: ${brandName} </p>
         <p> Date of Signing: ${today} </p>
+        <p> Agreement: <a href="${
+          agreement ? agreement : ""
+        }">View Agreement</a> </p>
         <p> Authorised Signatory: ${authName} </p>
         <p>Thanks, </p>
         <p>Team Thriwe </p>
@@ -216,6 +222,9 @@ sign the MOU.</p>
          <p> Brand Name: ${brandName} </p>
          <p> Date of Submission: ${today} </p>
          <p> Authorised Signatory: ${authName} </p>
+         <p> Agreement: <a href="${
+           agreement ? agreement : ""
+         }">View Agreement</a> </p>
          <p>We will send communication post signing of agreement.</p>
          <p>Thanks, </p>
          <p>Team Thriwe </p>
@@ -227,6 +236,9 @@ sign the MOU.</p>
          <p> Merchant Name: ${merchantName} </p>
          <p> Brand Name: ${brandName} </p>
          <p> Date of Signing: ${today} </p>
+         <p> Agreement: <a href="${
+           agreement ? agreement : ""
+         }">View Agreement</a> </p>
          <p> Authorised Signatory: ${authName} </p>
          <p>Thanks, </p>
          <p>Team Thriwe </p>
@@ -256,6 +268,9 @@ sign the MOU.</p>
          <p> Brand Name: ${brandName} </p>
          <p> Date of Submission: ${today} </p>
          <p> Authorised Signatory: ${authName} </p>
+        <p> Agreement: <a href="${
+          agreement ? agreement : ""
+        }">View Agreement</a> </p>
          <p>You will be notified once Merchant signs the agreement.</p>
          <p>Thanks, </p>
          <p>Team Thriwe </p>
@@ -267,6 +282,9 @@ sign the MOU.</p>
          <p> Merchant Name: ${merchantName} </p>
          <p> Brand Name: ${brandName} </p>
          <p> Date of Signing: ${today} </p>
+         <p> Agreement: <a href="${
+              agreement ? agreement : ""
+            }">View Agreement</a> </p>
          <p> Authorised Signatory: ${authName} </p>
          <p>Thanks, </p>
          <p>Team Thriwe </p>

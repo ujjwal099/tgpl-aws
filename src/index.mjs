@@ -59,12 +59,45 @@ const createPdf = async (
       ignoreHTTPSErrors: true,
     });
     const tab = await browser.newPage();
-    await tab.setContent(htmlString);
+    await tab.setContent(htmlString, { waitUntil: "networkidle0" });
     if (templateType == 1) await tab.setViewport({ width: 612, height: 792 });
     else await tab.setViewport({ width: 612, height: 792 });
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
+
+    if (textSignature) {
+      const totalPages = await tab.evaluate(() => {
+        const pageCountContainer = document.querySelector(".page-count");
+        return parseInt(pageCountContainer.textContent);
+      });
+
+      // Add signature to each page
+      for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+        // Go to the specific page
+        await tab.evaluate((pageNumber) => {
+          const goToPageInput = document.querySelector(".go-to-page");
+          goToPageInput.value = pageNumber;
+          const goToPageButton = document.querySelector(".go-to-page-button");
+          goToPageButton.click();
+        }, pageNumber);
+
+        // Wait for the page to render
+        await tab.waitForTimeout(1000); // Adjust the timeout if needed
+
+        // Add the signature image to the page
+        await tab.evaluate((textSignature) => {
+          const img = new Image();
+          img.src = textSignature;
+          img.style.position = "absolute";
+          img.style.top = "10px"; // Adjust the position of the signature
+          img.style.left = "10px"; // Adjust the position of the signature
+          img.style.width = "100px"; // Adjust the size of the signature
+          img.style.height = "50px"; // Adjust the size of the signature
+          document.body.appendChild(img);
+        }, textSignature);
+      }
+    }
     let arr;
     if (templateType == 1) {
       arr = await tab.pdf({

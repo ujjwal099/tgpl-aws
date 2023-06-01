@@ -69,6 +69,7 @@ const createPdf = async (
     if (textSignature) {
       const totalPages = await tab.evaluate(() => {
         const pageCountContainer = document.querySelector(".page-count");
+        console.log("pageCountContainer", pageCountContainer.textContent);
         return parseInt(pageCountContainer.textContent);
       });
 

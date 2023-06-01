@@ -65,7 +65,7 @@ const createPdf = async (
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
-    await page.evaluate(() => {
+    await tab.evaluate(() => {
       const totalPages = document.querySelectorAll(".page").length;
       const footer = document.createElement("footer");
       const pageNumberImg = document.createElement("img");

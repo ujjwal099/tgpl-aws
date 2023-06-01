@@ -65,28 +65,15 @@ const createPdf = async (
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
-    await tab.evaluate(() => {
-      const totalPages = document.querySelectorAll(".page").length;
-      console.log("Total Pages", totalPages);
-      const footer = document.createElement("footer");
-      footer.textContent = `Page 1 of ${totalPages}`;
-      document.body.appendChild(footer);
-    });
     let arr;
     if (templateType == 1) {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate:
-          '<footer id="footer-template" style="width: 100%; text-align: center;"></footer>',
         margin: { top: 60, right: 72, bottom: 60, left: 72 },
       });
     } else {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate:
-          '<footer id="footer-template" style="width: 100%; text-align: center;"></footer>',
         margin: { top: 40, right: 72, bottom: 40, left: 72 },
       });
     }

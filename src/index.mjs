@@ -79,12 +79,17 @@ const createPdf = async (
       // Add signature to each page
       for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
         // Go to the specific page
-        await tab.evaluate((pageNumber) => {
-          const goToPageInput = document.querySelector(".go-to-page");
-          goToPageInput.value = pageNumber;
-          const goToPageButton = document.querySelector(".go-to-page-button");
-          goToPageButton.click();
-        }, pageNumber);
+        const goToPageInput = await tab.$(".go-to-page");
+        const goToPageButton = await tab.$(".go-to-page-button");
+        if (goToPageInput && goToPageButton) {
+          await goToPageInput.type(pageNumber.toString());
+          await goToPageButton.click();
+        } else {
+          console.error(
+            `Elements for page navigation not found on page ${pageNumber}. Skipping signature for this page.`
+          );
+          continue;
+        }
 
         // Wait for the page to render
         await tab.waitForTimeout(1000); // Adjust the timeout if needed

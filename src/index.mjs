@@ -67,13 +67,11 @@ const createPdf = async (
     });
     await tab.evaluate(() => {
       const totalPages = document.querySelectorAll(".page").length;
+      console.log("Total Pages", totalPages);
       const footer = document.createElement("footer");
-      const pageNumberImg = document.createElement("img");
-      pageNumberImg.src = "path_to_your_image.png"; // Replace with the path to your image
-      footer.appendChild(pageNumberImg);
+      footer.textContent = `Page 1 of ${totalPages}`;
       document.body.appendChild(footer);
     });
-
     let arr;
     if (templateType == 1) {
       arr = await tab.pdf({

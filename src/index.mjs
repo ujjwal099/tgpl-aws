@@ -59,7 +59,23 @@ const createPdf = async (
       ignoreHTTPSErrors: true,
     });
     const tab = await browser.newPage();
-    await tab.setContent(htmlString);
+    await tab.setContent(`<style>
+      @page {
+        counter-increment: page;
+      }
+      body::after {
+        content: counter(page);
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background-image: url('path_to_your_image.png'); /* Replace with the path to your image */
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+    ${htmlString}`);
     if (templateType == 1) await tab.setViewport({ width: 612, height: 792 });
     else await tab.setViewport({ width: 612, height: 792 });
     await tab.addStyleTag({

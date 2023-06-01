@@ -59,63 +59,36 @@ const createPdf = async (
       ignoreHTTPSErrors: true,
     });
     const tab = await browser.newPage();
-    await tab.setContent(htmlString, { waitUntil: "networkidle0" });
+    await tab.setContent(htmlString);
     if (templateType == 1) await tab.setViewport({ width: 612, height: 792 });
     else await tab.setViewport({ width: 612, height: 792 });
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
+    await page.evaluate(() => {
+      const totalPages = document.querySelectorAll(".page").length;
+      const footer = document.createElement("footer");
+      const pageNumberImg = document.createElement("img");
+      pageNumberImg.src = "path_to_your_image.png"; // Replace with the path to your image
+      footer.appendChild(pageNumberImg);
+      document.body.appendChild(footer);
+    });
 
-    if (textSignature) {
-      let totalPages = 1; // Default to 1 if page count is not available
-      const pageCountElement = await tab.$(".page-count");
-      if (pageCountElement) {
-        const pageCountText = await tab.evaluate(
-          (element) => element.textContent,
-          pageCountElement
-        );
-        totalPages = parseInt(pageCountText) || 1;
-      }
-      // Add signature to each page
-      for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
-        // Go to the specific page
-        const goToPageInput = await tab.$(".go-to-page");
-        const goToPageButton = await tab.$(".go-to-page-button");
-        if (goToPageInput && goToPageButton) {
-          await goToPageInput.type(pageNumber.toString());
-          await goToPageButton.click();
-        } else {
-          console.error(
-            `Elements for page navigation not found on page ${pageNumber}. Skipping signature for this page.`
-          );
-          continue;
-        }
-
-        // Wait for the page to render
-        await tab.waitForTimeout(1000); // Adjust the timeout if needed
-
-        // Add the signature image to the page
-        await tab.evaluate((textSignature) => {
-          const img = new Image();
-          img.src = textSignature;
-          img.style.position = "absolute";
-          img.style.top = "10px"; // Adjust the position of the signature
-          img.style.left = "10px"; // Adjust the position of the signature
-          img.style.width = "100px"; // Adjust the size of the signature
-          img.style.height = "50px"; // Adjust the size of the signature
-          document.body.appendChild(img);
-        }, textSignature);
-      }
-    }
     let arr;
     if (templateType == 1) {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
+        footerTemplate:
+          '<footer id="footer-template" style="width: 100%; text-align: center;"></footer>',
         margin: { top: 60, right: 72, bottom: 60, left: 72 },
       });
     } else {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
+        footerTemplate:
+          '<footer id="footer-template" style="width: 100%; text-align: center;"></footer>',
         margin: { top: 40, right: 72, bottom: 40, left: 72 },
       });
     }

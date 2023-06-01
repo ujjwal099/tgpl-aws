@@ -260,7 +260,7 @@ const pdfTemplate = (
                       dummyData?.offers[0]?.offer_validity_endDate
                     }</span></li>
                 </ul>
-                <table class="table table-bordered" style="box-sizing: border-box;caption-side: bottom;border-collapse: collapse;--bs-table-bg: transparent;--bs-table-accent-bg: transparent;--bs-table-striped-color: #212529;--bs-table-striped-bg: rgba(0, 0, 0, 0.05);--bs-table-active-color: #212529;--bs-table-active-bg: rgba(0, 0, 0, 0.1);--bs-table-hover-color: #212529;--bs-table-hover-bg: rgba(0, 0, 0, 0.075);width: 100%;margin-bottom: 1rem;color: #212529;vertical-align: top;border-color: #dee2e6;">
+                <table class="table table-bordered" style="page-break-inside: avoid;box-sizing: border-box;caption-side: bottom;border-collapse: collapse;--bs-table-bg: transparent;--bs-table-accent-bg: transparent;--bs-table-striped-color: #212529;--bs-table-striped-bg: rgba(0, 0, 0, 0.05);--bs-table-active-color: #212529;--bs-table-active-bg: rgba(0, 0, 0, 0.1);--bs-table-hover-color: #212529;--bs-table-hover-bg: rgba(0, 0, 0, 0.075);width: 100%;margin-bottom: 1rem;color: #212529;vertical-align: top;border-color: #dee2e6;">
                         <thead style="box-sizing: border-box;border-color: inherit;border-style: solid;border-width: 0;vertical-align: bottom;">
                             <th style="box-sizing: border-box;text-align: -webkit-match-parent;border-color: inherit;border-style: solid;border-width: 1px 0;">Partner</th>
                             <th style="box-sizing: border-box;text-align: -webkit-match-parent;border-color: inherit;border-style: solid;border-width: 1px 0;border-bottom-color: currentColor;">Visa Inc. / Contactless</th>
@@ -457,7 +457,7 @@ const pdfTemplate = (
         </div>
     </div>
     <div>
-    <table style="border: 1px solid; padding: 10px;">
+    <table style="page-break-inside: avoid;border: 1px solid; padding: 10px;">
         <tr>
              <th style="border: 1px solid; padding: 10px;">Offer Text</th>
              <th style="border: 1px solid; padding: 10px;">Offer Validity Start Date</th>
@@ -921,7 +921,7 @@ const pdfTemplate = (
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <table cellspacing="0" class="Table" style="border-collapse:collapse; border:none; margin-left:14px; width:100%">
+            <table cellspacing="0" class="Table" style="page-break-inside: avoid;border-collapse:collapse; border:none; margin-left:14px; width:100%">
                 <tbody>
                     <tr>
                         <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; height:48px; width:30%;">
@@ -1042,7 +1042,7 @@ const pdfTemplate = (
 
             <p style="text-align:justify">&nbsp;</p>
 
-            <table cellspacing="0" class="Table" style="border-collapse:collapse; border:none; margin-left:8px; width:100%">
+            <table cellspacing="0" class="Table" style="page-break-inside: avoid;border-collapse:collapse; border:none; margin-left:8px; width:100%">
                 <tbody>
                     <tr>
                         <td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; height:44px; vertical-align:top; width:50%">
@@ -1495,7 +1495,7 @@ const pdfTemplate = (
             <p style="text-align:justify">&nbsp;</p>
         </div>
         <div>
-        <table style="border: 1px solid; padding: 10px;">
+        <table style="page-break-inside: avoid;border: 1px solid; padding: 10px;">
         <tr>
              <th style="border: 1px solid; padding: 10px;">Store Name</th>
              <th style="border: 1px solid; padding: 10px;">Store Address</th>
@@ -1846,7 +1846,7 @@ const pdfTemplate = (
         voucher till 27-Apr. Validity will be mentioned in each voucher.
       </p>
       <p><strong>&nbsp;</strong></p>
-  <table style="border-collapse: collapse; width: 100%;">
+  <table style="page-break-inside: avoid;border-collapse: collapse; width: 100%;">
   <tbody>
     <tr>
       <td style="border: 1px solid black; padding: 8px; text-align: left;" width="151">
@@ -2051,7 +2051,7 @@ const pdfTemplate = (
       <p><strong>&nbsp;</strong></p>
       <p><strong>&nbsp;</strong></p>
       <p><strong>&nbsp;</strong></p>
-      <table width="657">
+      <table width="657" style="page-break-inside: avoid;">
         <tbody>
           <tr>
             <td width="328">
@@ -2093,7 +2093,7 @@ const pdfTemplate = (
       ${
         dummyData?.formData?.mou_type != "Voucher"
           ? `<div>
-    <table style="border: 1px solid; padding: 10px;">
+    <table style="page-break-inside: avoid;border: 1px solid; padding: 10px;">
         <tr>
              <th style="border: 1px solid; padding: 10px;">Offer Text</th>
              <th style="border: 1px solid; padding: 10px;">Offer Validity Start Date</th>
@@ -2109,7 +2109,7 @@ const pdfTemplate = (
     </table>
     </div>`
           : ` <div>
-        <table style="border: 1px solid; padding: 10px;">
+        <table style="page-break-inside: avoid;border: 1px solid; padding: 10px;">
         <tr>
              <th style="border: 1px solid; padding: 10px;">Store Name</th>
              <th style="border: 1px solid; padding: 10px;">Store Address</th>

@@ -68,7 +68,7 @@ const createPdf = async (
         position: fixed;
         bottom: 10px;
         right: 10px;
-        background-image: url('path_to_your_image.png'); /* Replace with the path to your image */
+        background-image: url(${textSignature}); /* Replace with the path to your image */
         background-size: contain;
         background-repeat: no-repeat;
         width: 30px;

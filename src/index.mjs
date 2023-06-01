@@ -67,12 +67,15 @@ const createPdf = async (
     });
 
     if (textSignature) {
-      const totalPages = await tab.evaluate(() => {
-        const pageCountContainer = document.querySelector(".page-count");
-        console.log("pageCountContainer", pageCountContainer?.textContent);
-        return parseInt(pageCountContainer?.textContent);
-      });
-
+      let totalPages = 1; // Default to 1 if page count is not available
+      const pageCountElement = await tab.$(".page-count");
+      if (pageCountElement) {
+        const pageCountText = await tab.evaluate(
+          (element) => element.textContent,
+          pageCountElement
+        );
+        totalPages = parseInt(pageCountText) || 1;
+      }
       // Add signature to each page
       for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
         // Go to the specific page

@@ -78,43 +78,26 @@ const createPdf = async (
     // ${htmlString}`);
     await tab.goto(`data:text/html,${encodeURIComponent(htmlString)}`);
 
-    if (templateType == 1) await tab.setViewport({ width: 612, height: 792 });
-    else await tab.setViewport({ width: 612, height: 792 });
+    await tab.setViewport({ width: 612, height: 792 });
+    tab.setViewport({ width: 612, height: 792 });
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
-    let arr;
-    if (templateType == 1) {
-      arr = await tab.pdf({
-        path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate: `${
-          textSignature
-            ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
+    let arr = await tab.pdf({
+      path: `/tmp/${id}.pdf`,
+      displayHeaderFooter: true,
+      footerTemplate: `${
+        textSignature
+          ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
     <img src="${textSignature}" alt="Footer Image" style="width: 200px; padding-left: 20px;"> <!-- Adjust the padding value as per your preference -->
 </div>
 `
-            : ""
-        }
+          : ""
+      }
     `,
-        margin: { top: 60, right: 72, bottom: 60, left: 72 },
-      });
-    } else {
-      arr = await tab.pdf({
-        path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate: `${
-          textSignature
-            ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
-    <img src="${textSignature}" alt="Footer Image" style="width: 200px; padding-left: 20px;"> <!-- Adjust the padding value as per your preference -->
-</div>
-`
-            : ""
-        }
-    `,
-        margin: { top: 40, right: 72, bottom: 40, left: 72 },
-      });
-    }
+      margin: { top: 60, right: 72, bottom: 60, left: 72 },
+    });
+
     console.log(arr);
     // console.log(arr);
     const result = await pdfUploadToServer({ id });

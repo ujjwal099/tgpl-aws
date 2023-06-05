@@ -98,7 +98,7 @@ const createPdf = async (
         : ""
     }
 `,
-      margin: { top: 60, right: 72, bottom: 120, left: 72 },
+      margin: { top: 60, right: 72, bottom: 100, left: 72 },
     });
 
     console.log(arr);

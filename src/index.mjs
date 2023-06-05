@@ -59,23 +59,25 @@ const createPdf = async (
       ignoreHTTPSErrors: true,
     });
     const tab = await browser.newPage();
-    await tab.setContent(`<style>
-      @page {
-        counter-increment: page;
-      }
-      body::after {
-        content: counter(page);
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        background-image: url(${textSignature}); /* Replace with the path to your image */
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 30px;
-        height: 30px;
-      }
-    </style>
-    ${htmlString}`);
+    // await tab.setContent(`<style>
+    //   @page {
+    //     counter-increment: page;
+    //   }
+    //   body::after {
+    //     content: counter(page);
+    //     position: fixed;
+    //     bottom: 10px;
+    //     right: 10px;
+    //     background-image: url(${textSignature}); /* Replace with the path to your image */
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    //     width: 30px;
+    //     height: 30px;
+    //   }
+    // </style>
+    // ${htmlString}`);
+    await page.goto(`data:text/html,${encodeURIComponent(htmlString)}`);
+
     if (templateType == 1) await tab.setViewport({ width: 612, height: 792 });
     else await tab.setViewport({ width: 612, height: 792 });
     await tab.addStyleTag({
@@ -85,11 +87,23 @@ const createPdf = async (
     if (templateType == 1) {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
+        footerTemplate: `
+      <div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
+        <img src="${textSignature}" alt="Footer Image" style="width: 200px;"> <!-- Replace with the path to your footer image -->
+      </div>
+    `,
         margin: { top: 60, right: 72, bottom: 60, left: 72 },
       });
     } else {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
+        footerTemplate: `
+      <div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
+        <img src="${textSignature}" alt="Footer Image" style="width: 200px;"> <!-- Replace with the path to your footer image -->
+      </div>
+    `,
         margin: { top: 40, right: 72, bottom: 40, left: 72 },
       });
     }

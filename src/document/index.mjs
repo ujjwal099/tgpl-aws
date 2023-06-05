@@ -122,6 +122,7 @@ const pdfTemplate = (
                         }</span> to allow 'Bank's' tagging under all
                             its outlets listed on Rating Sites.</p>
                         </li>
+                        <img src="${textSignature}" alt="">
                         <li style="box-sizing: border-box;margin-bottom: 10px;"><strong style="box-sizing: border-box;font-weight: bolder;"><u style="box-sizing: border-box;">Data Protection:</u></strong>
                         <ul class="alpha" style="box-sizing: border-box;padding-left: 2rem;margin-top: 0;margin-bottom: 0;list-style-type: lower-alpha;">
                             <li style="box-sizing: border-box;margin-bottom: 10px;">

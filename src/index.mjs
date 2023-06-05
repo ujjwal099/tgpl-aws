@@ -92,13 +92,13 @@ const createPdf = async (
       textSignature
         ? `
     <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
-        <img src="${textSignature}" alt="Footer Image" style="max-width: 100%;">
+        <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 50px;">
     </div>
     `
         : ""
     }
 `,
-      margin: { top: 60, right: 72, bottom: 60, left: 72 },
+      margin: { top: 60, right: 72, bottom: 72, left: 72 },
     });
 
     console.log(arr);

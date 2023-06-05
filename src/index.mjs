@@ -87,22 +87,26 @@ const createPdf = async (
     if (templateType == 1) {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate: `
-      <div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
+        footerTemplate: `${
+          textSignature
+            ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
         <img src="${textSignature}" alt="Footer Image" style="width: 200px;"> <!-- Replace with the path to your footer image -->
-      </div>
+      </div>`
+            : ""
+        }
     `,
         margin: { top: 60, right: 72, bottom: 60, left: 72 },
       });
     } else {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate: `
-      <div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
+        footerTemplate: `${
+          textSignature
+            ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
         <img src="${textSignature}" alt="Footer Image" style="width: 200px;"> <!-- Replace with the path to your footer image -->
-      </div>
+      </div>`
+            : ""
+        }
     `,
         margin: { top: 40, right: 72, bottom: 40, left: 72 },
       });

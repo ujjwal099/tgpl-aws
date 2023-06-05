@@ -87,6 +87,7 @@ const createPdf = async (
     if (templateType == 1) {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
         footerTemplate: `${
           textSignature
             ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
@@ -100,6 +101,7 @@ const createPdf = async (
     } else {
       arr = await tab.pdf({
         path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
         footerTemplate: `${
           textSignature
             ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">

@@ -89,7 +89,7 @@ const createPdf = async (
       footerTemplate: `${
         textSignature
           ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center;">
-    <img src="${textSignature}" alt="Footer Image" style="width: 200px; padding-left: 20px;"> <!-- Adjust the padding value as per your preference -->
+    <img src="${textSignature}" alt="Footer Image" style="width: 200px; padding-left: 30px; margin-left: 10px;"> <!-- Adjust the padding and margin values as per your preference -->
 </div>
 `
           : ""

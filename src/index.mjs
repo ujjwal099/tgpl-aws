@@ -83,19 +83,21 @@ const createPdf = async (
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
-    
+
     let arr = await tab.pdf({
       path: `/tmp/${id}.pdf`,
       displayHeaderFooter: true,
-      footerTemplate: `${
-        textSignature
-          ? `<div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px;margin-top: 30px;">
-    <img src="${textSignature}" alt="Footer Image" style="width: 200px; padding-left: 50px;"> <!-- Adjust the padding value as per your preference -->
-</div>
-`
-          : ""
-      }
-    `,
+      footerTemplate: `
+    ${
+      textSignature
+        ? `
+    <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
+        <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 50px;">
+    </div>
+    `
+        : ""
+    }
+`,
       margin: { top: 60, right: 72, bottom: 60, left: 72 },
     });
 

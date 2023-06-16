@@ -6,6 +6,10 @@ import { fileURLToPath } from "url";
 import sendMail from "./src/sendMail.mjs";
 import "dotenv/config";
 import sendOtp from "./src/sendOtp.mjs";
+import {
+  approvedMailBySales,
+  rejectMailBySales,
+} from "./src/SalesConfirmMail.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -46,6 +50,8 @@ export const handler = async (event) => {
     signedAgreement,
     mail,
     countryCode,
+    rejectedMail,
+    approvedMail,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
@@ -76,6 +82,30 @@ export const handler = async (event) => {
       mailChange
     );
     // console.log(noremail);
+    const response = {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PUT",
+      },
+      body: `Mail send successfully`,
+    };
+    return response;
+  } else if (approvedMail) {
+    await approvedMailBySales(approvedMail);
+    const response = {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PUT",
+      },
+      body: `Mail send successfully`,
+    };
+    return response;
+  } else if (rejectedMail) {
+    await rejectMailBySales(rejectedMail);
     const response = {
       statusCode: 200,
       headers: {

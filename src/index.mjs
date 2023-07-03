@@ -158,7 +158,7 @@ export const resetPassword = async (mail) => {
         html: `
       <p style="color: #555555; margin-bottom: 10px;">Dear User,</p>
       <p style="color: #555555; margin-bottom: 20px;">Your password has been successfully reset.</p>
-      <p style="color: #555555; margin-bottom: 20px;">Your new password is: <strong>{{password}}</strong></p>`,
+      <p style="color: #555555; margin-bottom: 20px;">Your new password is: <strong>${password}</strong></p>`,
       };
       await sendMailPromise(options);
       return "Reset Password Successful";

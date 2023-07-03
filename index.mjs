@@ -1,4 +1,4 @@
-import createPdf from "./src/index.mjs";
+import createPdf, { resetPassword } from "./src/index.mjs";
 import fs from "fs";
 import axios from "axios";
 import path from "path";
@@ -52,6 +52,7 @@ export const handler = async (event) => {
     countryCode,
     rejectedMail,
     approvedMail,
+    authorizedSignatoryMail,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
@@ -114,6 +115,18 @@ export const handler = async (event) => {
         "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PUT",
       },
       body: `Mail send successfully`,
+    };
+    return response;
+  } else if (authorizedSignatoryMail) {
+    const resetPasswordMessage = await resetPassword(authorizedSignatoryMail);
+    const response = {
+      statusCode: 200,
+      body: JSON.stringify(resetPasswordMessage),
+      headers: {
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS,POST",
+      },
     };
     return response;
   } else {

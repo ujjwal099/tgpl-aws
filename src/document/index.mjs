@@ -6666,6 +6666,7 @@ const pdfTemplate = (
   } else if (templateType == 2) {
     return htmlString2;
   } else if (templateType == 3) {
+    
     return htmlString3;
   } else {
     return htmlString4;

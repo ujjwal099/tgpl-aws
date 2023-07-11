@@ -2661,7 +2661,7 @@ const pdfTemplate = (
             Merchant)
           </p>
         </td>
-        <td style="width: 238pt">
+        <td style="width: 238pt" xml:lang="ar" lang="ar">
           <p
             class="s6"
             style="
@@ -6666,7 +6666,6 @@ const pdfTemplate = (
   } else if (templateType == 2) {
     return htmlString2;
   } else if (templateType == 3) {
-    
     return htmlString3;
   } else {
     return htmlString4;

@@ -500,7 +500,9 @@
               text-align: left;
             "
           >
-            The Subscribing Vendor as referred to as” jkshbduidbhdu P.O.BOX
+            The Subscribing Vendor as referred to as” ${
+              dummyData?.formData?.merchant_name
+            } P.O.BOX ${dummyData?.formData?.po_box}
             <u>&nbsp;</u>
           </p>
           <p
@@ -526,7 +528,7 @@
             Merchant)
           </p>
         </td>
-        <td style="width: 238pt">
+        <td style="width: 238pt" xml:lang="ar" lang="ar">
           <p
             class="s6"
             style="
@@ -536,7 +538,7 @@
               text-align: left;
             "
           >
-            البائعون المشتركون ويشار إليها بـ&quot;---------- ص ب ---
+            --- ب ص<span class="s8"> </span>&quot;ـب اهيلإ راشيو نوكرتشملا
             <b>نوعئابلا</b>
           </p>
           <p
@@ -592,10 +594,10 @@
               text-align: left;
             "
           >
-            <input type="checkbox" value="" style="box-sizing:
-            border-box;margin: 0;font-family: inherit;font-size:
-            inherit;line-height: inherit;" ${ dummyData?.formData?.mou_type !=
-            "Voucher" ? "checked" : "" }>&nbsp; OFFERS for Thriwe clients
+           <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+             dummyData?.formData?.mou_type != "Voucher" ? "checked" : ""
+           }>&nbsp;
+            OFFERS for Thriwe clients
           </p>
         </td>
         <td style="width: 238pt">
@@ -608,13 +610,9 @@
               text-align: right;
             "
           >
-            يويرث ءلامعل ضورع
-            <span class="s9"
-              ><input type="checkbox" value="" style="box-sizing:
-              border-box;margin: 0;font-family: inherit;font-size:
-              inherit;line-height: inherit;" ${ dummyData?.formData?.mou_type !=
-              "Voucher" ? "checked" : "" }>&nbsp;</span
-            >
+            يويرث ءلامعل ضورع <span class="s9"><input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+              dummyData?.formData?.mou_type != "Voucher" ? "checked" : ""
+            }>&nbsp;</span>
           </p>
         </td>
       </tr>
@@ -645,7 +643,9 @@
                   text-align: justify;
                 "
               >
-                The Merchant owns and runs an outlet by the name of [<u> </u>
+                The Merchant owns and runs an outlet by the name of [${
+                  dummyData?.formData?.brand_name
+                }<u> </u>
               </p>
               <p
                 class="s11"
@@ -782,7 +782,11 @@
               text-align: left;
             "
           >
-            Participating Programs:
+            Participating Programs:  <u>${
+              dummyData?.offers[0]?.program
+                ? dummyData?.offers[0]?.program.join(", ")
+                : ""
+            }</u>
           </p>
           <p
             class="s15"
@@ -854,7 +858,9 @@
               text-align: left;
             "
           >
-            <span class="s17"> </span><span class="s3">“To </span
+            <span class="s17">${
+              dummyData.formData?.brand_name
+            } </span><span class="s3">“To </span
             ><span class="s4">Participating Thriwe</span>
           </p>
           <p
@@ -936,7 +942,11 @@
               text-align: left;
             "
           >
-            Offer
+            Offer:  ${
+              dummyData?.offers[0]?.offer_text
+                ? dummyData?.offers[0]?.offer_text
+                : ""
+            }
           </p>
         </td>
         <td style="width: 223pt">
@@ -964,7 +974,11 @@
               text-align: justify;
             "
           >
-            Validity:
+            Validity: ${
+              dummyData?.offers[0]?.offer_validity_endDate
+                ? dummyData?.offers[0]?.offer_validity_endDate
+                : ""
+            }
             <span class="s4">This agreement shall be in effect from</span>
           </p>
           <p
@@ -1194,7 +1208,7 @@
               text-align: left;
             "
           >
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ${dummyData?.formData?.brand_name}
             <span class="s3">hereby undertakes the following:</span>
           </p>
           <ul id="l3">
@@ -1447,6 +1461,9 @@
               text-align: left;
             "
           >
+           <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+             dummyData?.formData?.mou_type != "Offer" ? "checked" : ""
+           }>&nbsp;
             Acceptance of Thriwe Vouchers at Merchant outlets.
           </p>
         </td>
@@ -1471,7 +1488,9 @@
             class="s9"
             style="padding-left: 1pt; text-indent: 0pt; text-align: left"
           >
-            
+             <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+               dummyData?.formData?.mou_type != "Offer" ? "checked" : ""
+             }>&nbsp;
           </p>
         </td>
       </tr>
@@ -1561,7 +1580,7 @@
             style="padding-left: 22pt; text-indent: 0pt; text-align: left"
           >
             the name of [<u>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              ${dummyData?.formData?.brand_name}
             </u>
           </p>
         </td>
@@ -3589,7 +3608,15 @@
             border-right-width: 1pt;
           "
         >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p style="text-indent: 0pt; text-align: left"><br />${
+            dummyData?.stores[0]?.start_validity_voucher
+              ? dummyData?.stores[0]?.start_validity_voucher
+              : ""
+          } ${dummyData?.stores[0]?.end_validity_voucher ? "&" : ""} ${
+    dummyData?.stores[0]?.end_validity_voucher
+      ? dummyData?.stores[0]?.end_validity_voucher
+      : ""
+  } </p>
         </td>
       </tr>
       <tr style="height: 26pt">
@@ -3637,7 +3664,11 @@
             border-right-width: 1pt;
           "
         >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p style="text-indent: 0pt; text-align: left"><br />${
+            dummyData?.stores[0]?.commission_to_thriwe
+              ? dummyData?.stores[0]?.commission_to_thriwe
+              : ""
+          }</p>
         </td>
       </tr>
       <tr style="height: 35pt">
@@ -3681,7 +3712,11 @@
             border-right-width: 1pt;
           "
         >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p style="text-indent: 0pt; text-align: left"><br />${
+            dummyData?.offers[0]?.offer_text
+              ? dummyData?.offers[0]?.offer_text
+              : ""
+          }</p>
         </td>
       </tr>
     </table>
@@ -3838,7 +3873,11 @@
               text-align: left;
             "
           >
-            Account Holder Name<span class="s34">:: kjdhenjkdbjde</span>
+            Account Holder Name<span class="s34">::&nbsp; ${
+              dummyData?.stores[0]?.merchant_name_written
+                ? dummyData?.stores[0]?.merchant_name_written
+                : ""
+            }</span>
           </p>
         </td>
         <td style="width: 233pt">
@@ -3861,7 +3900,11 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Account Number
+            Account Number: ${
+              dummyData?.stores[0]?.bank_account_number
+                ? dummyData?.stores[0]?.bank_account_number
+                : ""
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -3884,7 +3927,11 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Bank Name
+            Bank Name: ${
+              dummyData?.stores[0]?.bank_name
+                ? dummyData?.stores[0]?.bank_name
+                : ""
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -3907,7 +3954,11 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Branch
+            Branch: ${
+              dummyData?.stores[0]?.branch_name
+                ? dummyData?.stores[0]?.branch_name
+                : ""
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -3930,7 +3981,11 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            IFSC Code
+            IFSC Code : ${
+              dummyData?.stores[0]?.ifsc_code
+                ? dummyData?.stores[0]?.ifsc_code
+                : ""
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -4009,7 +4064,7 @@
               text-align: left;
             "
           >
-            VAT Number
+            VAT Number: ${dummyData?.stores?.vat_number}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4097,7 +4152,7 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Legal Name: kshdiudehiked
+            Legal Name: ${dummyData?.formData?.merchant_name}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4120,7 +4175,7 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Brand Name
+            Brand Name: ${dummyData?.formData?.brand_name}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4143,7 +4198,7 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Address:
+            Address: ${dummyData?.formData?.corporate_address}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4166,7 +4221,11 @@
             class="s26"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Pin Code
+            Pin Code: ${
+              dummyData?.formData?.registered_address_pincode
+                ? dummyData?.formData?.registered_address_pincode
+                : ""
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -4189,7 +4248,7 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Contact number:
+            Contact number: ${dummyData?.formData?.spoc_no}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4212,7 +4271,9 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Name of the Signatory
+            Name of the Signatory: ${
+              dummyData?.formData?.authorised_signatory_name
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -4235,7 +4296,7 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Designation
+            Designation: ${dummyData?.formData?.designation}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4253,7 +4314,11 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Mobile Number:
+            Mobile Number: ${
+              dummyData?.formData?.authorised_signatory_number
+                ? dummyData?.formData?.authorised_signatory_number
+                : ""
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -4271,7 +4336,7 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Email Id:
+            Email Id: ${dummyData?.formData?.authorized_signatory_mail}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4294,7 +4359,9 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            Swipe Machine (Bank name
+            Swipe Machine (Bank name): ${
+              dummyData?.stores[0]?.tidANDMID[0]?.bankMachineName
+            }
           </p>
         </td>
         <td style="width: 233pt">
@@ -4317,7 +4384,7 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            TID #:
+            TID #:  ${dummyData?.stores[0]?.tidANDMID[0]?.tid}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4340,7 +4407,7 @@
             class="s36"
             style="padding-left: 2pt; text-indent: 0pt; text-align: left"
           >
-            MID #:
+            MID #:  ${dummyData?.stores[0]?.tidANDMID[0]?.mid}
           </p>
         </td>
         <td style="width: 233pt">
@@ -4395,7 +4462,8 @@
               text-align: left;
             "
           >
-            Signed by: ……………………………………………………… A duly authorised representative of
+            Signed by: <img src="${textSignature}" alt="">
+            A duly authorised representative of
           </p>
           <p
             class="s27"
@@ -4413,11 +4481,13 @@
               text-align: left;
             "
           >
-           <p style="font-weight: normal;font-size: 13px;">Name</p> 
-           <p>Designation : udhweuidewieudwdeiw</p>  
+           <p style="font-weight: normal;font-size: 13px;">Name: ${
+             dummyData?.formData?.authorised_signatory_name
+           }</p> 
+           <p>Designation : ${dummyData?.formData?.designation}</p>  
           </p>
         </td>
-        <td style="width: 233pt"
+        <td style="width: 233pt">
           <p style="text-indent: 0pt; text-align: left"><br /></p>
           <p
             class="s26"
@@ -4429,13 +4499,13 @@
               text-align: left;
             "
           >
-            Signed by: ……………………………………………………… A duly authorised representative of
+            Signed by: <img src="${textSignature}" alt="">
+            A duly authorised representative of
           </p>
           <p
             class="s27"
             style="padding-left: 7pt; text-indent: 0pt; text-align: left"
           >
-            …………………………………………………..
           </p>
           <p
             class="s26"
@@ -4447,7 +4517,10 @@
               text-align: left;
             "
           >
-            Name: …………………………………………………………… Designation: ……………………………………………………
+           <p style="font-weight: normal;font-size: 13px;">Name : ${
+             dummyData?.formData?.authorised_signatory_name
+           }</p> 
+           <p>Designation :${dummyData?.formData?.designation} </p>  
           </p>
         </td>
       </tr>

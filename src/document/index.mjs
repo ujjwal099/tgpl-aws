@@ -2131,16 +2131,4534 @@ const pdfTemplate = (
   </head>
 </html>
 `;
-  const htmlString4 = `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-</head>
-<body>
-  <h1>مرحبًا بك في صفحة الويب</h1>
-  <p>هذا هو مثال لنص عربي في صفحة HTML.</p>
-  <p>يمكنك استخدام النص العربي في جميع العناصر الأخرى مثل القوائم والجداول والعناصر التفاعلية.</p>
-</body>
+  const htmlString4 = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>file_1689067651082</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        text-indent: 0;
+      }
+      .s1 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s2 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s3 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      .s4 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      .s6 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s7 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s8 {
+        color: black;
+        font-family: "Times New Roman", serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s9 {
+        color: black;
+        font-family: Symbol, serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s10 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 10.5pt;
+      }
+      .s11 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10.5pt;
+      }
+      .s14 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: italic;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12.5pt;
+      }
+      .s15 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 10pt;
+      }
+      .s16 {
+        color: black;
+        font-family: "Times New Roman", serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: underline;
+        font-size: 10pt;
+      }
+      .s17 {
+        color: black;
+        font-family: "Times New Roman", serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      .s18 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 12pt;
+      }
+      .s19 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+        vertical-align: 1pt;
+      }
+      .s20 {
+        color: black;
+        font-family: Symbol, serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s21 {
+        color: black;
+        font-family: "Courier New", monospace;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s22 {
+        color: black;
+        font-family: "Times New Roman", serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s23 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 12pt;
+      }
+      .s24 {
+        color: #212121;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10.5pt;
+      }
+      .s25 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 10.5pt;
+      }
+      .s26 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      .s27 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      .s28 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 9pt;
+      }
+      .s29 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      .s30 {
+        color: black;
+        font-family: Verdana, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      .s31 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+        vertical-align: 3pt;
+      }
+      .s32 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      .s33 {
+        color: black;
+        font-family: "Times New Roman", serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      .s34 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      .s35 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 10pt;
+      }
+      .s36 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 8pt;
+      }
+      .s37 {
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 8pt;
+      }
+      .s38 {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 9pt;
+      }
+      li {
+        display: block;
+      }
+      #l1 {
+        padding-left: 0pt;
+        counter-reset: c1 1;
+      }
+      #l1 > li > *:first-child:before {
+        counter-increment: c1;
+        content: counter(c1, decimal) ". ";
+        color: black;
+        font-family: Calibri, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10.5pt;
+      }
+      #l1 > li:first-child > *:first-child:before {
+        counter-increment: c1 0;
+      }
+      li {
+        display: block;
+      }
+      #l2 {
+        padding-left: 0pt;
+      }
+      #l2 > li > *:first-child:before {
+        content: " ";
+        color: black;
+        font-family: Symbol, serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      li {
+        display: block;
+      }
+      #l3 {
+        padding-left: 0pt;
+      }
+      #l3 > li > *:first-child:before {
+        content: "o ";
+        color: black;
+        font-family: "Courier New", monospace;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      li {
+        display: block;
+      }
+      #l4 {
+        padding-left: 0pt;
+      }
+      #l4 > li > *:first-child:before {
+        content: "o ";
+        color: black;
+        font-family: "Courier New", monospace;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      li {
+        display: block;
+      }
+      #l5 {
+        padding-left: 0pt;
+        counter-reset: g1 1;
+      }
+      #l5 > li > *:first-child:before {
+        counter-increment: g1;
+        content: counter(g1, decimal) ". ";
+        color: black;
+        font-family: Verdana, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 8pt;
+      }
+      #l5 > li:first-child > *:first-child:before {
+        counter-increment: g1 0;
+      }
+      table,
+      tbody {
+        vertical-align: top;
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="padding-left: 23pt; text-indent: 0pt; text-align: left">
+      <span
+        ><table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <img
+                width="111"
+                height="41"
+                src="https://tgpl-crm-api.thriwe.com/parse/files/PROD_APPLICATION_ID/369ab8d05e083f43cd717913d28fcc1d_neba.jpg%20"
+              />
+            </td>
+          </tr></table
+      ></span>
+    </p>
+    <p style="text-indent: 0pt; text-align: left"><br /></p>
+    <p style="text-indent: 0pt; text-align: left"><br /></p>
+    <table style="border-collapse: collapse; margin-left: 7pt" cellspacing="0">
+      <tr style="height: 23pt">
+        <td style="width: 224pt">
+          <p
+            class="s1"
+            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
+          >
+            THIS AGREEMENT is made on the day
+          </p>
+        </td>
+        <td style="width: 238pt">
+          <p
+            class="s2"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            مويلا اذه يف ةيقافتلاا هذه ماربإ مت
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 80pt">
+        <td style="width: 224pt">
+          <p
+            class="s4"
+            style="
+              padding-top: 8pt;
+              padding-left: 3pt;
+              padding-right: 16pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: left;
+            "
+          >
+            <b>BETWEEN: Thriwe Consulting FZ LLC </b>with its registered address
+            at <u>&nbsp;</u> (hereinafter referred to as “First Party/Thriwe”);
+            AND
+          </p>
+        </td>
+        <td style="width: 238pt">
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ،<b>ةدودحملا دز فا تاراشتسلال يويرث : نم لك نيب</b>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ـب دعب اميف اهيلإ راشي ،------- يف لجسملا اهناونعو
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            )&quot;يويرث<span class="s7">/ </span>لولأا فرطلا&quot;(
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            و
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 71pt">
+        <td style="width: 224pt">
+          <p
+            class="s4"
+            style="
+              padding-top: 8pt;
+              padding-left: 3pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            The Subscribing Vendor as referred to as” ${
+              dummyData?.formData?.merchant_name
+            } P.O.BOX ${dummyData?.formData?.po_box}
+            <u>&nbsp;</u>
+          </p>
+          <p
+            class="s4"
+            style="
+              padding-top: 1pt;
+              padding-left: 3pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            (Hereinafter referred to As “Second Party”/
+          </p>
+          <p
+            class="s3"
+            style="
+              padding-top: 1pt;
+              padding-left: 3pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            Merchant)
+          </p>
+        </td>
+        <td style="width: 238pt" xml:lang="ar" lang="ar">
+          <p
+            class="s6"
+            style="
+              padding-top: 7pt;
+              padding-left: 16pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            --- ب ص<span class="s8"> </span>&quot;ـب اهيلإ راشيو نوكرتشملا
+            <b>نوعئابلا</b>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 47pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            &quot; رجاتلا <span class="s7">/</span>يناثلا فرطلا&quot;ـب يلي اميف
+            اهيلإ رلشيو &quot;-
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 30pt">
+        <td style="width: 224pt">
+          <p
+            class="s3"
+            style="
+              padding-top: 8pt;
+              padding-left: 3pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            Select the one which is applicable:
+          </p>
+        </td>
+        <td style="width: 238pt">
+          <p
+            class="s2"
+            style="
+              padding-top: 7pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            :بسنلأا رايتخاب مق
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 40pt">
+        <td style="width: 224pt">
+          <p
+            class="s3"
+            style="
+              padding-top: 7pt;
+              padding-left: 14pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+           <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+             dummyData?.formData?.mou_type != "Voucher" ? "checked" : ""
+           }>&nbsp;
+            OFFERS for Thriwe clients
+          </p>
+        </td>
+        <td style="width: 238pt">
+          <p
+            class="s2"
+            style="
+              padding-top: 7pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            يويرث ءلامعل ضورع <span class="s9"><input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+              dummyData?.formData?.mou_type != "Voucher" ? "checked" : ""
+            }>&nbsp;</span>
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 177pt">
+        <td style="width: 224pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s10"
+            style="
+              padding-top: 5pt;
+              padding-left: 3pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            WHEREAS<span class="s11">:</span>
+          </p>
+          <ol id="l1">
+            <li data-list-text="1.">
+              <p
+                class="s11"
+                style="
+                  padding-top: 7pt;
+                  padding-left: 21pt;
+                  padding-right: 16pt;
+                  text-indent: -18pt;
+                  line-height: 115%;
+                  text-align: justify;
+                "
+              >
+                The Merchant owns and runs an outlet by the name of [${
+                  dummyData?.formData?.brand_name
+                }<u> </u>
+              </p>
+              <p
+                class="s11"
+                style="
+                  padding-left: 21pt;
+                  text-indent: 0pt;
+                  line-height: 13pt;
+                  text-align: justify;
+                "
+              >
+                ] (“<b>Outlet</b>”).
+              </p>
+            </li>
+            <li data-list-text="2.">
+              <p
+                class="s11"
+                style="
+                  padding-top: 1pt;
+                  padding-left: 21pt;
+                  padding-right: 19pt;
+                  text-indent: -18pt;
+                  line-height: 115%;
+                  text-align: justify;
+                "
+              >
+                Thriwe is authorized on behalf of the Thriwe Clients_to enter
+                into this MoU.
+              </p>
+            </li>
+            <li data-list-text="3.">
+              <p
+                class="s11"
+                style="
+                  padding-left: 21pt;
+                  padding-right: 18pt;
+                  text-indent: -18pt;
+                  line-height: 114%;
+                  text-align: justify;
+                "
+              >
+                The Merchant is desirous to offer discount to Customers over and
+                above commission offered to Thriwe (<i>defined hereinafter</i>)
+                on the services provided in its Outlets.
+              </p>
+            </li>
+          </ol>
+        </td>
+        <td style="width: 238pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s2"
+            style="padding-left: 196pt; text-indent: 0pt; text-align: left"
+          >
+            : تايثيحلا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 16pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            )-----------( مساب ذفانم ريديو رجاتلا كلتمي -<span class="s7"
+              >1</span
+            >
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-left: 16pt;
+              padding-right: 3pt;
+              text-indent: 144pt;
+              line-height: 114%;
+              text-align: left;
+            "
+          >
+            )&quot;ذفانملا&quot;( لوخدلل يويرث ءلامع نع ةباين ةضوفم يويرث -<span
+              class="s7"
+              >2</span
+            >
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 117pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            .هذه مهافتلا ةركذم يف
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 16pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            ىلع ةولاع ءلامعلل مصخ حنم يف رجاتلا بغري -<span class="s7">3</span>
+          </p>
+          <p
+            class="s14"
+            style="padding-left: 16pt; text-indent: 0pt; text-align: left"
+          >
+            اميف اهفيرعت دري<span class="s6">( يويرث ىلإ ةحونمملا ةلومعلا</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-left: 49pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            .اهذفانم يف ةرفوتملا تامدخلا ىلع )<span class="s14">يلي</span>
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 57pt">
+        <td style="width: 224pt">
+          <p
+            class="s3"
+            style="
+              padding-top: 8pt;
+              padding-left: 15pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            Participating Programs:  <u>${
+              dummyData?.offers[0]?.program
+                ? dummyData?.offers[0]?.program.join(", ")
+                : ""
+            }</u>
+          </p>
+          <p
+            class="s15"
+            style="
+              padding-top: 1pt;
+              padding-left: 15pt;
+              padding-right: 16pt;
+              text-indent: 2pt;
+              line-height: 113%;
+              text-align: left;
+            "
+          >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,<span class="s3"> </span
+            ><span class="s4">of Dubai, United Arab Emirates</span>
+          </p>
+        </td>
+        <td style="width: 238pt">
+          <p
+            class="s2"
+            style="
+              padding-top: 8pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            :ةكراشملا جمارب
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 6pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ةدحتملا ةيبرعلا تاراملإا ، يبد ،---------------
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 105pt">
+        <td style="width: 224pt">
+          <p
+            class="s3"
+            style="
+              padding-top: 8pt;
+              padding-left: 3pt;
+              padding-right: 18pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            Purpose &amp; Background:
+            <span class="s4"
+              >The purpose of this agreement is to delineate the general areas
+              of responsibility and to provide guidelines for coordination of
+              activities between the two organizations for the ‘Special Offer”
+              made by</span
+            >
+          </p>
+          <p
+            class="s16"
+            style="
+              padding-left: 3pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: left;
+            "
+          >
+            <span class="s17">${
+              dummyData.formData?.brand_name
+            } </span><span class="s3">“To </span
+            ><span class="s4">Participating Thriwe</span>
+          </p>
+          <p
+            class="s4"
+            style="
+              padding-top: 1pt;
+              padding-left: 3pt;
+              text-indent: 0pt;
+              line-height: 11pt;
+              text-align: left;
+            "
+          >
+            Clients.
+          </p>
+        </td>
+        <td style="width: 238pt">
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-left: 16pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            تلااجم ديدحت ىلإ ةيقافتلاا هذه فدهت : <b>ةيفلخلاو فدهلا</b>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 16pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            نيب ةطشنلأا قيسنتل هيجوتلا ريفوتو ةماعلا ةيلوئسملا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 16pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            -<span class="s8"> </span>نم مدقملا &quot;صاخلا ضرعلا&quot; صوصخب
+            نيتسسؤملا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 96pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            .نيكراشملا يويرث ءلامع ىلإ &quot;-----
+          </p>
+        </td>
+      </tr>
+    </table>
+    <p style="text-indent: 0pt; text-align: left" />
+    <p style="text-indent: 0pt; text-align: left" />
+    <table
+      style="border-collapse: collapse; margin-left: 7.524pt"
+      cellspacing="0"
+    >
+      <tr style="height: 14pt">
+        <td style="width: 239pt">
+          <p
+            class="s15"
+            style="
+              padding-left: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: left;
+            "
+          >
+            Offer:  ${
+              dummyData?.offers[0]?.offer_text
+                ? dummyData?.offers[0]?.offer_text
+                : ""
+            }
+          </p>
+        </td>
+        <td style="width: 223pt">
+          <p
+            class="s18"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            ضرعلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 93pt">
+        <td style="width: 239pt">
+          <p
+            class="s3"
+            style="
+              padding-top: 1pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: justify;
+            "
+          >
+            Validity: ${
+              dummyData?.offers[0]?.offer_validity_endDate
+                ? dummyData?.offers[0]?.offer_validity_endDate
+                : ""
+            }
+            <span class="s4">This agreement shall be in effect from</span>
+          </p>
+          <p
+            class="s15"
+            style="
+              padding-top: 1pt;
+              padding-left: 2pt;
+              padding-right: 34pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="s3">till </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="s3">. </span
+            ><span class="s4"
+              >Both parties should give 30 days’ written confirmation to renew
+              or terminate the contract. The termination will be without
+              prejudice to any rights or obligations arising prior to the
+              termination date.</span
+            >
+          </p>
+        </td>
+        <td style="width: 223pt">
+          <p
+            class="s6"
+            style="padding-left: 1pt; text-indent: 0pt; text-align: left"
+          >
+            - ىتح<span class="s8"> </span>نم <span class="s19">ً</span>ارابتعا
+            ةيقافتلاا هذه يرست :<b>نايرسلا</b>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 117%;
+              text-align: right;
+            "
+          >
+            للاخ يطخ ديكأت ميدقت نيفرطلا لاك ىلع نيعتي ،-------للاخإ يأ نود
+            ءاهنلإا نوكي .دقعلا ءاهنإ وأ ديدجتل موي <span class="s7">30</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            . ءاهنلإا خيرات لبق أشنت تامازتلا وأ قوقح يأب
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 157pt">
+        <td style="width: 239pt">
+          <p
+            class="s3"
+            style="
+              padding-top: 7pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: justify;
+            "
+          >
+            Terms &amp; Conditions:
+          </p>
+          <ul id="l2">
+            <li data-list-text="">
+              <p
+                class="s4"
+                style="
+                  padding-top: 2pt;
+                  padding-left: 38pt;
+                  padding-right: 43pt;
+                  text-indent: -18pt;
+                  line-height: 112%;
+                  text-align: justify;
+                "
+              >
+                Offer not valid in conjunction with any other promotions &amp;
+                discounts.
+              </p>
+            </li>
+            <li data-list-text="">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  padding-right: 34pt;
+                  text-indent: -18pt;
+                  line-height: 113%;
+                  text-align: justify;
+                "
+              >
+                Offer to be best offer for Thriwe Clients’
+                <u><b>customers/</b></u
+                >cardholders during the promotion duration.
+              </p>
+            </li>
+            <li data-list-text="">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  padding-right: 38pt;
+                  text-indent: -18pt;
+                  line-height: 113%;
+                  text-align: left;
+                "
+              >
+                Offer are only valid with payment made using a Thriwe Clients’
+                <u><b>customers/</b></u
+                >cardholders credit or Debit Card.
+              </p>
+            </li>
+          </ul>
+        </td>
+        <td style="width: 223pt">
+          <p
+            class="s2"
+            style="
+              padding-top: 7pt;
+              padding-left: 148pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            : ماكحلأاو طورشلا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 1pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            تاضيفخت وأ جيورت يأ عم ضرعلا يرسي لا <span class="s20"></span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 159pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            .ىرخأ
+          </p>
+          <p
+            class="s18"
+            style="
+              padding-top: 1pt;
+              padding-left: 1pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            ءلامعل<span class="s2"> </span
+            ><span class="s6">ضورعلا لضفأ ، ضرعلا لثمي نأ بجي </span
+            ><span class="s20"></span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 28pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            .جيورتلا ةرتف ءانثأ يويرث تاقاطب ةلمح /
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 1pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            ةقاطب مادختساب عفدلا ةلاح يف طقف ضرعلا يرسي
+            <span class="s20"></span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-left: 1pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            وأ نامتئلاا تاقاطب ةلمح /ءلامعلل يويرث نامتئا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 156pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            . لجلآا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 183pt">
+        <td style="width: 239pt">
+          <p
+            class="s15"
+            style="
+              padding-top: 7pt;
+              padding-left: 2pt;
+              padding-right: 42pt;
+              text-indent: 20pt;
+              line-height: 115%;
+              text-align: left;
+            "
+          >
+            ${dummyData?.formData?.brand_name}
+            <span class="s3">hereby undertakes the following:</span>
+          </p>
+          <ul id="l3">
+            <li data-list-text="o">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  padding-right: 37pt;
+                  text-indent: -18pt;
+                  line-height: 113%;
+                  text-align: left;
+                "
+              >
+                Offer to be best offer for Thriwe Clients’
+                <u><b>customers/</b></u
+                ><b> </b>Cardholders during the promotion duration.
+              </p>
+            </li>
+            <li data-list-text="o">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  padding-right: 34pt;
+                  text-indent: -18pt;
+                  line-height: 113%;
+                  text-align: left;
+                "
+              >
+                Thriwe Clients’<u><b> customers/</b></u
+                ><b> </b>Cardholders customers entitled for the offer
+                automatically on presenting their Thriwe Clients’<u
+                  ><b> customers/</b></u
+                ><b> </b>Cardholders Debit or credit card.
+              </p>
+            </li>
+            <li data-list-text="o">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  padding-right: 51pt;
+                  text-indent: -18pt;
+                  line-height: 112%;
+                  text-align: left;
+                "
+              >
+                Ensure that the offer is provided in a professional and diligent
+                manner.
+              </p>
+            </li>
+          </ul>
+        </td>
+        <td style="width: 223pt">
+          <p
+            class="s6"
+            style="
+              padding-top: 7pt;
+              padding-left: 1pt;
+              padding-right: 3pt;
+              text-indent: 45pt;
+              line-height: 111%;
+              text-align: left;
+            "
+          >
+            : يلي امب دهعتلا متي اذهب ----------------ضورعلا لضفأ ، ضرعلا لثمي
+            نأ بجي <span class="s21">o </span>ءانثأ يويرث تاقاطب ةلمح / ءلامع
+            نئابزل
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 1pt;
+              padding-right: 38pt;
+              text-indent: 115pt;
+              line-height: 106%;
+              text-align: left;
+            "
+          >
+            .جيورتلا ةرتف يويرث تاقاطب ةلمح / ءلامع نئابز قحتسي
+            <span class="s21">o </span>زاربإ دنع
+            <span class="s19">ً</span>ايئاقلت ضرعلا ىلع لوصحلا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-left: 1pt;
+              padding-right: 38pt;
+              text-indent: 9pt;
+              line-height: 114%;
+              text-align: left;
+            "
+          >
+            يويرث ءلامع نئابز لجآ / نامتئا تاقاطب ةقيرطب مدقم ضرعلا نوكي نأ نم
+            دكأتلا <span class="s21">o</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 102pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            . ةنقتمو ةيفارتحا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 119pt">
+        <td style="width: 239pt">
+          <p
+            class="s4"
+            style="
+              padding-top: 7pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              line-height: 113%;
+              text-align: left;
+            "
+          >
+            Thriwe Clients’<u><b> customers/</b></u
+            ><b> </b>Cardholders <b>hereby undertakes the following:</b>
+          </p>
+          <ul id="l4">
+            <li data-list-text="o">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  padding-right: 36pt;
+                  text-indent: -18pt;
+                  line-height: 113%;
+                  text-align: left;
+                "
+              >
+                Communicate the offer on Dubai Islamic Bank/ Emirates Islamic
+                Bank Cardholders website
+              </p>
+            </li>
+            <li data-list-text="o">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  text-indent: -18pt;
+                  line-height: 12pt;
+                  text-align: left;
+                "
+              >
+                Internal broadcast to the staff
+              </p>
+            </li>
+            <li data-list-text="o">
+              <p
+                class="s4"
+                style="
+                  padding-left: 38pt;
+                  padding-right: 53pt;
+                  text-indent: -18pt;
+                  line-height: 14pt;
+                  text-align: left;
+                "
+              >
+                Communicate the offer through Website, Deals App, Social,
+                Emailers
+              </p>
+            </li>
+          </ul>
+        </td>
+        <td style="width: 223pt">
+          <p
+            style="
+              padding-top: 7pt;
+              padding-left: 1pt;
+              text-indent: -1pt;
+              line-height: 114%;
+              text-align: left;
+            "
+          >
+            <span class="s22" style="background-color: #e7e6e6"> </span
+            ><span class="s23" style="background-color: #e7e6e6"
+              >: يلي امب يويرث تاقاطب ةلمح \ ءلامع نئابز دهعتي اذهب</span
+            ><span class="s6"> كنب / يملاسلإا يبد كنب عقاوم ىلع ضرعلا رشن </span
+            ><span class="s21">o</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 16pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            .تاقاطبلا ةلمحب صاخلا ،يملاسلإا تاراملإا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 92pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            نيفظوملل يلخادلا ميمعتلا <span class="s21">o</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ،زليد تاقيبطت ،ينورتكللإا عقوملا للاخ نم ضرعلا رشن
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ينورتكللإا ديربلاو ،ةيعامتجلاا
+          </p>
+        </td>
+      </tr>
+    </table>
+    <p style="text-indent: 0pt; text-align: left" />
+    <table
+      style="border-collapse: collapse; margin-left: 5.9pt"
+      cellspacing="0"
+    >
+      <tr style="height: 35pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s3"
+            style="
+              padding-left: 16pt;
+              padding-right: 28pt;
+              text-indent: 0pt;
+              line-height: 115%;
+              text-align: left;
+            "
+          >
+           <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+             dummyData?.formData?.mou_type != "Offer" ? "checked" : ""
+           }>&nbsp;
+            Acceptance of Thriwe Vouchers at Merchant outlets.
+          </p>
+        </td>
+        <td style="width: 193pt">
+          <p
+            class="s2"
+            style="padding-left: 90pt; text-indent: 0pt; text-align: left"
+          >
+            راجتلا ذفانم يف يويرث تادن
+          </p>
+        </td>
+        <td style="width: 35pt">
+          <p
+            class="s2"
+            style="padding-left: 4pt; text-indent: 0pt; text-align: left"
+          >
+            س لوبق
+          </p>
+        </td>
+        <td style="width: 11pt">
+          <p
+            class="s9"
+            style="padding-left: 1pt; text-indent: 0pt; text-align: left"
+          >
+             <input type="checkbox" value="" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;" ${
+               dummyData?.formData?.mou_type != "Offer" ? "checked" : ""
+             }>&nbsp;
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 26pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s10"
+            style="
+              padding-top: 7pt;
+              padding-left: 4pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            WHEREAS<span class="s11">:</span>
+          </p>
+        </td>
+        <td style="width: 239pt" colspan="2" rowspan="11">
+          <p
+            class="s2"
+            style="
+              padding-top: 7pt;
+              padding-left: 197pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            : تايثيحلا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 18pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            )-----------( مساب ذفانم ريديو رجاتلا كلتمي -<span class="s7"
+              >1</span
+            >
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-left: 18pt;
+              padding-right: 16pt;
+              text-indent: 144pt;
+              line-height: 111%;
+              text-align: left;
+            "
+          >
+            )&quot;ذفانملا&quot;( <span class="s14">دري</span>( يويرث ءلامع نع
+            ةباين ةضوفم يويرث -<span class="s7">2 </span>هذه مهافتلا ةركذم يف
+            لوخدلل )<span class="s14">يلي اميف اهفيرعت </span>تادنس جمانرب يف
+            ةكراشملا يف رجاتلا بغري -<span class="s7">3 </span>بسح يويرث ىلإ
+            ةلومعحنم ىلع قفاويو يويرث
+          </p>
+          <p
+            class="s6"
+            style="padding-left: 157pt; text-indent: 0pt; text-align: left"
+          >
+            . دنسلا ةميق
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 18pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-top: 2pt;
+              padding-left: 4pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            1. The Merchant owns and runs an outlet by
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 22pt; text-indent: 0pt; text-align: left"
+          >
+            the name of [<u>
+              ${dummyData?.formData?.brand_name}
+            </u>
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 22pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            ] (“<b>Outlet</b>”).
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 4pt; text-indent: 0pt; text-align: left"
+          >
+            2. Thriwe is authorized on behalf of the
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 22pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            Thriwe Clients (<i>defined hereinafter</i>) to
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 22pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            enter into this MoU.
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 4pt; text-indent: 0pt; text-align: left"
+          >
+            3. The Merchant is desirous to participate in
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 22pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            the Thriwe Voucher Program and agreed to
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 22pt; text-indent: 0pt; text-align: left"
+          >
+            offer commission to Thriwe on voucher
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 29pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 22pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            value
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 54pt">
+        <td style="width: 224pt" colspan="5">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s3"
+            style="
+              padding-left: 4pt;
+              padding-right: 18pt;
+              text-indent: 0pt;
+              line-height: 113%;
+              text-align: left;
+            "
+          >
+            Participating Programs:
+            <span class="s4"
+              >Thriwe Vouchers in Dubai, United Arab Emirates</span
+            >
+          </p>
+        </td>
+        <td style="width: 239pt" colspan="2">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s6"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            تاراملإا ، يبد يف يويرث تادنس :<b>ةكراشملا جماربلا</b>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            . ةدحتملا ةيبرعلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 118pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s10"
+            style="
+              padding-top: 7pt;
+              padding-left: 4pt;
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            TERM AND TERMINATION -
+            <span class="s11"
+              >This MOU shall be valid for the period of 1 year i.e. from date
+              of signing Agreement/MOU. Both the Parties may mutually agree in
+              writing to terminate this MOU anytime during the subsistence of
+              this MOU by providing prior written notice of such termination, of
+              at least 30 days.</span
+            >
+          </p>
+        </td>
+        <td style="width: 239pt" colspan="2">
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-left: 18pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            ،ةنس<span class="s7">1 </span>دمل هذه مهافتلا ةركذم يرست –
+            <b>ءاهنلإاو طورشلا </b>نيفرطلل قحي .مهافتلا ةركذم / ةيقافتلاا عيقوت
+            خيرات نم يأ ءانثأ تقو يأ يف هذه مهافتلا ةركذم ءاهنإ ىلع ةباتك
+            قافتلاا <span class="s7">30 </span>لبق ءاهنلإا كلذب يطخ راعشإ ميدقت
+            للاخ نم اهنايرس
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 181pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: justify;
+            "
+          >
+            .لقلأا ىلع موي
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 34pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s10"
+            style="
+              padding-top: 7pt;
+              padding-left: 4pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            1. OBLIGATIONS OF THE MERCHANT -
+          </p>
+        </td>
+        <td style="width: 239pt" colspan="2">
+          <p
+            class="s2"
+            style="
+              padding-top: 7pt;
+              padding-left: 135pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            : رجاتلا تامازتلا -<span class="s1">1</span>
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 28pt">
+        <td style="width: 224pt" colspan="5">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s11"
+            style="padding-left: 4pt; text-indent: 0pt; text-align: left"
+          >
+            1.1. The Merchant shall be solely responsible
+          </p>
+        </td>
+        <td style="width: 193pt" rowspan="12">
+          <p
+            class="s6"
+            style="
+              padding-top: 11pt;
+              padding-left: 18pt;
+              text-indent: 0pt;
+              text-align: justify;
+            "
+          >
+            ليصوت نع <span class="s19">ً</span>لاوئسم هدحو رجاتلا نوكي
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 18pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            ،ضرعلا عوضوم تامدخلا / تاجتنملا اهتيلباقو ،ضرغلل اهتبسانمو ،اهتنايصو
+            تانامض مدقي امك ،اهتيمكو اهترفوو قيوستلل
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 18pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            .ةرفوملا تامدخلاب ةصاخلا ةيسايقلا تامدخلا سيسأت ةلاح يف يويرث راعشإب
+            رجاتلا مزتلي
+          </p>
+          <p
+            class="s19"
+            style="
+              padding-left: 17pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: justify;
+            "
+          >
+            ً<span class="s6">ايئاقلت دتمم ضرعلا حبصيو ةديدج ذفانم يأ</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ةرتف لاوط ةديدجلا ذفانملا هذه لمشيل
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            .ضرعلا
+          </p>
+        </td>
+        <td style="width: 46pt" rowspan="12">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s7"
+            style="padding-left: 10pt; text-indent: 0pt; text-align: left"
+          >
+            1<span class="s6">-</span>1
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 43pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 25pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            for
+          </p>
+        </td>
+        <td style="width: 24pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 5pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            the
+          </p>
+        </td>
+        <td style="width: 47pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 5pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            delivery,
+          </p>
+        </td>
+        <td style="width: 43pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 5pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            service,
+          </p>
+        </td>
+        <td style="width: 67pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 5pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            suitability,
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 25pt; text-indent: 0pt; text-align: left"
+          >
+            merchantability, availability and quality, of
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 25pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            and with regard to the products/ services
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 25pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            made available to Customers under the
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 25pt; text-indent: 0pt; text-align: left"
+          >
+            Offer and shall offer the standard service
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 25pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            providers warranties in respect of the
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 25pt; text-indent: 0pt; text-align: left"
+          >
+            services provided. The Merchant shall
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 25pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            inform Thriwe in case it starts any new
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 25pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            Outlets and the Offer will get
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="padding-left: 25pt; text-indent: 0pt; text-align: left"
+          >
+            automatically extended to these new
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 13pt">
+        <td style="width: 224pt" colspan="5">
+          <p
+            class="s11"
+            style="
+              padding-left: 25pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: left;
+            "
+          >
+            Outlets for entire Offer Period.
+          </p>
+        </td>
+      </tr>
+    </table>
+    <p style="text-indent: 0pt; text-align: left" />
+    <p style="text-indent: 0pt; text-align: left"><br /></p>
+    <table
+      style="border-collapse: collapse; margin-left: 7.524pt"
+      cellspacing="0"
+    >
+      <tr style="height: 367pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              padding-right: 17pt;
+              text-indent: -21pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            1.2. The Merchant shall further be responsible and liable for
+            all/any disputes, queries, complaints and contentions raised by
+            Customers including but not limited to, delivery, service,
+            suitability, merchantability, availability or quality of the food,
+            products and/or services offered by the Merchant. These disputes,
+            queries, complaints or contentions include disputes raised by the
+            Customers directly to the Merchant or disputes forwarded by the Bank
+            to the Merchant which shall be attended to promptly and be
+            satisfactorily resolved by the Merchant within 48 (forty-eight)
+            hours. In the event the Bank is constrained to compensate the
+            Customer on account of a dispute regarding delivery, service,
+            suitability, merchantability, availability or quality of the
+            Merchant’s food, products and/or services made available to
+            Customers under this Offer, the Merchant shall be obligated to
+            promptly and without demur compensate the Bank on account of the
+            same.
+          </p>
+        </td>
+        <td style="width: 193pt">
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 10pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            تاعازن يأو لك نع ةيلوئسملا رجاتلا لمحتي لمشيو ءلامعلا اهعفري ىواكش
+            وأ ةلءاسم وأ ةبسانملا ،ةنايصلا ، ليصوتلا رصح نود كلذ ةدوجو ةرفوو
+            قيوستلل ةيلباقلا ،ضرغلل ةمدقملا تامدخلا وأ / و تاجتنملاو ةمعطلأا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              line-height: 112%;
+              text-align: justify;
+            "
+          >
+            ،ةلءاسملا ، تاعازنلا هذه .رجاتلا نم نم ةعوفرملا تاعازنلا لمشت
+            ىواكشلاو يتلا تاعازنلا وأ رجاتلا ىلإ ةرشابم ءلامعلا بجي يتلاو رجاتلا
+            ىلإ كنبلا نم اهتلاحإ متي ةيضرم ةروصب اهلح متيو
+            <span class="s19">ً</span>اروف اهب ةيانعلا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 10pt;
+              text-indent: 0pt;
+              line-height: 113%;
+              text-align: justify;
+            "
+          >
+            )نيعبرأو نامث( <span class="s7">48 </span>للاخ رجاتلا لبق نم ليمعلا
+            ضيوعتب مزلم كنبلا ناك اذإ . ةعاس ةبسانملا ةنايص ،ليصوتب قلعتي عازن
+            لباقم
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              line-height: 112%;
+              text-align: justify;
+            "
+          >
+            ، ةمعطأةدوج وأ ةرفوقيوست ةيلباق ،ضرعلل اهريفوت مت يتلا رجاتلا تامدخ
+            وأ / و تاجتنم رجاتلا حبصي ، ضرعلا اذه بجومب ليمعلل يأ نودو
+            <span class="s19">ً</span>اروف كنبلا ضيوعتب مزلم لباقملاب
+          </p>
+          <p
+            class="s6"
+            style="padding-left: 143pt; text-indent: 0pt; text-align: justify"
+          >
+            . ضارتعا
+          </p>
+        </td>
+        <td style="width: 29pt">
+          <p
+            class="s7"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: right;
+            "
+          >
+            1<span class="s6">-</span>2
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 74pt">
+        <td style="width: 222pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              padding-right: 17pt;
+              text-indent: -21pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            1.3. Thriwe shall deploy from time to time promotional material at
+            merchant outlets in the form of Tent cards, Standees.
+          </p>
+        </td>
+        <td style="width: 193pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s6"
+            style="padding-right: 10pt; text-indent: 0pt; text-align: right"
+          >
+            ةيجيورت داوم رخلآ تقو نم يويرث مدختست
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ،تنت تاقاطب لكش يف نوكت رجاتلا ذفانم يف
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            . تادناتسا وأ
+          </p>
+        </td>
+        <td style="width: 29pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s7"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            1<span class="s6">-</span>3
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 78pt">
+        <td style="width: 222pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              padding-right: 17pt;
+              text-indent: -21pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            1.4. The Merchant shall allow the third party appointed by the
+            Thriwe Clients to survey the Marketing Material on a working day and
+            within business hours.
+          </p>
+        </td>
+        <td style="width: 193pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s6"
+            style="
+              padding-left: 10pt;
+              padding-right: 10pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: right;
+            "
+          >
+            نم نيعملا ثلاثلا فرطلل رجاتلا حمسي موي يف قيوستلا داوم ةبقارمب يويرث
+            ءلامع
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-right: 10pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: right;
+            "
+          >
+            . ةيمسرلا ماودلا تاعاس للاخو لمع
+          </p>
+        </td>
+        <td style="width: 29pt">
+          <p
+            class="s7"
+            style="
+              padding-top: 12pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            1<span class="s6">-</span>4
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 65pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-top: 7pt;
+              padding-left: 23pt;
+              padding-right: 17pt;
+              text-indent: -21pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            1.5. The merchant will use platform provided by Thriwe to validate
+            and redeem the vouchers. Payout will only be given for the
+          </p>
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: justify;
+            "
+          >
+            redeemed vouchers.
+          </p>
+        </td>
+        <td style="width: 193pt">
+          <p
+            class="s6"
+            style="
+              padding-top: 7pt;
+              padding-left: 17pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: left;
+            "
+          >
+            اهرفوت يتلا ةصنملا مادختسا رجاتلا ىلع طقف متي .تادنسلا ليصحتو
+            دامتعلا يويرث
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: left;
+            "
+          >
+            .اهليصحتو اهدامتعا مت يتلا تادنسلا فرص
+          </p>
+        </td>
+        <td style="width: 29pt">
+          <p
+            class="s7"
+            style="
+              padding-top: 7pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            1<span class="s6">-</span>5
+          </p>
+        </td>
+      </tr>
+    </table>
+    <p style="text-indent: 0pt; text-align: left"><br /></p>
+    <table
+      style="border-collapse: collapse; margin-left: 7.524pt"
+      cellspacing="0"
+    >
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            1.6. Thriwe will create denomination basis the
+          </p>
+        </td>
+        <td style="width: 193pt" rowspan="5">
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              line-height: 115%;
+              text-align: justify;
+            "
+          >
+            ءلامعل ةلمعلا ديدحت سسأ يويرث عضت مهرد / يأ( ةيسايقلا ةلمعلا مادختسا
+            وأ يويرث مهرد ،<span class="s7">100 </span>يتارامإ مهرد ،<span
+              class="s7"
+              >50 </span
+            >يتارامإ
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: justify;
+            "
+          >
+            مهرد ،<span class="s7">500 </span>يتارامإ مهرد ،<span class="s7"
+              >250 </span
+            >يتارامإ
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            مهرد ،<span class="s7">1000 </span>يتارامإ مهرد ،<span class="s7"
+              >750 </span
+            >يتارامإ
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 9pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            )<span class="s7">2000 </span>يتارامإ
+          </p>
+        </td>
+        <td style="width: 34pt" rowspan="5">
+          <p
+            class="s7"
+            style="
+              padding-left: 9pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: left;
+            "
+          >
+            1<span class="s6">-</span>6
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            requirement of Thriwe Clients or use
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-right: 18pt; text-indent: 0pt; text-align: right"
+          >
+            standard denomination (e.g.: AED 50, AED
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 18pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            100, AED 250, AED 500, AED 750, AED
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 51pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-left: 23pt; text-indent: 0pt; text-align: left"
+          >
+            1000, AED 2000)
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 55pt">
+        <td style="width: 222pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              padding-right: 17pt;
+              text-indent: -21pt;
+              line-height: 113%;
+              text-align: left;
+            "
+          >
+            1.7. Thriwe will share invoice with merchant once every month
+            against the commission.
+          </p>
+        </td>
+        <td style="width: 193pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s6"
+            style="padding-right: 10pt; text-indent: 0pt; text-align: right"
+          >
+            رجاتلا عم ةروتافلا ةكراشمب يويرث موقتس
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-right: 10pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            . ةلومعلا لباقم رهش لك دحاو ةرم
+          </p>
+        </td>
+        <td style="width: 34pt">
+          <p
+            class="s7"
+            style="
+              padding-top: 11pt;
+              padding-left: 9pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            1<span class="s6">-</span>7
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 27pt">
+        <td style="width: 222pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s11"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            1.8. The Merchant shall raise the Bill of
+          </p>
+        </td>
+        <td style="width: 227pt" colspan="2" rowspan="10">
+          <p
+            class="s6"
+            style="
+              padding-top: 12pt;
+              padding-left: 17pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: left;
+            "
+          >
+            ةروتافلا / ديروتلا ةروتاف عفرب رجاتلا موقي
+            <span class="s7">1</span>-<span class="s7">8</span>
+          </p>
+          <p
+            class="s19"
+            style="
+              padding-left: 17pt;
+              padding-right: 26pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: left;
+            "
+          >
+            ً<span class="s6"
+              >اصقان دنسلا ةميق( دنسلا ةميقب ةيبيرضلا رايخلا ليمعلا ىدل نوكي
+              كلذكو . )ةلومعلا</span
+            >
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 26pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: left;
+            "
+          >
+            .رهش لك نع ديروتلا ةروتاف ديحوت يف بسح دنسلا ةميق ديدحت ساسأ نوكيس
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 131pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: left;
+            "
+          >
+            ةيلاتلا ةلداعملا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 58pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            ريغ( ةلومعلا – دنسلا ةميق = دنسلا ةميق
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-left: 58pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            - <span class="s7">500 </span>: لاثملا ليبس ىلع – ةبيرضلا لماش
+          </p>
+          <p
+            class="s7"
+            style="
+              padding-top: 2pt;
+              padding-left: 58pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            450 <span class="s6">= )%</span>10 <span class="s6">ةلومع( </span>50
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            Supply/Tax Invoice
+            <span style="color: #212121">for the value of</span>
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            voucher (Voucher value minus
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            commission). Merchant shall also have an
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            option to raise a consolidated Bill of Supply
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            for each month. The voucher value shall be
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="
+              padding-left: 23pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            determined basis the below formula:
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            Voucher value = Voucher value -
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            Commission (Excluding taxes. For example
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 22pt">
+        <td style="width: 222pt">
+          <p
+            class="s24"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            - e.g.: 500 - 50 (10% commission) = Rs.450.
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 23pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-top: 8pt;
+              padding-right: 17pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            1.9. In addition to that above, the Merchant
+          </p>
+        </td>
+        <td style="width: 193pt" rowspan="4">
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-left: 17pt;
+              padding-right: 10pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: right;
+            "
+          >
+            نأ رجاتلا قفاوي ، هلاعأ درو ام ىلإ ةفاضإ ةلومعلا ىلع ةفاضملا ةميقلا
+            ةبيرض قيبطت
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-right: 10pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: right;
+            "
+          >
+            . يويرث ةطساوب عاديلإاو مصخلا متيو
+          </p>
+        </td>
+        <td style="width: 34pt" rowspan="4">
+          <p
+            class="s7"
+            style="
+              padding-top: 8pt;
+              padding-left: 9pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            1<span class="s6">-</span>9
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            agrees that VAT shall be applicable on
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            commission and the same will be
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 22pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: left;
+            "
+          >
+            deducted by Thriwe and deposited.
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 23pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-top: 8pt;
+              padding-right: 17pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            1.10.Thriwe will transfer funds to merchant
+          </p>
+        </td>
+        <td style="width: 227pt" colspan="2" rowspan="14">
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-left: 17pt;
+              text-indent: 0pt;
+              text-align: justify;
+            "
+          >
+            رجاتلا باسح ىلإ غلبملا ليوحتب يويرث مزتلت
+            <span class="s7">1</span>-<span class="s7">10</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-left: 17pt;
+              padding-right: 43pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            .ةلصحملا تادنسلا نع عوبسأ لك ةدحاو ةرم ينورتكللإا ديربلا قيرط نع
+            يويرث موقتس يذلا يفرصملا باسحلا ليصافتب راعشلإاب ديدحت متي ، يويرث
+            نم هيلإ ليوحتلا يف متيس
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 43pt;
+              text-indent: 30pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            :هاندأ ةلداعملا ساسأ ىلع دنسلا ةميق موي يف امإ غلابملا ليوحتب يويرث
+            موقت كلذب رجاتلا راعشإ متيو سيمخلا وأ ءاثلاثلا
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 43pt;
+              text-indent: 75pt;
+              line-height: 114%;
+              text-align: right;
+            "
+          >
+            . ينورتكللإا ديربلا ربع يضاملا عوبسلأا غلابم ليوحتب يويرث موقت
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-left: 17pt;
+              padding-right: 43pt;
+              text-indent: 41pt;
+              line-height: 114%;
+              text-align: right;
+            "
+          >
+            . اهليصحت مت يتلا تادنسلا لباقم ةلومعلا( – دنسلا ةميق = ةلوحملا
+            غلابملا ميق
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-right: 43pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: right;
+            "
+          >
+            .)ةفاضملا ةميقلا ةبيرض +
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            account once every week for the
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            redeemed voucher. Thriwe will inform via
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            email, the details of bank account in which
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            fund will be transferred by Thriwe.
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            Voucher value shall be determined basis
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-left: 23pt; text-indent: 0pt; text-align: left"
+          >
+            the below formula:
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            Thriwe will transfer funds either Tuesday
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-right: 17pt; text-indent: 0pt; text-align: right"
+          >
+            or Thursday and same will be informed to
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            merchant via email. Thriwe will transfer
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 15pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 13pt;
+              text-align: right;
+            "
+          >
+            last seven days funds against redeemed
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 23pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="padding-left: 23pt; text-indent: 0pt; text-align: left"
+          >
+            voucher.
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 23pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-top: 7pt;
+              padding-right: 17pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            Fund Transfer value = Voucher value –
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 13pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: left;
+            "
+          >
+            (Commission + VAT)
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table
+      style="border-collapse: collapse; margin-left: 7.524pt"
+      cellspacing="0"
+    >
+      <tr style="height: 72pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-left: 23pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: left;
+            "
+          >
+            e.g.: AED 500 is Voucher value and
+          </p>
+          <p
+            class="s11"
+            style="
+              padding-top: 1pt;
+              padding-left: 23pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            commission is 15% payout will be
+          </p>
+          <p
+            class="s11"
+            style="
+              padding-top: 2pt;
+              padding-left: 21pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            AED 500 – (75 + 3.75) = AED 421.25 is the
+          </p>
+          <p
+            class="s11"
+            style="
+              padding-top: 1pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            payout to merchant
+          </p>
+        </td>
+        <td style="width: 240pt">
+          <p
+            class="s6"
+            style="
+              padding-right: 56pt;
+              text-indent: 0pt;
+              line-height: 14pt;
+              text-align: right;
+            "
+          >
+            يتارامإ مهرد <span class="s7">500 </span>دنسلا ةميق :لاثم
+          </p>
+          <p
+            class="s7"
+            style="
+              padding-top: 2pt;
+              padding-right: 56pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            500 <span class="s6">عوفذملا غلبملا نوكيسف%</span>15
+            <span class="s6">ةلومعلاو</span>
+          </p>
+          <p
+            class="s7"
+            style="
+              padding-top: 2pt;
+              padding-right: 56pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            421.25 <span class="s6">= )</span>3.75<span class="s6">+ </span
+            >75<span class="s6">( – يتارامإ مهرد</span>
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 2pt;
+              padding-right: 56pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            . رجاتلل ةقحتسم يتارامإ مهرد
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 31pt">
+        <td style="width: 222pt">
+          <p
+            class="s25"
+            style="
+              padding-top: 8pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            DETAILS OF THE PROGRAMS
+          </p>
+        </td>
+        <td style="width: 240pt">
+          <p
+            class="s18"
+            style="
+              padding-top: 7pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            : جماربلا ليصافت
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 192pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-top: 8pt;
+              padding-left: 2pt;
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            Thriwe shall create a platform and onboard merchants from different
+            categories like dining, salons, shopping, among others and will
+            create a system to generate vouchers of different denomination on
+            real time basis. Users can visit the platform and generate vouchers
+            of defined denomination and balance will be deducted as per voucher
+            value. Outlet operator can redeem the voucher and provide discount
+            to user. Thriwe will make payment every week (Tuesday or Thursday)
+            of the voucher redeemed in the last 7 days.
+          </p>
+        </td>
+        <td style="width: 240pt">
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-left: 17pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            ةفلتخم تائف نم راجت جاردإو ةصنم ءاشنإب يويرث موقتس تاهج نمض نم
+            قوستلا زكارم ،تانولاصلا ،معاطملا لثم تائفب ريتاوف جارختسلا ماظن
+            داجيإب موقتس امك ،ىرخأ نومدختسملا عيطتسي .يقيقحلا نمزلا ساسأ ىلع
+            ةفلتخم مصخ متيسو ةددحم تائفب تادنس جارختساو ةصنملا ةرايز دنسلا ليصحت
+            ذفنملا عيطتسي .دنسلا ةميق بسح ديصرلا عوبسأ لك عفدلاب يويرث موقتس .
+            مدختسملل مصخ ءاطعإو مايلأا للاخ لصحملا تادنسلا لباقم )سيمخلا وأ
+            ءاثلاثلا(
+          </p>
+          <p
+            class="s6"
+            style="padding-left: 176pt; text-indent: 0pt; text-align: justify"
+          >
+            .ةيضاملا ةعبسلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 95pt">
+        <td style="width: 222pt">
+          <p
+            class="s11"
+            style="
+              padding-top: 8pt;
+              padding-left: 2pt;
+              padding-right: 17pt;
+              text-indent: 0pt;
+              line-height: 114%;
+              text-align: justify;
+            "
+          >
+            Merchant will have to accept Thriwe voucher till last date of
+            voucher validity. E.g.: If program is valid till 31-Mar and customer
+            generates voucher on 29-Mar with validity of 30 days. Merchant will
+            accept the voucher till 27-Apr.
+          </p>
+          <p
+            class="s11"
+            style="
+              padding-left: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: justify;
+            "
+          >
+            Validity will be mentioned in each voucher.
+          </p>
+        </td>
+        <td style="width: 240pt">
+          <p
+            class="s6"
+            style="
+              padding-top: 8pt;
+              padding-left: 17pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 112%;
+              text-align: justify;
+            "
+          >
+            نم موي رخآ ىتح يويرث تادنس لوبق رجاتلا ىلع نيعتي
+            <span class="s7">31 </span>ىتح <span class="s19">ً</span>ايراس
+            جمانربلا ناك اذإ :<span class="s19">ً</span>لاثم دنسلا ةيحلاص خيرات
+            ةيحلاصب سرام <span class="s7">29 </span>موي دنسلا جارختساب ليمعلا
+            ماقو سرام
+          </p>
+          <p
+            class="s6"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            .ليربأ <span class="s7">27 </span>ىتح دنسلا لوبق رجاتلا ىلع نيعتي
+            ،موي <span class="s7">30 </span>ةدمل
+          </p>
+          <p
+            class="s6"
+            style="
+              padding-top: 1pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            . دنس لك يف ةيحلاصلا خيرات ديدحت متيس
+          </p>
+        </td>
+      </tr>
+    </table>
+    <p style="text-indent: 0pt; text-align: left"><br /></p>
+    <table
+      style="border-collapse: collapse; margin-left: 14.834pt"
+      cellspacing="0"
+    >
+      <tr style="height: 53pt">
+        <td
+          style="
+            width: 114pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s26"
+            style="
+              padding-left: 36pt;
+              padding-right: 47pt;
+              text-indent: 0pt;
+              line-height: 115%;
+              text-align: left;
+            "
+          >
+            Offer(s) ضورعلا
+          </p>
+        </td>
+        <td
+          style="
+            width: 347pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p
+            class="s27"
+            style="
+              padding-left: 3pt;
+              text-indent: 0pt;
+              line-height: 113%;
+              text-align: left;
+            "
+          >
+            Any denomination between AED<u> 50 to AED 9999</u> voucher to be
+            uploaded in platform for user access
+          </p>
+          <p
+            class="s17"
+            style="
+              padding-left: 3pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: left;
+            "
+          >
+            رداق مدختسملا نوكيل ةصنملا ىلع هليمحت متي
+            <span class="s29">ي</span>تارامإ مهرد
+            <span class="s30">9999 </span>ىلإ <span class="s30">50 </span>نيب
+            هتميق حوارتت دنس يأ
+          </p>
+          <p
+            class="s17"
+            style="
+              padding-top: 1pt;
+              padding-left: 3pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            ةيلإ لوصولا ىلع
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 29pt">
+        <td
+          style="
+            width: 114pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p
+            class="s26"
+            style="
+              padding-top: 1pt;
+              padding-left: 7pt;
+              padding-right: 27pt;
+              text-indent: -1pt;
+              line-height: 113%;
+              text-align: left;
+            "
+          >
+            Voucher Validity دنسلا ةيحلاص
+          </p>
+        </td>
+        <td
+          style="
+            width: 347pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p
+            class="s26"
+            style="padding-top: 1pt; text-indent: 0pt; text-align: left"
+          >
+            Thriwe will define Voucher validity
+          </p>
+          <p
+            class="s17"
+            style="padding-top: 1pt; text-indent: 0pt; text-align: left"
+          >
+            دنسلا نايرس ديدحتب يويرث موقتس
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 38pt">
+        <td
+          style="
+            width: 114pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p
+            class="s26"
+            style="
+              padding-left: 5pt;
+              text-indent: 0pt;
+              line-height: 115%;
+              text-align: left;
+            "
+          >
+            Program Validity (Start &amp; End Date)
+          </p>
+          <p
+            class="s26"
+            style="
+              padding-left: 7pt;
+              text-indent: 0pt;
+              line-height: 11pt;
+              text-align: left;
+            "
+          >
+            ) ةياهنلاو ةيادبلا ( جمانبر لا ةيحلاص
+          </p>
+        </td>
+        <td
+          style="
+            width: 347pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p style="text-indent: 0pt; text-align: left"><br />${
+            dummyData?.stores[0]?.start_validity_voucher
+              ? dummyData?.stores[0]?.start_validity_voucher
+              : ""
+          } ${dummyData?.stores[0]?.end_validity_voucher ? "&" : ""} ${
+    dummyData?.stores[0]?.end_validity_voucher
+      ? dummyData?.stores[0]?.end_validity_voucher
+      : ""
+  } </p>
+        </td>
+      </tr>
+      <tr style="height: 26pt">
+        <td
+          style="
+            width: 114pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p
+            class="s26"
+            style="padding-left: 5pt; text-indent: 0pt; text-align: left"
+          >
+            Commission to Thriwe
+          </p>
+          <p
+            class="s26"
+            style="
+              padding-top: 1pt;
+              padding-left: 7pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            فيارث ةلومع
+          </p>
+        </td>
+        <td
+          style="
+            width: 347pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p style="text-indent: 0pt; text-align: left"><br />${
+            dummyData?.stores[0]?.commission_to_thriwe
+              ? dummyData?.stores[0]?.commission_to_thriwe
+              : ""
+          }</p>
+        </td>
+      </tr>
+      <tr style="height: 35pt">
+        <td
+          style="
+            width: 114pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p
+            class="s26"
+            style="
+              padding-top: 4pt;
+              padding-left: 7pt;
+              padding-right: 27pt;
+              text-indent: -1pt;
+              line-height: 113%;
+              text-align: left;
+            "
+          >
+            Offer for Customer ءلامعلا ضورع
+          </p>
+        </td>
+        <td
+          style="
+            width: 347pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p style="text-indent: 0pt; text-align: left"><br />${
+            dummyData?.offers[0]?.offer_text
+              ? dummyData?.offers[0]?.offer_text
+              : ""
+          }</p>
+        </td>
+      </tr>
+    </table>
+    <table
+      style="border-collapse: collapse; margin-left: 14.834pt"
+      cellspacing="0"
+    >
+      <tr style="height: 75pt">
+        <td
+          style="
+            width: 114pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s26"
+            style="
+              padding-left: 7pt;
+              padding-right: 27pt;
+              text-indent: -1pt;
+              line-height: 91%;
+              text-align: left;
+            "
+          >
+            Terms &amp; Conditions: ماكحلااو طوش<span class="s31">ر </span>لا
+          </p>
+        </td>
+        <td
+          style="
+            width: 347pt;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            border-left-style: solid;
+            border-left-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-right-width: 1pt;
+          "
+        >
+          <ol id="l5">
+            <li data-list-text="1.">
+              <p
+                class="s26"
+                style="padding-left: 41pt; text-indent: -18pt; text-align: left"
+              >
+                The above voucher can be utilized against services at the
+                partner merchant.
+              </p>
+            </li>
+            <li data-list-text="2.">
+              <p
+                class="s26"
+                style="
+                  padding-top: 1pt;
+                  padding-left: 41pt;
+                  text-indent: -18pt;
+                  text-align: left;
+                "
+              >
+                The voucher value is equal to a cash value for services availed
+                atthe Merchant.
+              </p>
+            </li>
+            <li data-list-text="3.">
+              <p
+                class="s26"
+                style="
+                  padding-top: 1pt;
+                  padding-left: 41pt;
+                  text-indent: -18pt;
+                  text-align: left;
+                "
+              >
+                The customer will state the intention to avail the offer before
+                the bill is generated.
+              </p>
+            </li>
+          </ol>
+          <p
+            class="s32"
+            style="
+              padding-top: 1pt;
+              padding-left: 143pt;
+              padding-right: 5pt;
+              text-indent: 11pt;
+              line-height: 110%;
+              text-align: left;
+            "
+          >
+            كيرشلا رجاتلا ىدل تامدخلا لباقم دنسلا مادختسا نكمي .<span
+              class="s26"
+              >1 </span
+            >رجاتلا نم ةمدقملا تامدخلل ةيدقنلا ةميقلا يواست دنسلا ةميق .<span
+              class="s26"
+              >2</span
+            >
+          </p>
+          <p
+            class="s33"
+            style="
+              padding-left: 127pt;
+              text-indent: 0pt;
+              line-height: 11pt;
+              text-align: left;
+            "
+          >
+            دنسلا جارحتسا لبق ضرعلا ريفوت نم دصقلا ركذب ليمعلا موقي
+            <span class="s27">.3</span>
+          </p>
+        </td>
+      </tr>
+    </table>
+    <p style="text-indent: 0pt; text-align: left"><br /></p>
+    <table
+      style="border-collapse: collapse; margin-left: 7.524pt"
+      cellspacing="0"
+    >
+      <tr style="height: 18pt">
+        <td style="width: 229pt">
+          <p
+            class="s15"
+            style="
+              padding-left: 2pt;
+              text-indent: 0pt;
+              line-height: 10pt;
+              text-align: left;
+            "
+          >
+            Bank Details
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+        </td>
+      </tr>
+      <tr style="height: 21pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="
+              padding-top: 7pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: left;
+            "
+          >
+            Account Holder Name<span class="s34">::&nbsp; ${
+              dummyData?.stores[0]?.merchant_name_written
+                ? dummyData?.stores[0]?.merchant_name_written
+                : ""
+            }</span>
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-top: 7pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            باسحلا بحاص مسا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Account Number: ${
+              dummyData?.stores[0]?.bank_account_number
+                ? dummyData?.stores[0]?.bank_account_number
+                : ""
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            باسحلا مقر
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Bank Name: ${
+              dummyData?.stores[0]?.bank_name
+                ? dummyData?.stores[0]?.bank_name
+                : ""
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            كنبلا مسا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Branch: ${
+              dummyData?.stores[0]?.branch_name
+                ? dummyData?.stores[0]?.branch_name
+                : ""
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            كنبلا عرف
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            IFSC Code : ${
+              dummyData?.stores[0]?.ifsc_code
+                ? dummyData?.stores[0]?.ifsc_code
+                : ""
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s4"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            IFSC <span class="s29">زمر</span>
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 20pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="
+              padding-top: 1pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            Cancel Cheque Number
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-top: 1pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            يغلملا كيشلا مقر
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 24pt">
+        <td style="width: 229pt">
+          <p
+            class="s28"
+            style="
+              padding-top: 5pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            Registration Details
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s28"
+            style="
+              padding-top: 5pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              text-align: right;
+            "
+          >
+            ليجستلا تانايب
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 20pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="
+              padding-top: 6pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            VAT Number: ${dummyData?.stores?.vat_number}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-top: 6pt;
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            يبيرضلا مقرلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Trade License
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            يراجتلا صيخرتلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s28"
+            style="
+              padding-top: 1pt;
+              padding-left: 2pt;
+              text-indent: 0pt;
+              text-align: left;
+            "
+          >
+            (To be Filled In Block Letters)
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s35"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            ) ةريبكلا فرحلأاب أبعت(
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Name: ${dummyData?.formData?.authorized_signatory_name}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            مسلاا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Legal Name: ${dummyData?.formData?.merchant_name}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            يمسرلا مسلاا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Brand Name: ${dummyData?.formData?.brand_name}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            ةملاعلا مسا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Address: ${dummyData?.formData?.corporate_address}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            ناونعلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s26"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Pin Code: ${
+              dummyData?.formData?.registered_address_pincode
+                ? dummyData?.formData?.registered_address_pincode
+                : ""
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            زمرلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Contact number: ${dummyData?.formData?.spoc_no}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            لصاوتلا مقر
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Name of the Signatory: ${
+              dummyData?.formData?.authorised_signatory_name
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            عيقوتلاب ضوفملا مسا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Designation: ${dummyData?.formData?.designation}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            ةفصلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Mobile Number: ${
+              dummyData?.formData?.authorised_signatory_number
+                ? dummyData?.formData?.authorised_signatory_number
+                : ""
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            لاوجلا مقر
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Email Id: ${dummyData?.formData?.authorized_signatory_mail}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 12pt;
+              text-align: right;
+            "
+          >
+            ينورتكللاا ديربلا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 14pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Swipe Machine (Bank name): ${
+              dummyData?.stores[0]?.tidANDMID[0]?.bankMachineName
+            }
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s29"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 11pt;
+              text-align: right;
+            "
+          >
+            ) كنبلا مسا ( عيبلا طاقن
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 12pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            TID #:  ${dummyData?.stores[0]?.tidANDMID[0]?.tid}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s32"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 10pt;
+              text-align: right;
+            "
+          >
+            يد يآ يت مقر
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 12pt">
+        <td style="width: 229pt">
+          <p
+            class="s36"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            MID #:  ${dummyData?.stores[0]?.tidANDMID[0]?.mid}
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s32"
+            style="
+              padding-right: 2pt;
+              text-indent: 0pt;
+              line-height: 10pt;
+              text-align: right;
+            "
+          >
+            يد يآ ما مقر
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 32pt">
+        <td style="width: 229pt">
+          <p
+            class="s37"
+            style="
+              padding-left: 2pt;
+              text-indent: 0pt;
+              line-height: 115%;
+              text-align: left;
+            "
+          >
+            IN WITNESS WHEREOF, this agreement has been executed the day and
+            year first above written.
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p
+            class="s38"
+            style="padding-right: 2pt; text-indent: 0pt; text-align: right"
+          >
+            .هلاعأ ةروكذملا ةنسلاو مويلا يف ةيقافتلاا هذه عيقوت مت ، كلذل ً
+            ادامتعا
+          </p>
+        </td>
+      </tr>
+      <tr style="height: 94pt">
+        <td style="width: 229pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s26"
+            style="
+              padding-left: 2pt;
+              padding-right: 53pt;
+              text-indent: 0pt;
+              line-height: 170%;
+              text-align: left;
+            "
+          >
+            Signed by: <img src="${textSignature}" alt="">
+            A duly authorised representative of
+          </p>
+          <p
+            class="s27"
+            style="padding-left: 2pt; text-indent: 0pt; text-align: left"
+          >
+            Thriwe Consulting FZ LLC
+          </p>
+          <p
+            class="s26"
+            style="
+              padding-left: 2pt;
+              padding-right: 178pt;
+              text-indent: 0pt;
+              line-height: 19pt;
+              text-align: left;
+            "
+          >
+           <p style="font-weight: normal;font-size: 13px;">Name: ${
+             dummyData?.formData?.authorised_signatory_name
+           }</p> 
+           <p>Designation : ${dummyData?.formData?.designation}</p>  
+          </p>
+        </td>
+        <td style="width: 233pt">
+          <p style="text-indent: 0pt; text-align: left"><br /></p>
+          <p
+            class="s26"
+            style="
+              padding-left: 7pt;
+              padding-right: 52pt;
+              text-indent: 0pt;
+              line-height: 170%;
+              text-align: left;
+            "
+          >
+            Signed by: <img src="${textSignature}" alt="">
+            A duly authorised representative of
+          </p>
+          <p
+            class="s27"
+            style="padding-left: 7pt; text-indent: 0pt; text-align: left"
+          >
+          </p>
+          <p
+            class="s26"
+            style="
+              padding-left: 7pt;
+              padding-right: 52pt;
+              text-indent: 0pt;
+              line-height: 19pt;
+              text-align: left;
+            "
+          >
+           <p style="font-weight: normal;font-size: 13px;">Name : ${
+             dummyData?.formData?.authorised_signatory_name
+           }</p> 
+           <p>Designation :${dummyData?.formData?.designation} </p>  
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
 `;
   if (templateType == 1) {

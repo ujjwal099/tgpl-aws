@@ -77,7 +77,7 @@ const createPdf = async (
     //   }
     // </style>
     // ${htmlString}`);
-    await tab.setContent(htmlString);
+    await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
 
     await tab.setViewport({ width: 612, height: 792 });
     tab.setViewport({ width: 612, height: 792 });

@@ -10,6 +10,7 @@ import {
   approvedMailBySales,
   rejectMailBySales,
 } from "./src/SalesConfirmMail.mjs";
+import sendWhatsappMessage from "./src/sendMessageToWssp.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -53,6 +54,8 @@ export const handler = async (event) => {
     rejectedMail,
     approvedMail,
     authorizedSignatoryMail,
+    whatsappPhoneNumber,
+    merchantId,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
@@ -122,6 +125,22 @@ export const handler = async (event) => {
     const response = {
       statusCode: 200,
       body: JSON.stringify(resetPasswordMessage),
+      headers: {
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS,POST",
+      },
+    };
+    return response;
+  } else if (whatsappPhoneNumber && merchantId && countryCode) {
+    const responseWhatappMessage = await sendWhatsappMessage(
+      countryCode,
+      whatsappPhoneNumber,
+      merchantId
+    );
+    const response = {
+      statusCode: 200,
+      body: JSON.stringify(responseWhatappMessage),
       headers: {
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",

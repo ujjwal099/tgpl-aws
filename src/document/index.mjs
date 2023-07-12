@@ -2131,24 +2131,25 @@ const pdfTemplate = (
   </head>
 </html>
 `;
-  const htmlString4 = `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My HTML to PDF Example</title>
-  <style>
-    body {
-      direction: rtl;
-      /* Additional styles can go here */
-    }
-  </style>
-</head>
-<body>
-  <h1>مرحبًا بك في صفحة الويب</h1>
-  <p>هذا هو مثال لنص عربي في صفحة HTML.</p>
-  <!-- More content... -->
-</body>
-</html>
+  const htmlString4 = `<html>
+    <head>
+      <style>
+        @font-face {
+          font-family: 'Noto Sans Arabic';
+          src: url('https://fonts.googleapis.com/css?family=Noto+Sans+Arabic&display=swap');
+        }
+        body {
+          font-family: 'Noto Sans Arabic', sans-serif;
+          direction: rtl;
+        }
+      </style>
+    </head>
+    <body>
+    <h1>مرحبًا بك في صفحة الويب</h1>
+    <p>هذا هو نص باللغة العربية يتضمن بعض الكلمات والجمل.</p>
+    <p>يمكنك إضافة المزيد من النص هنا وتعديله حسب احتياجاتك.</p>
+    </body>
+  </html>
 `;
   if (templateType == 1) {
     return htmlString1;

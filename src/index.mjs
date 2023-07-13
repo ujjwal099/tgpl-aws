@@ -7,9 +7,22 @@ import path from "path";
 import { fileURLToPath } from "url";
 import puppeteer from "puppeteer-core";
 import { sendMailPromise } from "./sendMail.mjs";
+import htmlPdf from "html-pdf";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+function convertHtmlToPdf(html, outputPath) {
+  return new Promise((resolve, reject) => {
+    htmlPdf.create(html, {}).toFile(outputPath, (error, res) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(res);
+      }
+    });
+  });
+}
 
 const pdfUploadToServer = async ({ id }) => {
   try {
@@ -51,44 +64,54 @@ const createPdf = async (
       signedAgreement
     );
     console.log("htmlString", htmlString);
+    if (templateType === 4) {
+      try {
+        const result = await convertHtmlToPdf(htmlString, "/tmp/${id}.pdf");
+        console.log("PDF saved:", result.filename);
+        // Send your response here, such as returning a success message or the generated PDF path
+        console.log("Response sent:", result.filename);
+      } catch (error) {
+        console.error("Error:", error);
+        // Handle error and send an error response if needed
+      }
+    } else {
+      const browser = await puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
+      });
+      const tab = await browser.newPage();
+      // await tab.setContent(`<style>
+      //   @page {
+      //     counter-increment: page;
+      //   }
+      //   body::after {
+      //     content: counter(page);
+      //     position: fixed;
+      //     bottom: 10px;
+      //     right: 10px;
+      //     background-image: url(${textSignature}); /* Replace with the path to your image */
+      //     background-size: contain;
+      //     background-repeat: no-repeat;
+      //     width: 30px;
+      //     height: 30px;
+      //   }
+      // </style>
+      // ${htmlString}`);
+      await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
 
-    const browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
-      ignoreHTTPSErrors: true,
-    });
-    const tab = await browser.newPage();
-    // await tab.setContent(`<style>
-    //   @page {
-    //     counter-increment: page;
-    //   }
-    //   body::after {
-    //     content: counter(page);
-    //     position: fixed;
-    //     bottom: 10px;
-    //     right: 10px;
-    //     background-image: url(${textSignature}); /* Replace with the path to your image */
-    //     background-size: contain;
-    //     background-repeat: no-repeat;
-    //     width: 30px;
-    //     height: 30px;
-    //   }
-    // </style>
-    // ${htmlString}`);
-    await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
+      await tab.setViewport({ width: 612, height: 792 });
+      tab.setViewport({ width: 612, height: 792 });
+      await tab.addStyleTag({
+        content: "@media print { section { page-break-after: always; } }",
+      });
 
-    await tab.setViewport({ width: 612, height: 792 });
-    tab.setViewport({ width: 612, height: 792 });
-    await tab.addStyleTag({
-      content: "@media print { section { page-break-after: always; } }",
-    });
-
-    let arr = await tab.pdf({
-      path: `/tmp/${id}.pdf`,
-      displayHeaderFooter: true,
-      footerTemplate: `
+      let arr = await tab.pdf({
+        path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
+        footerTemplate: `
     ${
       textSignature
         ? `
@@ -99,10 +122,11 @@ const createPdf = async (
         : ""
     }
 `,
-      margin: { top: 60, right: 72, bottom: 100, left: 72 },
-    });
+        margin: { top: 60, right: 72, bottom: 100, left: 72 },
+      });
 
-    console.log(arr);
+      console.log(arr);
+    }
     // console.log(arr);
     const result = await pdfUploadToServer({ id });
     // console.log(result);

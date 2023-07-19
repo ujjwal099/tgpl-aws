@@ -79,6 +79,7 @@ const createPdf = async (
     if (templateType == 4) {
       const tab = await browser.newPage();
       console.log("Template 4");
+      await page.setContent(htmlString, { waitUntil: "networkidle0" });
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });

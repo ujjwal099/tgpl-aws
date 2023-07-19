@@ -51,13 +51,6 @@ const createPdf = async (
       signedAgreement
     );
     console.log("htmlString", htmlString);
-    const browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
-      ignoreHTTPSErrors: true,
-    });
 
     // await tab.setContent(`<style>
     //   @page {
@@ -77,6 +70,13 @@ const createPdf = async (
     // </style>
     // ${htmlString}`);
     if (templateType == 4) {
+      const browser = await puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
+      });
       const tab = await browser.newPage();
       console.log("Template 4");
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
@@ -90,6 +90,13 @@ const createPdf = async (
         margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
       });
     } else {
+      const browser = await puppeteer.launch({
+        args: ["--no-sandbox", "--disable-dev-shm-usage"],
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
+      });
       const tab = await browser.newPage();
       await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
       await tab.setViewport({ width: 612, height: 792 });
@@ -116,6 +123,7 @@ const createPdf = async (
       console.log(arr);
     }
     // console.log(arr);
+
     const result = await pdfUploadToServer({ id });
     // console.log(result);
     const str1 = result.url.substring(0, 4);

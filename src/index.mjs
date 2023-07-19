@@ -7,7 +7,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import puppeteer from "puppeteer-core";
 import { sendMailPromise } from "./sendMail.mjs";
-const { PDFDocument } = require("pdf-lib");
+import PDFDocument from "pdf-lib";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -7,7 +7,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import puppeteer from "puppeteer-core";
 import { sendMailPromise } from "./sendMail.mjs";
-import PDFDocument from "pdf-lib";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -81,6 +80,7 @@ const createPdf = async (
       const tab = await browser.newPage();
       console.log("Template 4");
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
+      await page.waitForSelector("#arabicElement");
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });
@@ -90,25 +90,6 @@ const createPdf = async (
         format: "A4",
         margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
       });
-      // open file `/tmp/${id}.pdf and print it's details`
-      const pdfFile = fs.readFileSync(`/tmp/${id}.pdf`);
-      // Load the PDF document using PDFDocument
-      const pdfDoc = await PDFDocument.load(pdfFile);
-
-      // Create an array to store extracted text from all pages
-      const pdfText = [];
-
-      // Loop through all pages and extract text content
-      for (let i = 0; i < pdfDoc.getPageCount(); i++) {
-        const page = pdfDoc.getPage(i);
-        const content = await page.getTextContent();
-        const pageText = content.items.map((item) => item.str).join(" ");
-        pdfText.push(pageText);
-      }
-
-      // Print the extracted text content
-      console.log(`Text Content of ${id}.pdf:`);
-      console.log(pdfText.join("\n"));
     } else {
       const tab = await browser.newPage();
       await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);

@@ -71,11 +71,14 @@ const createPdf = async (
     // ${htmlString}`);
     if (templateType == 4) {
       const browser = await puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
+        args: [
+          "--no-sandbox",
+          "--disable-dev-shm-usage",
+          "--single-process",
+          "--no-zygote",
+        ],
+
         executablePath: await chromium.executablePath,
-        headless: chromium.headless,
-        ignoreHTTPSErrors: true,
       });
       const tab = await browser.newPage();
       console.log("Template 4");

@@ -57,11 +57,6 @@ const createPdf = async (
       executablePath: await chromium.executablePath,
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
-      env: {
-        LANG: "ar_SA.UTF-8",
-        LANGUAGE: "ar_SA.UTF-8",
-        LC_ALL: "ar_SA.UTF-8",
-      },
     });
     // await tab.setContent(`<style>
     //   @page {
@@ -82,8 +77,8 @@ const createPdf = async (
     // ${htmlString}`);
     if (templateType == 4) {
       const tab = await browser.newPage();
-      await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       console.log("Template 4");
+      await tab.waitForSelector("#arabicElement");
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });

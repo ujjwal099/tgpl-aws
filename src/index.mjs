@@ -78,7 +78,6 @@ const createPdf = async (
     if (templateType == 4) {
       const tab = await browser.newPage();
       console.log("Template 4");
-      await tab.waitForSelector("#arabicElement");
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });

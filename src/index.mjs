@@ -5,7 +5,7 @@ import fs from "fs";
 import chromium from "@sparticuz/chromium";
 import path from "path";
 import { fileURLToPath } from "url";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 import { sendMailPromise } from "./sendMail.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -50,7 +50,7 @@ const createPdf = async (
       ipAddress,
       signedAgreement
     );
-    console.log("htmlString", htmlString);
+    // console.log("htmlString", htmlString);
     const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
@@ -87,6 +87,10 @@ const createPdf = async (
         format: "A4",
         margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
       });
+      // open file `/tmp/${id}.pdf and print it's details`
+      const pdfFile = fs.readFileSync(`/tmp/${id}.pdf`);
+      const pdfDetails = await browser.pdf(pdfFile);
+      console.log("pdfDetils-> ", pdfDetails);
     } else {
       const tab = await browser.newPage();
       await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);

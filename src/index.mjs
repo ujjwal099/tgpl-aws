@@ -59,6 +59,8 @@ const createPdf = async (
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
     });
+
+    
     // await tab.setContent(`<style>
     //   @page {
     //     counter-increment: page;

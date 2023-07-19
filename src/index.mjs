@@ -5,7 +5,7 @@ import fs from "fs";
 import chromium from "@sparticuz/chromium";
 import path from "path";
 import { fileURLToPath } from "url";
-import puppeteer from "puppeteer-core";
+import puppeteer from "puppeteer";
 import { sendMailPromise } from "./sendMail.mjs";
 
 const __filename = fileURLToPath(import.meta.url);

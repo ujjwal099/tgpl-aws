@@ -89,6 +89,7 @@ const createPdf = async (
         format: "A4",
         margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
       });
+      await browser.close();
     } else {
       const browser = await puppeteer.launch({
         args: ["--no-sandbox", "--disable-dev-shm-usage"],
@@ -121,6 +122,7 @@ const createPdf = async (
         margin: { top: 60, right: 72, bottom: 100, left: 72 },
       });
       console.log(arr);
+      await browser.close();
     }
     // console.log(arr);
 
@@ -129,7 +131,6 @@ const createPdf = async (
     const str1 = result.url.substring(0, 4);
     const str2 = result.url.substring(4);
     result.url = str1 + "s" + str2;
-    await browser.close();
     return result;
   } catch (error) {
     // console.log(error);

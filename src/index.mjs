@@ -7,7 +7,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import puppeteer from "puppeteer-core";
 import { sendMailPromise } from "./sendMail.mjs";
-const { PDFDocument, PDFJS } = require("pdfjs-dist/es5/build/pdf");
+const { PDFDocument } = require("pdf-lib");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,7 +60,6 @@ const createPdf = async (
       ignoreHTTPSErrors: true,
     });
 
-    
     // await tab.setContent(`<style>
     //   @page {
     //     counter-increment: page;
@@ -93,14 +92,15 @@ const createPdf = async (
       });
       // open file `/tmp/${id}.pdf and print it's details`
       const pdfFile = fs.readFileSync(`/tmp/${id}.pdf`);
-      const pdf = await PDFDocument.load(pdfFile);
+      // Load the PDF document using PDFDocument
+      const pdfDoc = await PDFDocument.load(pdfFile);
 
       // Create an array to store extracted text from all pages
       const pdfText = [];
 
       // Loop through all pages and extract text content
-      for (let i = 0; i < pdf.numPages; i++) {
-        const page = await pdf.getPage(i + 1);
+      for (let i = 0; i < pdfDoc.getPageCount(); i++) {
+        const page = pdfDoc.getPage(i);
         const content = await page.getTextContent();
         const pageText = content.items.map((item) => item.str).join(" ");
         pdfText.push(pageText);

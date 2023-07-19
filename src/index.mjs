@@ -50,7 +50,7 @@ const createPdf = async (
       ipAddress,
       signedAgreement
     );
-    // console.log("htmlString", htmlString);
+    console.log("htmlString", htmlString);
     const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,

@@ -57,8 +57,12 @@ const createPdf = async (
       executablePath: await chromium.executablePath,
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
+      env: {
+        LANG: "ar_SA.UTF-8",
+        LANGUAGE: "ar_SA.UTF-8",
+        LC_ALL: "ar_SA.UTF-8",
+      },
     });
-    const tab = await browser.newPage();
     // await tab.setContent(`<style>
     //   @page {
     //     counter-increment: page;
@@ -77,8 +81,9 @@ const createPdf = async (
     // </style>
     // ${htmlString}`);
     if (templateType == 4) {
+      const tab = await browser.newPage();
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
-      console.log("Template 4")
+      console.log("Template 4");
       // Capture a screenshot with margin
       await tab.screenshot({
         path: "screenshot.png",
@@ -92,9 +97,8 @@ const createPdf = async (
         format: "A4",
         margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
       });
-
-      await browser.close();
     } else {
+      const tab = await browser.newPage();
       await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
       await tab.setViewport({ width: 612, height: 792 });
       await tab.addStyleTag({

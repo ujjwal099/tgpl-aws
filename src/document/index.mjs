@@ -2143,6 +2143,9 @@ const pdfTemplate = (
         padding: 0;
         text-indent: 0;
       }
+      body {
+        font-family: 'Arial', 'Noto Naskh Arabic', 'Droid Arabic Naskh', sans-serif;
+      }    
       .s1 {
         color: black;
         font-family: Calibri, sans-serif;

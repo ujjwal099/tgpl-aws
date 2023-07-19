@@ -79,14 +79,12 @@ const createPdf = async (
       const tab = await browser.newPage();
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       console.log("Template 4");
-
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });
-
       // Convert the screenshot to PDF with margin
       await tab.pdf({
-        path: "/tmp/${id}.pdf",
+        path: `/tmp/${id}.pdf`,
         format: "A4",
         margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
       });

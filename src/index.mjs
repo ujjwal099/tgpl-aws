@@ -57,6 +57,11 @@ const createPdf = async (
       executablePath: await chromium.executablePath,
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
+      env: {
+        LANG: "ar_SA.UTF-8",
+        LANGUAGE: "ar_SA.UTF-8",
+        LC_ALL: "ar_SA.UTF-8",
+      },
     });
     // await tab.setContent(`<style>
     //   @page {

@@ -78,34 +78,47 @@ const createPdf = async (
     // ${htmlString}`);
     if (templateType == 4) {
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
+      console.log("Template 4")
+      // Capture a screenshot with margin
+      await tab.screenshot({
+        path: "screenshot.png",
+        clip: { x: 0, y: 0, width: 800, height: 600 },
+        margin: { top: 50, right: 50, bottom: 50, left: 50 },
+      });
+
+      // Convert the screenshot to PDF with margin
+      await tab.pdf({
+        path: "/tmp/${id}.pdf",
+        format: "A4",
+        margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
+      });
+
+      await browser.close();
     } else {
       await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
       await tab.setViewport({ width: 612, height: 792 });
+      await tab.addStyleTag({
+        content: "@media print { section { page-break-after: always; } }",
+      });
+
+      let arr = await tab.pdf({
+        path: `/tmp/${id}.pdf`,
+        displayHeaderFooter: true,
+        footerTemplate: `
+      ${
+        textSignature
+          ? `
+      <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
+          <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 60px;">
+      </div>
+      `
+          : ""
+      }
+  `,
+        margin: { top: 60, right: 72, bottom: 100, left: 72 },
+      });
+      console.log(arr);
     }
-
-    await tab.addStyleTag({
-      content: "@media print { section { page-break-after: always; } }",
-    });
-
-    let arr = await tab.pdf({
-      path: `/tmp/${id}.pdf`,
-      displayHeaderFooter: true,
-      footerTemplate: `
-    ${
-      textSignature
-        ? `
-    <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
-        <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 60px;">
-    </div>
-    `
-        : ""
-    }
-`,
-      margin: { top: 60, right: 72, bottom: 100, left: 72 },
-    });
-
-    console.log(arr);
-
     // console.log(arr);
     const result = await pdfUploadToServer({ id });
     // console.log(result);

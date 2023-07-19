@@ -89,8 +89,11 @@ const createPdf = async (
       });
       // open file `/tmp/${id}.pdf and print it's details`
       const pdfFile = fs.readFileSync(`/tmp/${id}.pdf`);
-      const pdfDetails = await browser.pdf(pdfFile);
-      console.log("pdfDetils-> ", pdfDetails);
+      // now extract the details from the pdfFile
+      const pdfContent = pdfFile.toString('binary');
+
+    console.log(`PDF Content for ${id}.pdf:`);
+    console.log(pdfContent);
     } else {
       const tab = await browser.newPage();
       await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);

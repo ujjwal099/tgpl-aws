@@ -80,7 +80,7 @@ const createPdf = async (
       const tab = await browser.newPage();
       console.log("Template 4");
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
-      await page.waitForSelector("#arabicElement");
+      await tab.waitForSelector("#arabicElement");
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });

@@ -7,6 +7,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import puppeteer from "puppeteer-core";
 import { sendMailPromise } from "./sendMail.mjs";
+import PDFParser from "pdf-parse";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -90,10 +91,11 @@ const createPdf = async (
       // open file `/tmp/${id}.pdf and print it's details`
       const pdfFile = fs.readFileSync(`/tmp/${id}.pdf`);
       // now extract the details from the pdfFile
-      const pdfContent = pdfFile.toString('binary');
+      const pdfTextContent = await PDFParser(pdfFile);
 
-    console.log(`PDF Content for ${id}.pdf:`);
-    console.log(pdfContent);
+      // Print the extracted text content
+      console.log(`Text Content of `);
+      console.log(pdfTextContent.text);
     } else {
       const tab = await browser.newPage();
       await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);

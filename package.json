@@ -7,7 +7,6 @@
     "nodemailer": "^6.9.0",
     "nodemailer-mandrill-transport": "^1.2.0",
     "pdfjs-dist": "^3.8.162",
-    "puppeteer": "^20.8.3",
     "puppeteer-core": "^10.4.0"
   }
 }

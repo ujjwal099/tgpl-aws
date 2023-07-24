@@ -53,7 +53,7 @@ const createPdf = async (
     console.log("htmlString", htmlString);
     if (templateType == 4) {
       const browser = await puppeteer.launch({
-        args: ["--no-sandbox", "--disable-dev-shm-usage"],
+        args: chromium.args,
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath,
         headless: chromium.headless,
@@ -69,7 +69,7 @@ const createPdf = async (
       await tab.screenshot({ path: `/tmp/${id}.pdf` });
       await browser.close();
       const imageToPdfPage = await puppeteer.launch({
-        args: ["--no-sandbox", "--disable-dev-shm-usage"],
+        args: chromium.args,
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath,
         headless: chromium.headless,

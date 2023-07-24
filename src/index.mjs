@@ -51,24 +51,6 @@ const createPdf = async (
       signedAgreement
     );
     console.log("htmlString", htmlString);
-
-    // await tab.setContent(`<style>
-    //   @page {
-    //     counter-increment: page;
-    //   }
-    //   body::after {
-    //     content: counter(page);
-    //     position: fixed;
-    //     bottom: 10px;
-    //     right: 10px;
-    //     background-image: url(${textSignature}); /* Replace with the path to your image */
-    //     background-size: contain;
-    //     background-repeat: no-repeat;
-    //     width: 30px;
-    //     height: 30px;
-    //   }
-    // </style>
-    // ${htmlString}`);
     if (templateType == 4) {
       const browser = await puppeteer.launch({
         args: ["--no-sandbox", "--disable-dev-shm-usage"],
@@ -84,12 +66,21 @@ const createPdf = async (
         content: "@media print { section { page-break-after: always; } }",
       });
       // Convert the screenshot to PDF with margin
-      await tab.pdf({
-        path: `/tmp/${id}.pdf`,
-        format: "A4",
-        margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
-      });
+      await tab.screenshot({ path: `/tmp/${id}.pdf` });
       await browser.close();
+      const imageToPdfPage = await puppeteer.launch({
+        args: ["--no-sandbox", "--disable-dev-shm-usage"],
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
+      });
+      const imagePage = await imageToPdfPage.newPage();
+      await imagePage.goto(`file: /tmp/${id}.pdf`, {
+        waitUntil: "networkidle0",
+      });
+      await imagePage.pdf({ path: pdfPath, format: "A4" });
+      await imageToPdfPage.close();
     } else {
       const browser = await puppeteer.launch({
         args: ["--no-sandbox", "--disable-dev-shm-usage"],

@@ -54,7 +54,7 @@ const createPdf = async (
     const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
+      executablePath: "/path/to/your/libnss3.so", // Update this path
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
     });

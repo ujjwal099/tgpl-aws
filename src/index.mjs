@@ -52,11 +52,10 @@ const createPdf = async (
     console.log("htmlString", htmlString);
 
     const browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: "/path/to/your/libnss3.so", // Update this path
-      headless: chromium.headless,
-      ignoreHTTPSErrors: true,
+      args: puppeteer.defaultArgs(),
+      executablePath:
+        "node_modules/puppeteer/.local-chromium/linux-XXXXXX/chrome-linux/chrome", // Update the path accordingly
+      headless: true, // Set to true for headless operation
     });
     const tab = await browser.newPage();
     // await tab.setContent(`<style>

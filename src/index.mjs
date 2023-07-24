@@ -126,7 +126,6 @@ const createPdf = async (
     const str1 = result.url.substring(0, 4);
     const str2 = result.url.substring(4);
     result.url = str1 + "s" + str2;
-    await browser.close();
     return result;
   } catch (error) {
     // console.log(error);

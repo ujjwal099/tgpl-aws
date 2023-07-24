@@ -116,4 +116,56 @@ const createPdf = async (
   }
 };
 
+export const resetPassword = async (mail) => {
+  var userData = {
+    where: {
+      username: mail,
+    },
+  };
+  var config = {
+    method: "get",
+    url: `https://tgpl-crm-api.thriwe.com/parse/users`,
+    headers: {
+      "X-Parse-Master-Key": "Hh4evLBEui54XoUj",
+      "X-Parse-Application-Id": "PROD_APPLICATION_ID",
+    },
+    params: userData,
+  };
+  const userInformation = await axios(config);
+
+  if (userInformation.data.results.length > 0) {
+    const password = Math.random().toString(36).slice(2, 10);
+    try {
+      let updateUserData = {
+        password: password,
+      };
+      var updateUserConfig = {
+        method: "put",
+        url: `https://tgpl-crm-api.thriwe.com/parse/users/${userInformation.data.results[0].objectId}`,
+        headers: {
+          "X-Parse-Master-Key": "Hh4evLBEui54XoUj",
+          "X-Parse-Application-Id": "PROD_APPLICATION_ID",
+        },
+        data: updateUserData,
+      };
+      await axios(updateUserConfig);
+      var options = {
+        from: "noreply@thriwe.com",
+        to: mail,
+        subject: "Reset Password",
+        text: ``,
+        html: `
+      <p style="color: #555555; margin-bottom: 10px;">Dear User,</p>
+      <p style="color: #555555; margin-bottom: 20px;">Your password has been successfully reset.</p>
+      <p style="color: #555555; margin-bottom: 20px;">Your new password is: <strong>${password}</strong></p>
+      <p style="color: #555555; margin-bottom: 10px;">Thanks</p>
+      <p style="color: #555555; margin-bottom: 0;">Team Thriwe</p>`,
+      };
+      await sendMailPromise(options);
+      return "Reset Password Successful";
+    } catch (error) {
+      return error.message;
+    }
+  }
+};
 export default createPdf;

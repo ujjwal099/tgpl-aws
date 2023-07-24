@@ -51,6 +51,7 @@ const createPdf = async (
       signedAgreement
     );
     console.log("htmlString", htmlString);
+
     const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
@@ -58,7 +59,7 @@ const createPdf = async (
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
     });
-
+    const tab = await browser.newPage();
     // await tab.setContent(`<style>
     //   @page {
     //     counter-increment: page;
@@ -76,46 +77,31 @@ const createPdf = async (
     //   }
     // </style>
     // ${htmlString}`);
-    if (templateType == 4) {
-      const tab = await browser.newPage();
-      console.log("Template 4");
-      await tab.setContent(htmlString, { waitUntil: "networkidle0" });
-      await tab.waitForSelector("#arabicElement");
-      await tab.addStyleTag({
-        content: "@media print { section { page-break-after: always; } }",
-      });
-      // Convert the screenshot to PDF with margin
-      await tab.pdf({
-        path: `/tmp/${id}.pdf`,
-        format: "A4",
-        margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
-      });
-    } else {
-      const tab = await browser.newPage();
-      await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
-      await tab.setViewport({ width: 612, height: 792 });
-      await tab.addStyleTag({
-        content: "@media print { section { page-break-after: always; } }",
-      });
+    await tab.goto(`data:text/html,${encodeURIComponent(htmlString)}`);
+    await tab.setViewport({ width: 612, height: 792 });
+    tab.setViewport({ width: 612, height: 792 });
+    await tab.addStyleTag({
+      content: "@media print { section { page-break-after: always; } }",
+    });
 
-      let arr = await tab.pdf({
-        path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate: `
-      ${
-        textSignature
-          ? `
-      <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
-          <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 60px;">
-      </div>
-      `
-          : ""
-      }
-  `,
-        margin: { top: 60, right: 72, bottom: 100, left: 72 },
-      });
-      console.log(arr);
+    let arr = await tab.pdf({
+      path: `/tmp/${id}.pdf`,
+      displayHeaderFooter: true,
+      footerTemplate: `
+    ${
+      textSignature
+        ? `
+    <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
+        <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 60px;">
+    </div>
+    `
+        : ""
     }
+`,
+      margin: { top: 60, right: 72, bottom: 100, left: 72 },
+    });
+
+    console.log(arr);
     // console.log(arr);
     const result = await pdfUploadToServer({ id });
     // console.log(result);

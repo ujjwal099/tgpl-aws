@@ -62,6 +62,12 @@ const createPdf = async (
       const fontPath = "../NotoNaskhArabic-Regular.ttf";
       const tab = await browser.newPage();
       console.log("Template 4");
+      const languages = ["ar", "en"];
+      const acceptLanguageHeader = languages.join(",");
+      await tab.setExtraHTTPHeaders({
+        "Accept-Language": acceptLanguageHeader,
+      });
+
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",

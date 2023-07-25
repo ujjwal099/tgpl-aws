@@ -30,7 +30,6 @@ const pdfUploadToServer = async ({ id }) => {
     throw error;
   }
 };
-
 const createPdf = async (
   data,
   templateType,
@@ -50,55 +49,24 @@ const createPdf = async (
       signedAgreement
     );
     console.log("htmlString", htmlString);
+    const browser = await puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
+    });
+    const tab = await browser.newPage();
+    await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
+    await tab.setViewport({ width: 612, height: 792 });
+    await tab.addStyleTag({
+      content: "@media print { section { page-break-after: always; } }",
+    });
 
-    if (templateType == 4) {
-      const browser = await puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
-        ignoreHTTPSErrors: true,
-      });
-      const tab = await browser.newPage();
-      console.log("__dirname-> ", __dirname);
-      const fontPath = path.resolve(__dirname, 'fonts', 'NotoNaskhArabic-Regular.ttf');
-      console.log("Template 4");
-      await tab.setContent(htmlString, { waitUntil: "networkidle0" });
-      await tab.addStyleTag({
-        content: "@media print { section { page-break-after: always; } }",
-      });
-      await tab.addStyleTag({
-        content: `@font-face { font-family: "CustomFont"; src: local("${fontPath}") format("truetype");@media print { section { page-break-after: always; } } }`,
-      });
-      await tab.evaluate(
-        () => (document.body.style.fontFamily = "CustomFont")
-      );
-      // Convert the screenshot to PDF with margin
-      await tab.pdf({
-        path: `/tmp/${id}.pdf`,
-        format: "A4",
-        margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
-      });
-      await browser.close();
-    } else {
-      const browser = await puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
-        ignoreHTTPSErrors: true,
-      });
-      const tab = await browser.newPage();
-      await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
-      await tab.setViewport({ width: 612, height: 792 });
-      await tab.addStyleTag({
-        content: "@media print { section { page-break-after: always; } }",
-      });
-
-      let arr = await tab.pdf({
-        path: `/tmp/${id}.pdf`,
-        displayHeaderFooter: true,
-        footerTemplate: `
+    let arr = await tab.pdf({
+      path: `/tmp/${id}.pdf`,
+      displayHeaderFooter: true,
+      footerTemplate: `
       ${
         textSignature
           ? `
@@ -109,14 +77,11 @@ const createPdf = async (
           : ""
       }
   `,
-        margin: { top: 60, right: 72, bottom: 100, left: 72 },
-      });
-      console.log(arr);
-      await browser.close();
-    }
+      margin: { top: 60, right: 72, bottom: 100, left: 72 },
+    });
+    await browser.close();
     // console.log(arr);
     const result = await pdfUploadToServer({ id });
-    // console.log(result);
     const str1 = result.url.substring(0, 4);
     const str2 = result.url.substring(4);
     result.url = str1 + "s" + str2;

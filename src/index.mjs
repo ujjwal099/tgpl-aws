@@ -70,13 +70,13 @@ const createPdf = async (
       body {
       font-family: 'ArabicFont', sans-serif;
       /* Other CSS styles for proper Arabic rendering, if needed */
+      "@media print { section { page-break-after: always; } }
       }
-      @media print { section { page-break-after: always; } }
   `;
 
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       await tab.addStyleTag({
-        content: customCss,
+        content: { customCss },
       });
       // Convert the screenshot to PDF with margin
       await tab.pdf({

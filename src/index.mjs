@@ -59,6 +59,7 @@ const createPdf = async (
         headless: chromium.headless,
         ignoreHTTPSErrors: true,
       });
+      const fontPath = "../NotoNaskhArabic-Regular.ttf";
       const tab = await browser.newPage();
       console.log("Template 4");
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
@@ -66,26 +67,12 @@ const createPdf = async (
         content: "@media print { section { page-break-after: always; } }",
       });
       // Convert the screenshot to PDF with margin
-      const screenshotPath = `/tmp/${id}.png`;
-      await tab.screenshot({ path: screenshotPath });
-      await browser.close();
-      const imageToPdfPage = await puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
-        ignoreHTTPSErrors: true,
-      });
-      const imagePage = await imageToPdfPage.newPage();
-      await imagePage.goto(`file:${screenshotPath}`, {
-        waitUntil: "networkidle0",
-      });
-      await imagePage.pdf({
+      await tab.pdf({
         path: `/tmp/${id}.pdf`,
         format: "A4",
         margin: { top: "50px", right: "50px", bottom: "50px", left: "50px" },
       });
-      await imageToPdfPage.close();
+      await browser.close();
     } else {
       const browser = await puppeteer.launch({
         args: chromium.args,

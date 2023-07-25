@@ -59,13 +59,20 @@ const createPdf = async (
         headless: chromium.headless,
         ignoreHTTPSErrors: true,
       });
-      const fontPath = "";
       const tab = await browser.newPage();
+      console.log("__dirname-> ", __dirname);
+      const fontPath = path.resolve(__dirname, 'fonts', 'NotoNaskhArabic-Regular.ttf');
       console.log("Template 4");
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });
+      await page.addStyleTag({
+        content: `@font-face { font-family: "CustomFont"; src: local("${fontPath}") format("truetype");@media print { section { page-break-after: always; } } }`,
+      });
+      await page.evaluate(
+        () => (document.body.style.fontFamily = "CustomFont")
+      );
       // Convert the screenshot to PDF with margin
       await tab.pdf({
         path: `/tmp/${id}.pdf`,

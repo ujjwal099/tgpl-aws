@@ -1,3 +1,5 @@
+import fs from "fs";
+
 const pdfTemplate = (
   dummyData,
   templateType = 1,
@@ -6,6 +8,15 @@ const pdfTemplate = (
   signedAgreement = false
 ) => {
   // console.log(dummyData);
+  const fontData = fs
+    .readFileSync("./NotoNaskhArabic-Regular.ttf")
+    .toString("base64");
+  const fontFace = `
+    @font-face {
+      font-family: 'Noto Naskh Arabic';
+      src: url(data:font/woff;charset=utf-8;base64,${fontData}) format('woff');
+    }
+  `;
   const today = new Date();
   let tableRows;
   if (signedAgreement) {
@@ -2138,6 +2149,7 @@ const pdfTemplate = (
       <title>file_1689659772551</title>
       <meta name="author" content="Ahmed A. Al-Nahdi" />
       <style type="text/css">
+      ${fontFace}
         * {
           margin: 0;
           padding: 0;

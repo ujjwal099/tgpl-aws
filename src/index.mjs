@@ -67,10 +67,10 @@ const createPdf = async (
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",
       });
-      await page.addStyleTag({
+      await tab.addStyleTag({
         content: `@font-face { font-family: "CustomFont"; src: local("${fontPath}") format("truetype");@media print { section { page-break-after: always; } } }`,
       });
-      await page.evaluate(
+      await tab.evaluate(
         () => (document.body.style.fontFamily = "CustomFont")
       );
       // Convert the screenshot to PDF with margin

@@ -67,7 +67,10 @@ const createPdf = async (
       await tab.setExtraHTTPHeaders({
         "Accept-Language": acceptLanguageHeader,
       });
-
+      await tab.evaluate(() => {
+        document.documentElement.setAttribute("lang", "ar");
+        document.documentElement.setAttribute("dir", "rtl");
+      });
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       await tab.addStyleTag({
         content: "@media print { section { page-break-after: always; } }",

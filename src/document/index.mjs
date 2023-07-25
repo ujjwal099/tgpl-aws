@@ -17,7 +17,7 @@ const pdfTemplate = (
   //     src: url(data:font/woff;charset=utf-8;base64,${fontData}) format('woff');
   //   }
   // `;
-  // const today = new Date();
+  const today = new Date();
   let tableRows;
   if (signedAgreement) {
     tableRows = dummyData?.offers

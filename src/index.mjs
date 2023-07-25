@@ -62,18 +62,21 @@ const createPdf = async (
       const fontPath = "../NotoNaskhArabic-Regular.ttf";
       const tab = await browser.newPage();
       console.log("Template 4");
-      const languages = ["ar", "en"];
-      const acceptLanguageHeader = languages.join(",");
-      await tab.setExtraHTTPHeaders({
-        "Accept-Language": acceptLanguageHeader,
-      });
-      await tab.evaluate(() => {
-        document.documentElement.setAttribute("lang", "ar");
-        document.documentElement.setAttribute("dir", "rtl");
-      });
+      const customCss = `
+      @font-face {
+        font-family: 'ArabicFont';
+        src: url('../NotoNaskhArabic-Regular.ttf') format('truetype');
+      } 
+      body {
+      font-family: 'ArabicFont', sans-serif;
+      /* Other CSS styles for proper Arabic rendering, if needed */
+      }
+      @media print { section { page-break-after: always; } }
+  `;
+
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       await tab.addStyleTag({
-        content: "@media print { section { page-break-after: always; } }",
+        content: customCss,
       });
       // Convert the screenshot to PDF with margin
       await tab.pdf({

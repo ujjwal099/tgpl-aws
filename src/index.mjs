@@ -6,6 +6,7 @@ import chromium from "@sparticuz/chromium";
 import path from "path";
 import { fileURLToPath } from "url";
 import puppeteer from "puppeteer-core";
+import "../NotoNaskhArabic-Regular.ttf";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -59,24 +60,12 @@ const createPdf = async (
         headless: chromium.headless,
         ignoreHTTPSErrors: true,
       });
-      const fontPath = "../NotoNaskhArabic-Regular.ttf";
+      const fontPath = "";
       const tab = await browser.newPage();
       console.log("Template 4");
-      const customCss = `
-      @font-face {
-        font-family: 'ArabicFont';
-        src: url('../NotoNaskhArabic-Regular.ttf') format('truetype');
-      } 
-      body {
-      font-family: 'ArabicFont', sans-serif;
-      /* Other CSS styles for proper Arabic rendering, if needed */
-      "@media print { section { page-break-after: always; } }
-      }
-  `;
-
       await tab.setContent(htmlString, { waitUntil: "networkidle0" });
       await tab.addStyleTag({
-        content: { customCss },
+        content: "@media print { section { page-break-after: always; } }",
       });
       // Convert the screenshot to PDF with margin
       await tab.pdf({

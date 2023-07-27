@@ -49,6 +49,7 @@ const createPdf = async (
       signedAgreement
     );
     console.log("htmlString", htmlString);
+
     const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
@@ -57,8 +58,27 @@ const createPdf = async (
       ignoreHTTPSErrors: true,
     });
     const tab = await browser.newPage();
-    await tab.setContent(`data:text/html,${encodeURIComponent(htmlString)}`);
+    // await tab.setContent(`<style>
+    //   @page {
+    //     counter-increment: page;
+    //   }
+    //   body::after {
+    //     content: counter(page);
+    //     position: fixed;
+    //     bottom: 10px;
+    //     right: 10px;
+    //     background-image: url(${textSignature}); /* Replace with the path to your image */
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    //     width: 30px;
+    //     height: 30px;
+    //   }
+    // </style>
+    // ${htmlString}`);
+    await tab.goto(`data:text/html,${encodeURIComponent(htmlString)}`);
+
     await tab.setViewport({ width: 612, height: 792 });
+    tab.setViewport({ width: 612, height: 792 });
     await tab.addStyleTag({
       content: "@media print { section { page-break-after: always; } }",
     });
@@ -67,24 +87,27 @@ const createPdf = async (
       path: `/tmp/${id}.pdf`,
       displayHeaderFooter: true,
       footerTemplate: `
-      ${
-        textSignature
-          ? `
-      <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
-          <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 60px;">
-      </div>
-      `
-          : ""
-      }
-  `,
+    ${
+      textSignature
+        ? `
+    <div id="footer" style="font-size: 10px; width: 100%; text-align: center; padding-top: 30px; margin-top: 30px;">
+        <img src="${textSignature}" alt="Footer Image" style="width: 200px; margin-left: 60px;">
+    </div>
+    `
+        : ""
+    }
+`,
       margin: { top: 60, right: 72, bottom: 100, left: 72 },
     });
-    await browser.close();
+
+    console.log(arr);
     // console.log(arr);
     const result = await pdfUploadToServer({ id });
+    // console.log(result);
     const str1 = result.url.substring(0, 4);
     const str2 = result.url.substring(4);
     result.url = str1 + "s" + str2;
+    await browser.close();
     return result;
   } catch (error) {
     // console.log(error);

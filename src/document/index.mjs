@@ -1,4 +1,3 @@
-
 const pdfTemplate = (
   dummyData,
   templateType = 1,
@@ -2145,7 +2144,7 @@ const pdfTemplate = (
     return htmlString1;
   } else if (templateType == 2) {
     return htmlString2;
-  } else if (templateType == 3) {
+  } else {
     return htmlString3;
   }
 };

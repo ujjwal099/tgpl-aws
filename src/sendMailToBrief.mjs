@@ -4,7 +4,7 @@ export const sendBriefMails = async (briefMails, briefData) => {
   var options = {
     from: "noreply@thriwe.com",
     to: briefMails.join(", "),
-    subject: "Brief",
+    subject: `A New Brief has Submitted for ${briefData?.programName}`,
     text: `wow thats sample `,
     html: `<!DOCTYPE html>
     <html lang="en">

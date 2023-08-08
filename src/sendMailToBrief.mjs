@@ -187,7 +187,6 @@ export const sendBriefMails = async (briefMails, briefData) => {
                     <td>${briefData?.writeUp}</td>
                 </tr>
             </table>
-            {{#if briefData?.welcomeKit}}
             <h2>Welcome Kit</h2>
             <ul>
             ${

@@ -11,6 +11,7 @@ import {
   rejectMailBySales,
 } from "./src/SalesConfirmMail.mjs";
 import sendWhatsappMessage from "./src/sendMessageToWssp.mjs";
+import { sendBriefMails } from "./src/sendMailToBrief.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -56,6 +57,8 @@ export const handler = async (event) => {
     authorizedSignatoryMail,
     whatsappPhoneNumber,
     merchantId,
+    briefMails,
+    briefData,
   } = JSON.parse(event.body);
   const id = Date.now();
   if (phone) {
@@ -141,6 +144,18 @@ export const handler = async (event) => {
     const response = {
       statusCode: 200,
       body: JSON.stringify(responseWhatappMessage),
+      headers: {
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS,POST",
+      },
+    };
+    return response;
+  } else if (briefMails && briefData) {
+    await sendBriefMails(briefMails, briefData);
+    const response = {
+      statusCode: 200,
+      body: "Mail send successfully",
       headers: {
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",

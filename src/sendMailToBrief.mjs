@@ -4,7 +4,7 @@ export const sendBriefMails = async (briefMails, briefData) => {
   var options = {
     from: "noreply@thriwe.com",
     to: briefMails.join(", "),
-    subject: "OTP for Thriwe CRM | Email Verification",
+    subject: "Brief",
     text: `wow thats sample `,
     html: `<!DOCTYPE html>
     <html lang="en">

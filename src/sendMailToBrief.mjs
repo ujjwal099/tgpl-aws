@@ -180,7 +180,9 @@ export const sendBriefMails = async (briefMails, briefData) => {
                   (imageUrl) =>
                     `<li>
                    Welcome Kit :
-                    <a target="_blank" href="${imageUrl}" >View Welcome Kit</a>
+                    <a target="_blank" href="${
+                      imageUrl.data ? imageUrl.data : ""
+                    }" >View Welcome Kit</a>
                   </li>`
                 )
                 .join("")}

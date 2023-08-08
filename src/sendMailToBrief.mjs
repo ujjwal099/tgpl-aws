@@ -114,7 +114,7 @@ export const sendBriefMails = async (briefMails, briefData) => {
           }
           ${
             briefData?.offersTandC
-              ? `<p>Offer T and C: ${briefData?.offersTandC}</p>`
+              ? `<p>Offer T&C: ${briefData?.offersTandC}</p>`
               : ""
           }
           ${
@@ -171,11 +171,6 @@ export const sendBriefMails = async (briefMails, briefData) => {
           }
           ${briefData?.count ? `<p>Count: ${briefData?.count}</p>` : ""}
           ${briefData?.writeUp ? `<p>Write Up: ${briefData?.writeUp}</p>` : ""}
-          ${
-            briefData?.welcomeKit
-              ? `<p>Welcome Kit: ${briefData?.welcomeKit}</p>`
-              : ""
-          }
           ${
             briefData?.welcomeKit && briefData?.welcomeKit.length > 0
               ? `

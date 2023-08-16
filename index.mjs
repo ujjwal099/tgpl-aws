@@ -10,6 +10,7 @@ import {
   approvedMailBySales,
   rejectMailBySales,
 } from "./src/SalesConfirmMail.mjs";
+
 import sendWhatsappMessage from "./src/sendMessageToWssp.mjs";
 import { sendBriefMails } from "./src/sendMailToBrief.mjs";
 

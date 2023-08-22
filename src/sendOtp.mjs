@@ -65,7 +65,6 @@ const sendOtp = async (phone, mail, countryCode) => {
     {
       "Content-Type": "application/json",
     },
-    country,
     null
   );
   await axios(configOtp);

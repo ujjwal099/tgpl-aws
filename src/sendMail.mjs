@@ -41,8 +41,7 @@ const sendMail = async (
   authName,
   locallySigned,
   agreement,
-  mailChange,
-  country
+  mailChange
 ) => {
   try {
     const today = dateToYMD(new Date());
@@ -176,7 +175,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
       } else {
@@ -187,7 +186,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
       }
@@ -201,7 +200,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
         configSpoc = AxiosUtils.axiosConfigConstructor(
@@ -211,7 +210,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
         configSale = AxiosUtils.axiosConfigConstructor(
@@ -221,7 +220,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
       } else {
@@ -233,7 +232,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
         configSpoc = AxiosUtils.axiosConfigConstructor(
@@ -243,7 +242,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
         configSale = AxiosUtils.axiosConfigConstructor(
@@ -253,7 +252,7 @@ const sendMail = async (
           {
             "Content-Type": "application/json",
           },
-          country,
+
           null
         );
       }

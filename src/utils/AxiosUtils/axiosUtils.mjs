@@ -1,12 +1,5 @@
 export default class AxiosUtils {
-  static axiosConfigConstructor = (
-    method,
-    endpoint,
-    data,
-    headers,
-    country,
-    params
-  ) => {
+  static axiosConfigConstructor = (method, endpoint, data, headers, params) => {
     return {
       method: method,
       url: endpoint,

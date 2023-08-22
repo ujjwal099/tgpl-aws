@@ -42,22 +42,32 @@ const sendOtp = async (phone, mail, countryCode) => {
   };
   const result = await axios(config);
   console.log("Result", result.data);
-  var options = {
-    from: "noreply@thriwe.com",
-    to: mail,
-    subject: "OTP for Thriwe CRM | Email Verification",
-    text: `wow thats sample `,
-    html: `<p>Dear User,</p>
 
-<p>Please use OTP ${code} to verify your credentials.<br>
-Please Note: OTP is valid for 10 minutes only</p>
-
-<p>
-Stay Safe,<br>
-Team Thriwe<br>
-</p>`,
-  };
-  await sendMailPromise(options);
+  const emailForOtp = JSON.stringify({
+    typeOfComms: 0,
+    typeOfMessage: 5,
+    requests: {
+      programCode: "TGPL",
+      userId: ["Dummy"],
+      message: 5,
+      payload: {
+        email: mail,
+        otp: code,
+        communicationCode: "email_otp",
+      },
+    },
+  });
+  const configOtp = AxiosUtils.axiosConfigConstructor(
+    "post",
+    "https://staging-india-api-gateway.thriwe.com/communications",
+    emailForOtp,
+    {
+      "Content-Type": "application/json",
+    },
+    country,
+    null
+  );
+  await axios(configOtp);
   return result.data;
 };
 

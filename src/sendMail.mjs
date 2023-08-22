@@ -193,6 +193,7 @@ const sendMail = async (
       }
     } else {
       if (locallySigned || isSigning) {
+        console.log("Check If The Siging", locallySigned, isSigning);
         configAuth = AxiosUtils.axiosConfigConstructor(
           "post",
           "https://staging-india-api-gateway.thriwe.com/communications",
@@ -224,6 +225,7 @@ const sendMail = async (
           null
         );
       } else {
+        console.log("Check For Submit");
         configAuth = AxiosUtils.axiosConfigConstructor(
           "post",
           "https://staging-india-api-gateway.thriwe.com/communications",

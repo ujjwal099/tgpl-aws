@@ -229,7 +229,7 @@ const sendMail = async (
         configAuth = AxiosUtils.axiosConfigConstructor(
           "post",
           "https://staging-india-api-gateway.thriwe.com/communications",
-          emailSignedAuth,
+          emailSubmitAuth,
           {
             "Content-Type": "application/json",
           },

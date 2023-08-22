@@ -192,7 +192,7 @@ const sendMail = async (
         );
       }
     } else {
-      if (locallySigned || isSigning) {
+      if (locallySigned || isSigning == "true") {
         console.log("Check If The Siging", locallySigned, isSigning);
         configAuth = AxiosUtils.axiosConfigConstructor(
           "post",

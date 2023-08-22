@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 import mandrillTransport from "nodemailer-mandrill-transport";
 import "dotenv/config";
+import AxiosUtils from "./utils/AxiosUtils/axiosUtils.mjs";
+import axios from "axios";
 
 function dateToYMD(date) {
   var d = date.getDate();
@@ -39,15 +41,134 @@ const sendMail = async (
   authName,
   locallySigned,
   agreement,
-  mailChange
+  mailChange,
+  country
 ) => {
   try {
     const today = dateToYMD(new Date());
-    var options1;
-    var options2;
-    var options3;
+    let configAuth;
+    let configSpoc;
+    let configSale;
+
+    const emailSubmitAuth = JSON.stringify({
+      typeOfComms: 0,
+      typeOfMessage: 10,
+      requests: {
+        programCode: "TGPL",
+        userId: ["Dummy"],
+        message: 10,
+        payload: {
+          email: authEmail,
+          authEmail: authEmail,
+          password: password,
+          merchantName: merchantName,
+          brandName: brandName,
+          today: today,
+          authName: authEmail,
+          link: agreement,
+          communicationCode: "email_submit_auth",
+        },
+      },
+    });
+
+    const emailSubmitSpoc = JSON.stringify({
+      typeOfComms: 0,
+      typeOfMessage: 10,
+      requests: {
+        programCode: "TGPL",
+        userId: ["Dummy"],
+        message: 10,
+        payload: {
+          email: spocEmail,
+          merchantName: merchantName,
+          brandName: brandName,
+          today: today,
+          authName: authEmail,
+          link: agreement,
+          communicationCode: "email_submit_spoc",
+        },
+      },
+    });
+
+    const emailSubmitSale = JSON.stringify({
+      typeOfComms: 0,
+      typeOfMessage: 10,
+      requests: {
+        programCode: "TGPL",
+        userId: ["Dummy"],
+        message: 10,
+        payload: {
+          email: email,
+          merchantName: merchantName,
+          brandName: brandName,
+          today: today,
+          authName: authName,
+          link: agreement,
+          communicationCode: "email_submit_sale",
+        },
+      },
+    });
+
+    const emailSignedAuth = JSON.stringify({
+      typeOfComms: 0,
+      typeOfMessage: 9,
+      requests: {
+        programCode: "TGPL",
+        userId: ["Dummy"],
+        message: 9,
+        payload: {
+          email: authEmail,
+          authEmail: authEmail,
+          merchantName: merchantName,
+          brandName: brandName,
+          today: today,
+          authName: authName,
+          link: agreement,
+          communicationCode: "email_signed_auth",
+        },
+      },
+    });
+
+    const emailSignedSpoc = JSON.stringify({
+      typeOfComms: 0,
+      typeOfMessage: 9,
+      requests: {
+        programCode: "TGPL",
+        userId: ["Dummy"],
+        message: 9,
+        payload: {
+          email: spocEmail,
+          merchantName: merchantName,
+          brandName: brandName,
+          today: today,
+          authName: authName,
+          link: agreement,
+          communicationCode: "email_signed_spoc_sale",
+        },
+      },
+    });
+
+    const emailSignedSale = JSON.stringify({
+      typeOfComms: 0,
+      typeOfMessage: 9,
+      requests: {
+        programCode: "TGPL",
+        userId: ["Dummy"],
+        message: 9,
+        payload: {
+          email: email,
+          merchantName: merchantName,
+          brandName: brandName,
+          today: today,
+          authName: authName,
+          link: agreement,
+          communicationCode: "email_signed_spoc_sale",
+        },
+      },
+    });
+
     if (mailChange == "Yes") {
-      options1 = {
+      configAuth = {
         from: "noreply@thriwe.com",
         to: authEmail,
         subject: `${
@@ -96,216 +217,97 @@ sign the MOU.</p>
       }
        `,
       };
-      options2 = {
-        from: "noreply@thriwe.com",
-        to: spocEmail,
-        subject: `${
-          isSigning == "false"
-            ? `A form is submitted for ${brandName}`
-            : `MOU is successfully signed - ${brandName}
-`
-        }`,
-        text: `wow thats sample `,
-        html: `<p>Authorised Signatory Mail has Changed </p>`,
-      };
-      options3 = {
-        from: "noreply@thriwe.com",
-        to: email,
-        subject: `${
-          isSigning == "false"
-            ? `A form is submitted for ${brandName}`
-            : `MOU is successfully signed - ${brandName}
-`
-        }`,
-        text: `wow thats sample `,
-        html: `<p>Authorised Signatory Mail has Changed </p>`,
-      };
-    } else {
-      if (locallySigned) {
-        options1 = {
-          from: "noreply@thriwe.com",
-          to: authEmail,
-          subject: `${
-            isSigning == "false"
-              ? `MOU is submitted for Digital Signatures - ${brandName}`
-              : `MOU is successfully signed - ${brandName}
-`
-          }`,
-          text: `wow thats sample `,
-          html: `
-      ${`
-        <p>Dear User,</p>
-        <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
-        <p>AuthEmail : ${authEmail} </p>
-        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-        <p> Merchant Name: ${merchantName} </p>
-        <p> Brand Name: ${brandName} </p>
-        <p> Date of Signing: ${today} </p>
-        <p> Agreement: <a href="${
-          agreement ? agreement : ""
-        }">View Agreement</a> </p>
-        <p> Authorised Signatory: ${authName} </p>
-        <p>Thanks, </p>
-        <p>Team Thriwe </p>
-          `}
-       `,
-        };
+      if (isSigning === "true") {
+        configAuth = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSignedAuth,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
       } else {
-        options1 = {
-          from: "noreply@thriwe.com",
-          to: authEmail,
-          subject: `${
-            isSigning == "false"
-              ? `MOU is submitted for Digital Signatures - ${brandName}`
-              : `MOU is successfully signed - ${brandName}
-`
-          }`,
-          text: `wow thats sample `,
-          html: `
-      ${
-        isSigning == "false"
-          ? `
-        <p>Dear User,</p>
-        <p>An MOU is successfully submitted for ${brandName}. Please login to below mention Platform URL and digitally
-sign the MOU.</p>
-        <p>AuthEmail : ${authEmail} </p>
-        ${password ? `<p> Password : ${password} </p>` : ""}
-        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-        <p> Merchant Name: ${merchantName} </p>
-        <p> Brand Name: ${brandName} </p>
-        <p> Date of Signing: ${today} </p>
-        <p> Authorised Signatory: ${authName} </p>
-        <p> Agreement: <a href="${
-          agreement ? agreement : ""
-        }">View Agreement</a> </p>
-        <p>Thanks, </p>
-        <p>Team Thriwe </p>
-          `
-          : `
-        <p>Dear User,</p>
-        <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
-        <p>AuthEmail : ${authEmail} </p>
-        ${password ? `<p> Password : ${password} </p>` : ""}
-        <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-        <p> Merchant Name: ${merchantName} </p>
-        <p> Brand Name: ${brandName} </p>
-        <p> Date of Signing: ${today} </p>
-        <p> Authorised Signatory: ${authName} </p>
-         <p> Agreement: <a href="${
-           agreement ? agreement : ""
-         }">View Agreement</a> </p>
-        <p>Thanks, </p>
-        <p>Team Thriwe </p>
-          `
+        configAuth = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSubmitAuth,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
       }
-       `,
-        };
+    } else {
+      if (locallySigned || isSigning) {
+        configAuth = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSignedAuth,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
+        configSpoc = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSignedSpoc,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
+        configSale = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSignedSale,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
+      } else {
+        configAuth = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSignedAuth,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
+        configSpoc = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSubmitSpoc,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
+        configSale = AxiosUtils.axiosConfigConstructor(
+          "post",
+          "https://staging-india-api-gateway.thriwe.com/communications",
+          emailSubmitSale,
+          {
+            "Content-Type": "application/json",
+          },
+          country,
+          null
+        );
       }
-      options2 = {
-        from: "noreply@thriwe.com",
-        to: spocEmail,
-        subject: `${
-          isSigning == "false"
-            ? `A form is submitted for ${brandName}`
-            : `MOU is successfully signed - ${brandName}
-`
-        }`,
-        text: `wow thats sample `,
-        html: `
-      ${
-        isSigning == "false"
-          ? `
-         <p>Dear User,</p>
-         <p>A form is successfully submitted for <Brand Name>.</p>
-         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-         <p> Merchant Name: ${merchantName} </p>
-         <p> Brand Name: ${brandName} </p>
-         <p> Date of Submission: ${today} </p>
-         <p> Authorised Signatory: ${authName} </p>
-         <p> Agreement: <a href="${
-           agreement ? agreement : ""
-         }">View Agreement</a> </p>
-         <p>We will send communication post signing of agreement.</p>
-         <p>Thanks, </p>
-         <p>Team Thriwe </p>
-          `
-          : `
-         <p>Dear User,</p>
-         <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
-         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-         <p> Merchant Name: ${merchantName} </p>
-         <p> Brand Name: ${brandName} </p>
-         <p> Date of Signing: ${today} </p>
-         <p> Agreement: <a href="${
-           agreement ? agreement : ""
-         }">View Agreement</a> </p>
-         <p> Authorised Signatory: ${authName} </p>
-         <p>Thanks, </p>
-         <p>Team Thriwe </p>
-          `
-      }
-       `,
-      };
-
-      options3 = {
-        from: "noreply@thriwe.com",
-        to: email,
-        subject: `${
-          isSigning == "false"
-            ? `A form is submitted for ${brandName}`
-            : `MOU is successfully signed - ${brandName}
-`
-        }`,
-        text: `wow thats sample `,
-        html: `
-      ${
-        isSigning == "false"
-          ? `
-         <p>Dear User,</p>
-         <p>A form is successfully submitted for <Brand Name>.</p>
-         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-         <p> Merchant Name: ${merchantName} </p>
-         <p> Brand Name: ${brandName} </p>
-         <p> Date of Submission: ${today} </p>
-         <p> Authorised Signatory: ${authName} </p>
-        <p> Agreement: <a href="${
-          agreement ? agreement : ""
-        }">View Agreement</a> </p>
-         <p>You will be notified once Merchant signs the agreement.</p>
-         <p>Thanks, </p>
-         <p>Team Thriwe </p>
-          `
-          : `
-         <p>Dear User,</p>
-         <p>MOU is successfully signed for ${brandName}. We have enclosed the signed MOU for reference.</p>
-         <p>Platform URL: <a href="https://tgpl-crm.thriwe.com/">https://tgpl-crm.thriwe.com</a></p>
-         <p> Merchant Name: ${merchantName} </p>
-         <p> Brand Name: ${brandName} </p>
-         <p> Date of Signing: ${today} </p>
-         <p> Agreement: <a href="${
-           agreement ? agreement : ""
-         }">View Agreement</a> </p>
-         <p> Authorised Signatory: ${authName} </p>
-         <p>Thanks, </p>
-         <p>Team Thriwe </p>
-          `
-      }
-       `,
-      };
     }
-    const promises = [
-      sendMailPromise(options1),
-      sendMailPromise(options2),
-      sendMailPromise(options3),
-    ];
-
-    await Promise.all(promises)
-      .then((results) => {
-        console.log("All emails sent:", results);
-      })
-      .catch((err) => {
-        console.error("Error sending emails:", err);
-      });
+    await axios(configAuth);
+    await axios(configSpoc);
+    await axios(configSale);
   } catch (error) {
     console.log(error);
   }
